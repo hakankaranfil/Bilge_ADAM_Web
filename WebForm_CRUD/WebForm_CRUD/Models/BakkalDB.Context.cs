@@ -13,10 +13,10 @@ namespace WebForm_CRUD.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BakkalDBEntities1 : DbContext
+    public partial class BakkalDB1Entities : DbContext
     {
-        public BakkalDBEntities1()
-            : base("name=BakkalDBEntities1")
+        public BakkalDB1Entities()
+            : base("name=BakkalDB1Entities")
         {
         }
     
@@ -25,5 +25,6 @@ namespace WebForm_CRUD.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

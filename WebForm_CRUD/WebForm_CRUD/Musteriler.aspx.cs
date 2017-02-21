@@ -12,9 +12,16 @@ namespace WebForm_CRUD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            using(BakkalDBEntities db=new BakkalDBEntities())
+            using (BakkalDB1Entities db=new BakkalDB1Entities())
             {
-                Repeater1.DataSource=db.
+                Repeater1.DataSource = db.Customers.ToList();
+                Repeater1.DataBind();
+            }
+
+            if (Request.QueryString["ID"]!=null)
+            {
+                int id = int.Parse(Request.QueryString["ID"]);
+
             }
         }
     }
