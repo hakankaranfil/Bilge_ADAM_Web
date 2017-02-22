@@ -21,6 +21,13 @@ namespace WebForm_CRUD
             if (Request.QueryString["ID"]!=null)
             {
                 int id = int.Parse(Request.QueryString["ID"]);
+                using (BakkalDB1Entities db=new BakkalDB1Entities())
+                {
+                    var result = db.Customers.Find(id);
+                    db.Customers.Remove(result);
+                    db.SaveChanges();
+                    Response.Redirect("Musteriler.aspx");
+                }
 
             }
         }
