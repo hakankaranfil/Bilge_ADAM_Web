@@ -28,7 +28,7 @@ namespace WebQuiz_Kütüphane
                     TextBoxKitapadi.Text = result.KitapAdi;
                     TextBoxKitapKonu.Text = result.KitapKonu;
                     TextBoxKitapSayfa.Text = result.KitapSayfa;
-                    TextBoxKitapNO.Text = result.KitapID.ToString();
+                    //TextBoxKitapNO.Text = result.KitapID.ToString();
 
 
                 }
@@ -40,14 +40,12 @@ namespace WebQuiz_Kütüphane
 
         protected void BtnKirala_Click(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    int id = int.Parse(Request.QueryString["ID"]);
+           
                 using (Kutuphane db = new Kutuphane())
                 {
-                //var result = db.Kitap.Find(id);
-                kira.KitapID = int.Parse(TextBoxKitapNO.Text);
-                kira.KullaniciID = int.Parse(TextBoxkullanicino.Text);
+               
+                //kira.KitapID = int.Parse(TextBoxKitapNO.Text);
+                //kira.KullaniciID = int.Parse(TextBoxkullanicino.Text);
                 kira.KitapAdi = TextBoxKitapadi.Text;
                     kira.KitapKonu = TextBoxKitapKonu.Text;
                     kira.KitapKonu = TextBoxKitapSayfa.Text;
