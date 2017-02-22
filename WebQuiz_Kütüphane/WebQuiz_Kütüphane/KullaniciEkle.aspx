@@ -9,8 +9,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    <table border="1" class="table">
+        <div>
+            <table border="1" class="table">
                 <tr>
                     <td>
                         <asp:Label ID="label1" CssClass="form-kontrol" runat="server" Text="Kullanıcı Adı:"></asp:Label>
@@ -25,32 +25,41 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="label2" runat="server" Text="Adres">
+                        <asp:Label ID="label2" runat="server" Text="KullanıcıNo:">
                     
                         </asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBoxKonu" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxKullaniciNo" CssClass="form-control" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="label3" runat="server" Text="Sayfa Sayısı"> </asp:Label>
+                        <asp:Label ID="label3" runat="server" Text="Adres:"> </asp:Label>
 
 
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBoxsayfa" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxAdres" CssClass="form-control" runat="server"></asp:TextBox>
                     </td>
                 </tr>
-
+                <tr>
+                    <td>
+                        <asp:Label ID="label4" runat="server" Text="Tel:">
+                    
+                        </asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBoxTel" CssClass="form-control" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="2">
                         <asp:Button ID="BtnKaydet" class="btn btn-primary btn-block" runat="server" Text="Kaydet" OnClick="BtnKaydet_Click"  />
                     </td>
                 </tr>
             </table>
-    </div>
+        </div>
     </form>
 </body>
 </html>

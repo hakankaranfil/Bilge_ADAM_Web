@@ -11,6 +11,7 @@
             visibility: hidden;
             height: 59px;
         }
+
         .auto-style2 {
             height: 59px;
         }
@@ -20,7 +21,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>Kitaplar</h1>
-            
+
             <table border="1">
                 <tr>
                     <th>Kitap ID</th>
@@ -49,10 +50,7 @@
                                 <a class="btn btn-success" href="#">Kirala</a>
                                 <a class="btn btn-info" href="#">Düzenle</a>
                                 <a class="btn btn-danger" href="Web_Kitap.aspx?ID=<%#Eval("KitapID")%>">Sil</a>
-
                             </td>
-                              
-                
                         </tr>
                         </div>
                          </table>
@@ -62,17 +60,13 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <tr>
-                     <td>
-                 <a class="btn btn-success" href="KitapEkle.aspx">Kitap Ekle</a>
-                 <a class="btn btn-primary" href="KitapEkle.aspx">Kullanıcı Ekle</a>
+                    <td>
+                        <a class="btn btn-success" href="KitapEkle.aspx">Kitap Ekle</a>
+                        <a class="btn btn-primary" href="KullaniciEkle.aspx">Kullanıcı Ekle</a>
                     </td>
                 </tr>
-                 
+
             </table>
-          
-           
-        
-           
         </div>
     </form>
 </body>

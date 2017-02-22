@@ -9,6 +9,7 @@ namespace WebQuiz_Kütüphane
     {
         public int KullaniciID { get; set; }
         public string KullaniciAdi { get; set; }
+        public int KullaniciNo { get; set; }
         public string KullaniciAdres { get; set; }
         public string KullaniciTel { get; set; }
     }

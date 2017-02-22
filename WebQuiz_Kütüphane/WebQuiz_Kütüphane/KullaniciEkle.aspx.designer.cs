@@ -49,13 +49,13 @@ namespace WebQuiz_Kütüphane {
         protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// TextBoxKonu control.
+        /// TextBoxKullaniciNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxKonu;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxKullaniciNo;
         
         /// <summary>
         /// label3 control.
@@ -67,13 +67,31 @@ namespace WebQuiz_Kütüphane {
         protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
-        /// TextBoxsayfa control.
+        /// TextBoxAdres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxsayfa;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxAdres;
+        
+        /// <summary>
+        /// label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label4;
+        
+        /// <summary>
+        /// TextBoxTel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTel;
         
         /// <summary>
         /// BtnKaydet control.
