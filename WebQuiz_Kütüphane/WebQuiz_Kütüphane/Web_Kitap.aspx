@@ -45,11 +45,10 @@
                             </td>
 
                             <td>
-                                <%--<a class="btn btn-warning" href="MusteriGuncelle.aspx?ID=<%#Eval("CustomerID")%>">update</a>--%>
-                                <%--<a class="btn btn-danger" href="Musteriler.aspx?ID=<%#Eval("CustomerID")%>">delete</a>--%>
-                                <a class="btn btn-success" href="#">Kirala</a>
+                                
+                                <a class="btn btn-success" href="Web_Kitap.aspx?ID=<%#Eval("KitapID")%>">Sil</a>"
                                 <a class="btn btn-info" href="#">Düzenle</a>
-                                <a class="btn btn-danger" href="Web_Kitap.aspx?ID=<%#Eval("KitapID")%>">Sil</a>
+                                <a class="btn btn-danger" href="Kiralanan.aspx?ID=<%#Eval("KitapID")%>">Kirala</a>"
                             </td>
                         </tr>
                         </div>

@@ -104,6 +104,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Kiralanan.aspx" />
     <Content Include="KitapKirala.aspx" />
     <Content Include="KullaniciEkle.aspx" />
     <Content Include="packages.config" />
@@ -145,6 +146,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Kiralanan.aspx.cs">
+      <DependentUpon>Kiralanan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kiralanan.aspx.designer.cs">
+      <DependentUpon>Kiralanan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kitap.cs" />
     <Compile Include="KiralananKitap.cs" />

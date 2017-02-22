@@ -12,7 +12,9 @@ namespace WebQuiz_Kütüphane
         public int KullaniciID { get; set; }
         public string KullaniciAdi { get; set; }
         public string KitapAdi { get; set; }
-        public bool Durum { get; set; }
+        public string KitapKonu { get; set; }
+        public string KitapSayfa { get; set; }
+        
         public DateTime AlisTarihi { get; set; }
 
         public DateTime IadeTarihi { get; set; }

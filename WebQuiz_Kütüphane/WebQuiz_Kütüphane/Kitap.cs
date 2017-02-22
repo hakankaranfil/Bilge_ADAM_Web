@@ -13,6 +13,7 @@ namespace WebQuiz_Kütüphane
         public bool Durum { get; set; }
 
         public string KitapSayfa { get; set; }
+        public Kullanici KullaniciID { get; set; }
 
     }
 }
