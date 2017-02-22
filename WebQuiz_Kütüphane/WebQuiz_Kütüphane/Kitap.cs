@@ -10,6 +10,7 @@ namespace WebQuiz_Kütüphane
         public int KitapID { get; set; }
         public string KitapAdi { get; set; }
         public string KitapKonu{ get; set; }
+        public bool Durum { get; set; }
 
         public string KitapSayfa { get; set; }
 

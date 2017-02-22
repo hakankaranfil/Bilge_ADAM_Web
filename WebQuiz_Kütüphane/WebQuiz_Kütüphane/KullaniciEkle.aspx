@@ -1,31 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="KitapEkle.aspx.cs" Inherits="WebQuiz_Kütüphane.KitapEkle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="KullaniciEkle.aspx.cs" Inherits="WebQuiz_Kütüphane.KullaniciEkle" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Kitap Ekle</title>
+    <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table border="1" class="table">
+    <div>
+    <table border="1" class="table">
                 <tr>
                     <td>
-                        <asp:Label ID="label1" CssClass="form-kontrol" runat="server" Text="Kitap Adı:"></asp:Label>
+                        <asp:Label ID="label1" CssClass="form-kontrol" runat="server" Text="Kullanıcı Adı:"></asp:Label>
 
 
                     </td>
 
 
                     <td>
-                        <asp:TextBox ID="TextBoxKitapad" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxKullanıcıad" CssClass="form-control" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="label2" runat="server" Text="Konusu">
+                        <asp:Label ID="label2" runat="server" Text="Adres">
                     
                         </asp:Label>
                     </td>
@@ -50,7 +50,7 @@
                     </td>
                 </tr>
             </table>
-        </div>
+    </div>
     </form>
 </body>
 </html>

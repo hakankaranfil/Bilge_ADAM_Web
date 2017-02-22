@@ -6,6 +6,15 @@
 <head runat="server">
     <title>Kütüphane</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            visibility: hidden;
+            height: 59px;
+        }
+        .auto-style2 {
+            height: 59px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -35,11 +44,11 @@
                             </td>
 
                             <td>
-                                <%--<a class="btn btn-warning" href="MusteriGuncelle.aspx?ID=<%#Eval("CustomerID")%>">update</a>
-                                <a class="btn btn-danger" href="Musteriler.aspx?ID=<%#Eval("CustomerID")%>">delete</a>--%>
+                                <%--<a class="btn btn-warning" href="MusteriGuncelle.aspx?ID=<%#Eval("CustomerID")%>">update</a>--%>
+                                <%--<a class="btn btn-danger" href="Musteriler.aspx?ID=<%#Eval("CustomerID")%>">delete</a>--%>
                                 <a class="btn btn-success" href="#">Kirala</a>
                                 <a class="btn btn-info" href="#">Düzenle</a>
-                                <a class="btn btn-danger" href="#">Sil</a>
+                                <a class="btn btn-danger" href="Web_Kitap.aspx?ID=<%#Eval("KitapID")%>">Sil</a>
 
                             </td>
                               
@@ -53,8 +62,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <tr>
-                     <td colspan="6">
+                     <td>
                  <a class="btn btn-success" href="KitapEkle.aspx">Kitap Ekle</a>
+                 <a class="btn btn-primary" href="KitapEkle.aspx">Kullanıcı Ekle</a>
                     </td>
                 </tr>
                  

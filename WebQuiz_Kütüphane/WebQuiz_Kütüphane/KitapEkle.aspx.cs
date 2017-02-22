@@ -13,5 +13,19 @@ namespace WebQuiz_Kütüphane
         {
 
         }
+
+        protected void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            Kitap kitap = new Kitap();
+            kitap.KitapAdi = TextBoxKitapad.Text;
+            kitap.KitapKonu = TextBoxKonu.Text;
+            kitap.KitapSayfa = TextBoxsayfa.Text;
+            using (Kutuphane db=new Kutuphane())
+            {
+                db.Kitap.Add(kitap);
+                db.SaveChanges();
+                Response.Redirect("Web_Kitap.aspx");
+            }
+        }
     }
 }
