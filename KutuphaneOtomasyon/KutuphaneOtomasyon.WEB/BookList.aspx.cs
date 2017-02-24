@@ -16,7 +16,7 @@ namespace KutuphaneOtomasyon.WEB
             Repeater1.DataSource = BookRepositery.GetALLBooks();
             Repeater1.DataBind();
             
-              
+
         }
     }
 }

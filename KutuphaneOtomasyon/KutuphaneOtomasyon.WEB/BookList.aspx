@@ -18,7 +18,7 @@
     <div>
             <h1>Kitaplar</h1>
 
-            <table class="table table-bordered">
+            <table border="1">
                 <tr>
                     
                     <th>Kitap Adı</th>
@@ -63,8 +63,8 @@
                 </asp:Repeater>
                 <tr>
                     <td>
-                        <a class="btn btn-success" href="KitapEkle.aspx">Kitap Ekle</a>
-                        <a class="btn btn-primary" href="KullaniciEkle.aspx">Kullanıcı Ekle</a>
+                        <a class="btn btn-success" href="AddBook.aspx">Kitap Ekle</a>
+                        <a class="btn btn-primary" href="UsersAdd.aspx">Kullanıcı Ekle</a>
                     </td>
                 </tr>
 

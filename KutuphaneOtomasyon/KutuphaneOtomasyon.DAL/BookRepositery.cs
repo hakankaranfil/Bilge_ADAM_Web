@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace KutuphaneOtomasyon.DAL
 {
-   public class BookRepositery
+    public class BookRepositery
     {
-      public static  List<WiewBook> GetALLBooks()
+        public static List<WiewBook> GetALLBooks()
         {
-            using(KutuphaneDBContext db=new KutuphaneDBContext())
+            using (KutuphaneDBContext db = new KutuphaneDBContext())
             {
                 return db.Book.Select(p => new WiewBook
                 {
@@ -26,18 +26,32 @@ namespace KutuphaneOtomasyon.DAL
                 }).ToList();
 
 
-                }
-               
             }
 
         }
-        public static void     (Book book)
+        public static void AddBook(Book book)
+
         {
-            using (KutuphaneDBContext db=new KutuphaneDBContext())
+            using (KutuphaneDBContext db = new KutuphaneDBContext())
             {
                 db.Book.Add(book);
                 db.SaveChanges();
+
             }
+        }
+        public static void DeleteBook(Book result)
+        {
+            using (KutuphaneDBContext db = new KutuphaneDBContext())
+            {
+                
+            }
+
+
         }
     }
 }
+
+
+
+
+       
