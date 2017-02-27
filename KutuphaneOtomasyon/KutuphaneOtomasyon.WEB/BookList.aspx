@@ -5,7 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Kitaplar Listesi</title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+      <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+  
     <style type="text/css">
         .auto-style1 {
             height: 58px;
@@ -17,6 +20,19 @@
     
     <div>
             <h1>Kitaplar</h1>
+        <div class="btn-group">
+  <button type="button" class="btn btn-primary">Sony</button>
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="AddBook.aspx">Kitap Ekle</a></li>
+    <li><a href="WriterAdd.aspx">Yazar Ekle</a></li>
+    <li><a href="UsersAdd.aspx">Kullanıcı Ekle</a></li>
+     <li><a href="#">Kayıtlar</a></li>
+      <li><a href="#">Tüm Hareketler</a></li>
+  </ul>
+</div>
 
             <table border="1">
                 <tr>
@@ -27,18 +43,19 @@
                     <th>Sayfa Sayısı</th>
                     <th>Durum</th>
                      <th>İşlem</th>
+
                     
                    
                 </tr>
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
-                        <tr>
+                       <%-- <tr class="<%# Eval("IsRented").ToString()=="True" ? "danger":"success"%>">--%>
                             
                             <td><%# Eval("BookName")%></td>
                             <td><%# Eval("BookSubject")%></td>
                             <td><%# Eval("WriterName")%></td>
                             <td><%# Eval("PageCount")%></td>
-                            <td><%# Eval("ISRented")%></td>
+                           <%-- <td><%# Eval("IsRented").ToString()=="True"?"Alınabilir":"Alınamaz"%></td>--%>
                             
                             
                             
@@ -49,22 +66,22 @@
 
                             <td>
                                 
-                                <a class="btn btn-success" href="#">Sil</a>"
-                                <a class="btn btn-info" href="#">Düzenle</a>
-                                <a class="btn btn-danger" href="#">Kirala</a>"
+                              <%--  <a class="btn btn-success" href="#">Sil</a>"
+                                <a class="btn btn-info" href="#">Düzenle</a>--%>
+                                <a href="#?ID=<%#Eval("BookID")%>" class="btn btn-info btn-btn-block">Kirala</a>"
                             </td>
                         </tr>
                         </div>
                          </table>
                  
                     </td>
-           
+          <%-- </tr>--%>
                     </ItemTemplate>
                 </asp:Repeater>
                 <tr>
                     <td>
-                        <a class="btn btn-success" href="AddBook.aspx">Kitap Ekle</a>
-                        <a class="btn btn-primary" href="UsersAdd.aspx">Kullanıcı Ekle</a>
+                      <%--  <a class="btn btn-success" href="AddBook.aspx">Kitap Ekle</a>
+                        <a class="btn btn-primary" href="UsersAdd.aspx">Kullanıcı Ekle</a>--%>
                     </td>
                 </tr>
 

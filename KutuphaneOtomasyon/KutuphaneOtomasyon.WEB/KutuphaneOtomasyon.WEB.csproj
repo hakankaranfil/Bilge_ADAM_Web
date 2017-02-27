@@ -106,7 +106,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="RentBook.aspx" />
+    <Content Include="RentList.aspx" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="WriterAdd.aspx" />
+    <Content Include="WriterList.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,6 +140,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="UserList.aspx" />
     <Content Include="UsersAdd.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,12 +164,47 @@
     </Compile>
     <Compile Include="Models\WiewBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentBook.aspx.cs">
+      <DependentUpon>RentBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentBook.aspx.designer.cs">
+      <DependentUpon>RentBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentList.aspx.cs">
+      <DependentUpon>RentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentList.aspx.designer.cs">
+      <DependentUpon>RentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UsersAdd.aspx.cs">
       <DependentUpon>UsersAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UsersAdd.aspx.designer.cs">
       <DependentUpon>UsersAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WriterAdd.aspx.cs">
+      <DependentUpon>WriterAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WriterAdd.aspx.designer.cs">
+      <DependentUpon>WriterAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WriterList.aspx.cs">
+      <DependentUpon>WriterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WriterList.aspx.designer.cs">
+      <DependentUpon>WriterList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

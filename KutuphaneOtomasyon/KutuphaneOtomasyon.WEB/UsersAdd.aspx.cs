@@ -22,7 +22,7 @@ namespace KutuphaneOtomasyon.WEB
             user.UserName = TextBoxUserName.Text;
             user.Address = TextBoxAddress.Text;
             UsersRespositery.UserAdd(user);
-            Response.Redirect("UsersAdd.aspx");
+            Response.Redirect("UserList.aspx");
         }
     }
 }

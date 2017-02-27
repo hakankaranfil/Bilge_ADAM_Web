@@ -1,13 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddBook.aspx.cs" Inherits="KutuphaneOtomasyon.WEB.AddBook" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RentBook.aspx.cs" Inherits="KutuphaneOtomasyon.WEB.RentBook" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Kitap Ekle</title>
+    <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
-
-    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -57,18 +55,18 @@
                 </tr>
          <tr>
                     <td>
-                        <asp:Label ID="label5" runat="server" Text="Yazar no:"> </asp:Label>
+                        <asp:Label ID="label5" runat="server" Text="KUlacınıcı adı:"> </asp:Label>
 
 
                     </td>
                     <td>
-                        <asp:DropDownList ID="DropWriter" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="DropUser" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="BtnKaydet" class="btn btn-primary btn-block" runat="server" Text="Kaydet" OnClick="BtnKaydet_Click"  />
+                        <asp:Button ID="BtnKaydet" class="btn btn-primary btn-block" runat="server" Text="Kirala" OnClick="BtnKaydet_Click"  />
                     </td>
                 </tr>
             </table>

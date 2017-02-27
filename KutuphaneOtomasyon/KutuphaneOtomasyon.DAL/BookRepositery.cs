@@ -48,6 +48,15 @@ namespace KutuphaneOtomasyon.DAL
 
 
         }
+        public static Book GetBook(int id)
+        {
+            using (KutuphaneDBContext db = new KutuphaneDBContext())
+            {
+                return db.Book.Find(id);
+            }
+
+
+        }
     }
 }
 

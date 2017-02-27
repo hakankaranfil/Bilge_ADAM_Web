@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BookRepositery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentRespositery.cs" />
     <Compile Include="UsersRespositery.cs" />
     <Compile Include="WriterRespositery.cs" />
   </ItemGroup>

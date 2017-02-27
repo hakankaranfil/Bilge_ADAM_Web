@@ -5,7 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Kişi Ekle</title>
-    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    
+    
+    
+    
 </head>
 <body>
     <form id="form1" runat="server">
