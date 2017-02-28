@@ -24,6 +24,33 @@ namespace İMDB.DAL
                 return db.Director.ToList();
             }
         }
+        public static void DeleteDirector(int id)
+        {
+            using (IMDBDB db = new IMDBDB())
+            {
+                var result = db.Director.Find(id);
+                db.Director.Remove(result);
+                db.SaveChanges();
+
+            }
+        }
+        public static Director GetDirector(int id)
+        {
+            using (IMDBDB db = new IMDBDB())
+            {
+                return db.Director.Find(id);
+            }
+        }
+        public static void UpdateDirector(int id, string name)
+        {
+            using (IMDBDB db = new IMDBDB())
+            {
+                var result = db.Director.Find(id);
+                result.DirectorName = name;
+                db.SaveChanges();
+            }
+        }
     }
 }
+
 

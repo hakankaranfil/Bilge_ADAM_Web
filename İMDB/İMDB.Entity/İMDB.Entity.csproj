@@ -56,6 +56,8 @@
     <Compile Include="Movie.cs" />
     <Compile Include="MovieType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wiew\WiewDirectorMovie.cs" />
+    <Compile Include="Wiew\WiewMovie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

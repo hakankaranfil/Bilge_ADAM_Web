@@ -103,10 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectorList.aspx" />
+    <Content Include="DirectorMovie.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Pictures\indir.jpg" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -155,6 +157,13 @@
     </Compile>
     <Compile Include="DirectorList.aspx.designer.cs">
       <DependentUpon>DirectorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorMovie.aspx.cs">
+      <DependentUpon>DirectorMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DirectorMovie.aspx.designer.cs">
+      <DependentUpon>DirectorMovie.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

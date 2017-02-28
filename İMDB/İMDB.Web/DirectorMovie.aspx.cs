@@ -8,21 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace İMDB.Web
 {
-    public partial class DirectorList : System.Web.UI.Page
+    public partial class DirectorMovie : System.Web.UI.Page
     {
-       
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["ID"] != null && !IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["ID"]);
-                DirectorRepository.DeleteDirector(id);
-                Response.Redirect("DirectorList.aspx");
-            }
+                Repeater1.DataSource = MovieRepository.GetAllDMovies(id);
+                Repeater1.DataBind();
 
-                Repeater1.DataSource = DirectorRepository.GetAllDirector();
-            Repeater1.DataBind();
+
+            }
         }
     }
 }

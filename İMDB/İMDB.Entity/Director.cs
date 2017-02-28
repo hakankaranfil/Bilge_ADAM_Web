@@ -10,5 +10,6 @@ namespace İMDB.Entity
     {
         public int DirectorId { get; set; }
         public string DirectorName { get; set; }
+      
     }
 }

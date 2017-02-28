@@ -6,13 +6,18 @@
 <head runat="server">
     <title>Yönetmen Ekle</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+         background-color:brown;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
          <div class="container">
             <h1>Yönetmen Ekle</h1>
-            <a href="MovieList.aspx" class="btn btn-primary">Ana Sayfa</a><br /><br />
+            <a href="HomePage.aspx" class="btn btn-primary">Ana Sayfa</a><br /><br />
      <table class="table table-bordered">
                 <tr>
                     <td>

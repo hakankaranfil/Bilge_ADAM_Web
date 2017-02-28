@@ -8,11 +8,17 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+     
+    <style type="text/css">
+        body {
+         background-color:brown;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div class="container">
-            <h1>İMDB Film Listesi</h1>
+            <h1>İMDB Ana Sayfa</h1>
             <%--<a href="BookList.aspx" class="btn btn-primary">Ana Sayfa</a><br />--%>
 
             <%--İşlemler--%>
@@ -25,7 +31,7 @@
                     <li><a href="MovieAdd.aspx">Film Ekle</a></li>
                     <li><a href="DirectorAdd.aspx">Yönetmen Ekle</a></li>
                     <li><a href="MovieList.aspx">Filmleri Listele</a></li>
-                    <li><a href="WriterAdd.aspx">Yönetmenleri Listele</a></li>
+                    <li><a href="DirectorList.aspx">Yönetmenleri Listele</a></li>
                 
                 </ul>
             </div>

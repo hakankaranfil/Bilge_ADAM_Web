@@ -13,14 +13,14 @@
     <div>
      <div class="container">
             <h1>Film Ekle</h1>
-            <a href="MovieList.aspx" class="btn btn-primary">Ana Sayfa</a><br /><br />
+            <a href="HomePage.aspx" class="btn btn-primary">Ana Sayfa</a><br /><br />
             <table class="table table-bordered">
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="Film Adı:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtBookName" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMovieName" CssClass="form-control" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -60,12 +60,12 @@
                         <asp:Label ID="Label6" runat="server" Text="Yönetmeni:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBoxDirector" CssClass="form-control" runat="server"></asp:TextBox>
+                       <asp:DropDownList ID="DropDirector" CssClass="form-control" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="btnKaydet" CssClass="btn btn-primary btn-block" runat="server" Text="Kaydet" />
+                        <asp:Button ID="btnKaydet" CssClass="btn btn-primary btn-block" runat="server" Text="Kaydet" OnClick="btnKaydet_Click" />
                     </td>
                 </tr>
             </table>

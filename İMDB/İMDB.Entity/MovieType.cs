@@ -10,5 +10,7 @@ namespace İMDB.Entity
     {
         public int MovieTypeID { get; set; }
         public string MovieTypeName { get; set; }
+     
     }
+   
 }

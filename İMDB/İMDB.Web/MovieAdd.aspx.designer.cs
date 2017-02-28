@@ -31,13 +31,13 @@ namespace İMDB.Web {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// txtBookName control.
+        /// txtMovieName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBookName;
+        protected global::System.Web.UI.WebControls.TextBox txtMovieName;
         
         /// <summary>
         /// Label2 control.
@@ -121,13 +121,13 @@ namespace İMDB.Web {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// TextBoxDirector control.
+        /// DropDirector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDirector;
+        protected global::System.Web.UI.WebControls.DropDownList DropDirector;
         
         /// <summary>
         /// btnKaydet control.
