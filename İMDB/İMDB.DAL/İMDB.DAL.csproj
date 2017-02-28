@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectorRepository.cs" />
-    <Compile Include="MovieRepository.cs" />
+    <Compile Include="MovieRepositery.cs" />
     <Compile Include="MovieTypeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

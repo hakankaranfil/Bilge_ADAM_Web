@@ -37,7 +37,7 @@ namespace İMDB.Web
             movie.RealiseDate =Convert.ToDateTime( txtRealiseDate.Text);
             movie.MovieTypeID = Convert.ToInt32(DropMovieType.SelectedItem.Value);
             movie.DirectorID = Convert.ToInt32(DropDirector.SelectedItem.Value);
-            MovieRepository.AddMovie(movie);
+            MovieRepositery.AddMovie(movie);
             Response.Redirect("MovieList.aspx");
         }
     }

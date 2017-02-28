@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace İMDB.DAL
 {
-    public class MovieRepository
+    public class MovieRepositery
     {
         public static List<WiewMovie> GetAllMovie()
         {
@@ -57,8 +57,19 @@ namespace İMDB.DAL
                 }).ToList();
             }
         }
- 
+        public static List<WiweMovieRating> GetAllRating(int movieid,int toplam,int kisisayısı)
+        {
+            using (IMDBDB db = new IMDBDB())
+            {
+                return db.Movie.Where(b => b.MovieID == movieid).Select(b => new WiweMovieRating
+                {
+                    MovieID = b.MovieID,
+                    MovieName = b.MovieName,
+                   MovieRating=toplam/kisisayısı,
+                }).ToList();
+            }
         }
+    }
 
         }
     

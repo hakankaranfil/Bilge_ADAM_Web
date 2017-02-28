@@ -16,11 +16,11 @@ namespace İMDB.Web
             if (Request.QueryString["ID"]!=null && !IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["ID"]);
-                MovieRepository.DeleteMovie(id);
+                MovieRepositery.DeleteMovie(id);
                 Response.Redirect("MovieList.aspx");
 
             }
-            Repeater1.DataSource = MovieRepository.GetAllMovie();
+            Repeater1.DataSource = MovieRepositery.GetAllMovie();
             Repeater1.DataBind();
         }
     }

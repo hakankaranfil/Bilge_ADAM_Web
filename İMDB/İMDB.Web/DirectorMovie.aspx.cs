@@ -15,7 +15,7 @@ namespace İMDB.Web
             if (Request.QueryString["ID"] != null && !IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["ID"]);
-                Repeater1.DataSource = MovieRepository.GetAllDMovies(id);
+                Repeater1.DataSource = MovieRepositery.GetAllDMovies(id);
                 Repeater1.DataBind();
 
 

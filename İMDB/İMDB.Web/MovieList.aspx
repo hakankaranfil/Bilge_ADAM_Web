@@ -50,10 +50,13 @@
                             </td>
 
                             <td>
-                                <a href="MovieList.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-danger btn-btn-block">Sil</a>"
+                                <a href="MovieList.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-danger btn-btn-block">Sil</a>
                             </td>
                             <td>
-                                <a href="MovieAdd.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-success btn-btn-block">düzenle</a>"
+                                <a href="MovieAdd.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-success btn-btn-block">düzenle</a>
+                            </td>
+                            <td>
+                                <a href="MovieRating.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-info btn-btn-block">Puan Ver</a>
                             </td>
                             </tr>
                         </div>
