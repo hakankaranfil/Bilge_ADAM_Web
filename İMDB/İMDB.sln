@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "İMDB.Web", "İMDB.Web\İMDB.Web.csproj", "{0709A064-028E-4E30-BDE4-A962F01FC14C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "İMDB.Entity", "İMDB.Entity\İMDB.Entity.csproj", "{93B656C3-11FE-4BC4-9EB7-5D9B06FE241B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "İMDB.DAL", "İMDB.DAL\İMDB.DAL.csproj", "{F1D7F3EF-9F0B-40EA-81D5-F85036FEB9A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0709A064-028E-4E30-BDE4-A962F01FC14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0709A064-028E-4E30-BDE4-A962F01FC14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0709A064-028E-4E30-BDE4-A962F01FC14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0709A064-028E-4E30-BDE4-A962F01FC14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B656C3-11FE-4BC4-9EB7-5D9B06FE241B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B656C3-11FE-4BC4-9EB7-5D9B06FE241B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B656C3-11FE-4BC4-9EB7-5D9B06FE241B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B656C3-11FE-4BC4-9EB7-5D9B06FE241B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D7F3EF-9F0B-40EA-81D5-F85036FEB9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D7F3EF-9F0B-40EA-81D5-F85036FEB9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D7F3EF-9F0B-40EA-81D5-F85036FEB9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D7F3EF-9F0B-40EA-81D5-F85036FEB9A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
