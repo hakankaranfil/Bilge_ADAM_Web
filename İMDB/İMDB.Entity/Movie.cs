@@ -10,11 +10,8 @@ namespace İMDB.Entity
     {
         public int MovieID { get; set; }
         public string MovieName { get; set; }
-
         public string MovieSubject { get; set; }
-
         public DateTime RealiseDate { get; set; }
-
         public int MovieRating { get; set; }
         public int MovieTypeID { get; set; }
         public int DirectorID { get; set; }

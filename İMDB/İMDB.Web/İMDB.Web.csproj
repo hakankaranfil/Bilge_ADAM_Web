@@ -102,6 +102,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DirectorList.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="DirectorAdd.aspx.designer.cs">
       <DependentUpon>DirectorAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorList.aspx.cs">
+      <DependentUpon>DirectorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DirectorList.aspx.designer.cs">
+      <DependentUpon>DirectorList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

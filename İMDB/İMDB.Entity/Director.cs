@@ -10,7 +10,5 @@ namespace İMDB.Entity
     {
         public int DirectorId { get; set; }
         public string DirectorName { get; set; }
-        public int MovieID { get; set; }
-        public Movie Movie { get; set; }
     }
 }

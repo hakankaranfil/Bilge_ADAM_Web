@@ -17,6 +17,13 @@ namespace İMDB.DAL
                 db.SaveChanges();
             }
         }
+        public static List<Director> GetAllDirector()
+        {
+            using (IMDBDB db = new IMDBDB())
+            {
+                return db.Director.ToList();
+            }
+        }
     }
 }
 

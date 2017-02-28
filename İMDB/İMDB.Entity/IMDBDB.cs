@@ -11,9 +11,6 @@
             : base("name=IMDBDB")
         {
         }
-
-
-
         public virtual DbSet<Movie> Movie { get; set; }
         public virtual DbSet<Director> Director { get; set; }
         public virtual DbSet<MovieType> MovieType { get; set; }
