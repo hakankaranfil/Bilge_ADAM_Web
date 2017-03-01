@@ -18,18 +18,26 @@ namespace İMDB.Web
                 Repeater1.DataSource = MovieRepositery.GetAllDRating();
                 Repeater1.DataBind();
             }
-            else
+
+
+            else 
             {
+
                 if (Request.QueryString["ID"] != null && !IsPostBack)
-                { 
-                  int id = int.Parse(Request.QueryString["ID"]);
+                {
+                    int id = int.Parse(Request.QueryString["ID"]);
                     MovieRepositery.DeleteMovie(id);
                     Response.Redirect("MovieList.aspx");
 
                 }
+
+                }
+
                 Repeater1.DataSource = MovieRepositery.GetAllMovie();
                 Repeater1.DataBind();
             }
+
         }
-    }
-}
+  
+        }
+    

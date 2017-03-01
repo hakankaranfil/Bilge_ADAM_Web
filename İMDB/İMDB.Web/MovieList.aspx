@@ -22,6 +22,7 @@
         <div class="container">
             <h1>İMDB FİLM LİSTESİ</h1>
             <br />
+            
        
             
             <br />
@@ -29,6 +30,23 @@
          
               <tr>
                         <td> <a href="MovieList.aspx?sort=rating_desc" class="btn btn-info btn-btn-block">Puana Göre Sırala</a></td>
+                  <td>
+                      <div class="btn-group">
+                <button type="button" class="btn btn-primary">Türe Göre Listele</button>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="MovieList.aspx">Komedi</a></li>
+                    <li><a href="MovieList.aspx">Korku</a></li>
+                    <li><a href="MovieList.aspx">Dram</a></li>
+                    <li><a href="MovieList.aspx">Savaş</a></li>
+                    <li><a href="MovieList.aspx">Romantik</a></li>
+
+
+                </ul>
+            </div>
+                  </td>
                     </tr>
                 
             <div class="table-responsive">
