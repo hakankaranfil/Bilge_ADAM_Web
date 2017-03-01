@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Film Listesi</title>
+     <a href="HomePage.aspx" class="btn btn-primary">Ana Sayfa</a><br />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
@@ -70,9 +71,11 @@
                             </tr>
                         </div>
                          </table>
+                            
                               
                                 </td>
                             </tr>
+                            
                         </ItemTemplate>
                     </asp:Repeater>
                 </table>

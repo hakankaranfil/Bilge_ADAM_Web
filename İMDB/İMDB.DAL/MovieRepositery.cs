@@ -74,6 +74,7 @@ namespace İMDB.DAL
             }
         }
 
+
     }
 
         }
