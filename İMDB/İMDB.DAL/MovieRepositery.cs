@@ -57,18 +57,23 @@ namespace İMDB.DAL
                 }).ToList();
             }
         }
-        public static List<WiweMovieRating> GetAllRating(int movieid,int toplam,int kisisayısı)
+        public static List<WiewMovie> GetAllDRating()
         {
             using (IMDBDB db = new IMDBDB())
             {
-                return db.Movie.Where(b => b.MovieID == movieid).Select(b => new WiweMovieRating
+                return db.Movie.OrderByDescending(b =>b.MovieRating).Select(b => new WiewMovie
                 {
                     MovieID = b.MovieID,
                     MovieName = b.MovieName,
-                   MovieRating=toplam/kisisayısı,
+                    DirectorID=b.DirectorID,
+                    DirectorName=b.Director.DirectorName,
+                    MovieRating=b.MovieRating,
+                    MovieSubject=b.MovieSubject,
+                    MovieTypeName=b.MovieType.MovieTypeName
                 }).ToList();
             }
         }
+
     }
 
         }

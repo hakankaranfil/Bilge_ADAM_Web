@@ -8,7 +8,7 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <style type="text/css">
         body {
-         background-color:brown;
+         background-color:gray;
         }
     </style>
 </head>
@@ -44,6 +44,7 @@
                 </table>
             </div>
     </div>
+        </div>
     </form>
 </body>
 </html>

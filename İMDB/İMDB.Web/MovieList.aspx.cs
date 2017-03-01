@@ -13,6 +13,11 @@ namespace İMDB.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["sort"]=="rating_desc" )
+            {
+                Repeater1.DataSource = MovieRepositery.GetAllDRating();
+                Repeater1.DataBind();
+            }
             if (Request.QueryString["ID"]!=null && !IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["ID"]);

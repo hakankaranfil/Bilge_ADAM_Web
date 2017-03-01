@@ -11,7 +11,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <style type="text/css">
         body {
-         background-color:brown;
+         background-color:gray;
         }
     </style>
 </head>
@@ -25,8 +25,14 @@
             
             <br />
             <br />
+         
+              <tr>
+                        <td> <a href="MovieList.aspx?sort=rating_desc" class="btn btn-info btn-btn-block">Puana Göre Sırala</a></td>
+                    </tr>
+                
             <div class="table-responsive">
                 <table class="table table-bordered">
+
                     <tr>
                         <th>Film Adı</th>
                         <th>Film Konusu</th>
@@ -34,7 +40,10 @@
                         <th>Puanı</th>
                         <th>Türü</th>
                         <th>Yönetmeni</th>
+
                     </tr>
+                  
+                    
                     <asp:Repeater ID="Repeater1" runat="server">
                         <ItemTemplate>
 
