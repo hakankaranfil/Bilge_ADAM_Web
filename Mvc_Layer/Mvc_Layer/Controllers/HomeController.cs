@@ -19,5 +19,9 @@ namespace Mvc_Layer.Controllers
             ViewBag.Title = "Video";
             return View();
         }
+        public ActionResult Mail()
+        {
+            return View();
+        }
     }
 }
