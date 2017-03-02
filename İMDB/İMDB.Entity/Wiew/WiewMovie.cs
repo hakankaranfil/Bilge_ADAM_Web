@@ -16,6 +16,7 @@ namespace İMDB.Entity
         public string MovieTypeName { get; set; }
         public string DirectorName { get; set; }
         public int DirectorID { get; set; }
+        public int MovieTypeID { get; set; }
 
     }
 }

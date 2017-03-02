@@ -13,8 +13,13 @@ namespace İMDB.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Request.QueryString["ID"] != null && !IsPostBack)
             {
+                int id = int.Parse(Request.QueryString["ID"]);
+                var result = MovieRepositery.GetMovie(id);
+                txtMovieName.Text = result.MovieName;
+                txtSubject.Text = result.MovieSubject;
+                txtMovieRating.Text =result.MovieRating.ToString();
                 DropMovieType.DataSource = MovieTypeRepository.GetAllMovieType();
                 DropMovieType.DataTextField = "MovieTypeName";
                 DropMovieType.DataValueField = "MovieTypeID";
@@ -23,14 +28,44 @@ namespace İMDB.Web
                 DropDirector.DataTextField = "DirectorName";
                 DropDirector.DataValueField = "DirectorID";
                 DropDirector.DataBind();
+                btnKaydet.CssClass = "btn btn-Info btn-block";
+                btnKaydet.Text = "Güncelle";
 
-               
             }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    DropMovieType.DataSource = MovieTypeRepository.GetAllMovieType();
+                    DropMovieType.DataTextField = "MovieTypeName";
+                    DropMovieType.DataValueField = "MovieTypeID";
+                    DropMovieType.DataBind();
+                    DropDirector.DataSource = DirectorRepository.GetAllDirector();
+                    DropDirector.DataTextField = "DirectorName";
+                    DropDirector.DataValueField = "DirectorID";
+                    DropDirector.DataBind();
+
+
+                }
+            }
+          
         }
 
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
             Movie movie = new Movie();
+            if (btnKaydet.Text == "Güncelle")
+            {
+                movie.MovieName = txtMovieName.Text;
+                movie.MovieSubject = txtSubject.Text;
+                movie.MovieRating =int.Parse( txtMovieRating.Text);
+                movie.MovieTypeID= Convert.ToInt32(DropMovieType.SelectedItem.Value);
+                movie.RealiseDate= Convert.ToDateTime(txtRealiseDate.Text);
+                movie.DirectorID = Convert.ToInt32(DropDirector.SelectedItem.Value);
+                int id = int.Parse(Request.QueryString["ID"]);
+                MovieRepositery.UpdateMovie(id, txtMovieName.Text,txtSubject.Text,int.Parse(txtMovieRating.Text),int.Parse(DropDirector.SelectedItem.Value), int.Parse(DropMovieType.SelectedItem.Value),Convert.ToDateTime(  txtRealiseDate.Text));
+                Response.Redirect("MovieList.aspx");
+            }
             movie.MovieName = txtMovieName.Text;
             movie.MovieSubject = txtSubject.Text;
             movie.MovieRating =int.Parse( txtMovieRating.Text);
