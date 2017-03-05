@@ -13,23 +13,30 @@ namespace İMDB.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["sort"] == "rating_desc")
+            if (!IsPostBack)
             {
-                Repeater1.DataSource = MovieRepositery.GetAllDRating();
-                Repeater1.DataBind();
-            }
+                DropMovieType.DataSource = MovieTypeRepository.GetAllMovieType();
+                DropMovieType.DataTextField = "MovieTypeName";
+                DropMovieType.DataValueField = "MovieTypeID";
+                DropMovieType.DataBind();
 
-
-            else 
-            {
-
-                if (Request.QueryString["ID"] != null && !IsPostBack)
+                if (Request.QueryString["sort"] == "rating_desc")
                 {
-                    int id = int.Parse(Request.QueryString["ID"]);
-                    MovieRepositery.DeleteMovie(id);
-                    Response.Redirect("MovieList.aspx");
-
+                    Repeater1.DataSource = MovieRepositery.GetAllDRating();
+                    Repeater1.DataBind();
                 }
+
+
+                else
+                {
+
+                    if (Request.QueryString["ID"] != null && !IsPostBack)
+                    {
+                        int id = int.Parse(Request.QueryString["ID"]);
+                        MovieRepositery.DeleteMovie(id);
+                        Response.Redirect("MovieList.aspx");
+
+                    }
 
                 }
 
@@ -38,6 +45,13 @@ namespace İMDB.Web
             }
 
         }
-  
+
+        protected void DropMovieType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            Repeater1.DataSource= MovieRepositery.GetAllMovieType(int.Parse(DropMovieType.SelectedItem.Value));
+            Repeater1.DataBind();
         }
+    }
+}
     
