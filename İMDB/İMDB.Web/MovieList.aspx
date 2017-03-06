@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Film Listesi</title>
-     <a href="HomePage.aspx" class="btn btn-primary">Ana Sayfa</a><br />
+    <a href="HomePage.aspx" class="btn btn-primary">Ana Sayfa</a><br />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <style type="text/css">
         body {
-         background-color:gray;
+            background-color: gray;
         }
     </style>
 </head>
@@ -22,71 +22,64 @@
         <div class="container">
             <h1>İMDB FİLM LİSTESİ</h1>
             <br />
-            
-       
-            
-            <br />
-            <br />
-         
-              <tr>
-                        <td> <a href="MovieList.aspx?sort=rating_desc" class="btn btn-info btn-btn-block">Puana Göre Sırala</a></td>
-                  <td>
-                      <div class="btn-group">
-                <button type="button" class="btn btn-primary">Türe Göre Listele</button>
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="MovieList.aspx">Komedi</a></li>
-                    <li><a href="MovieList.aspx">Korku</a></li>
-                    <li><a href="MovieList.aspx">Dram</a></li>
-                    <li><a href="MovieList.aspx">Savaş</a></li>
-                    <li><a href="MovieList.aspx">Romantik</a></li>
 
 
-                </ul>
-            </div>
-                  </td>
-                    </tr>
-                
-            <div class="table-responsive">
+
+            <br />
+            <br />
+
+
+            <td><a href="MovieList.aspx?sort=rating_desc" class="btn btn-info btn-btn-block">Puana Göre Sırala</a>
                 <table class="table table-bordered">
-
                     <tr>
-                        <th>Film Adı</th>
-                        <th>Film Konusu</th>
-                        <th>Çıkış Tarihi</th>
-                        <th>Puanı</th>
-                        <th>Türü</th>
-                        <th>Yönetmeni</th>
-
+                        <td>
+                            <span class="label label-primary">Türe Göre Listele</span>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="DropMovieType" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropMovieType_SelectedIndexChanged"></asp:DropDownList>
+                        </td>
                     </tr>
-                  
-                    
-                    <asp:Repeater ID="Repeater1" runat="server">
-                        <ItemTemplate>
+            </td>
 
-                            <td><%#Eval("MovieName") %></td>
-                            <td><%#Eval("MovieSubject") %></td>
-                            <td><%#Eval("RealiseDate") %></td>
-                            <td><%#Eval("MovieRating") %></td>
-                            <td><%#Eval("MovieTypeName") %></td>
-                            <td><%#Eval("DirectorName") %></td>
-                            <td>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                            </td>
+            </tr>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
 
-                            <td>
-                                <a href="MovieList.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-danger btn-btn-block">Sil</a>
-                            </td>
-                            <td>
-                                <a href="MovieAdd.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-success btn-btn-block">düzenle</a>
-                            </td>
-                            <td>
-                                <a href="MovieRating.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-info btn-btn-block">Puan Ver</a>
-                            </td>
-                            </tr>
+                        <tr>
+                            <th>Film Adı</th>
+                            <th>Film Konusu</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Puanı</th>
+                            <th>Türü</th>
+                            <th>Yönetmeni</th>
+
+                        </tr>
+
+
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            <ItemTemplate>
+
+                                <td><%#Eval("MovieName") %></td>
+                                <td><%#Eval("MovieSubject") %></td>
+                                <td><%#Eval("RealiseDate") %></td>
+                                <td><%#Eval("MovieRating") %></td>
+                                <td><%#Eval("MovieTypeName") %></td>
+                                <td><%#Eval("DirectorName") %></td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                </td>
+
+                                <td>
+                                    <a href="MovieList.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-danger btn-btn-block">Sil</a>
+                                </td>
+                                <td>
+                                    <a href="MovieAdd.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-success btn-btn-block">düzenle</a>
+                                </td>
+                                <td>
+                                    <a href="MovieRating.aspx?ID=<%#Eval("MovieID")%>" class="btn btn-info btn-btn-block">Puan Ver</a>
+                                </td>
+                                </tr>
                         </div>
                          </table>
                             
@@ -94,10 +87,10 @@
                                 </td>
                             </tr>
                             
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </table>
-            </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </table>
+                </div>
         </div>
     </form>
 </body>
