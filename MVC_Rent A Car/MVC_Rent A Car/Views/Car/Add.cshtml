@@ -4,54 +4,43 @@
 }
 
 <h2>Araç Ekle</h2>
-
+@using() 
+{
 <form class="form-horizontal">
-   
-        <fieldset>
 
-            <div class="form-group">
-                <label for="inputMarka" class="col-lg-2 control-label">Marka</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputMarka" placeholder="Marka" name="Brand" id="Marka">
-                </div>
+    <fieldset>
+
+        <div class="form-group">
+            <label for="inputMarka" class="col-lg-2 control-label">Marka</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputMarka" placeholder="Marka" name="Brand" id="Marka">
             </div>
-            <div class="form-group">
-                <label for="inputModel" class="col-lg-2 control-label">Model</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputModel" placeholder="Model" name="Model "id="Model" >
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="inputModel" class="col-lg-2 control-label">Model</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputModel" placeholder="Model" name="Model " id="Model">
             </div>
-            <div class="form-group">
-                <label for="inputAracYas" class="col-lg-2 control-label">Araç Yaşı</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputAracYas" placeholder="AracYas" name="Age" id="Age">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAracYas" class="col-lg-2 control-label">Araç Yaşı</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputAracYas" placeholder="AracYas" name="Age" id="Age">
             </div>
+        </div>
 
 
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default">İptal</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">İptal</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
             </div>
-        </fieldset>
-    </form>
-<script type="text/javascript">
-    function Gonder()
-    {
-        var brand=document.getElementById("marka").value;
-        var brand=document.getElementById("model").value;
-        var brand=document.getElementById("yas").value;
-        var data=JSON.stringify((
-            'Brand': brand,
+        </div>
+    </fieldset>
+</form>
 
-            
-            ))) ;
-    }
+}
 
-</script>
- 
 
 
 

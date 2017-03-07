@@ -1,0 +1,33 @@
+﻿@model List<MVCCRUD.Models.Car>
+@{
+    ViewBag.Title = "CarList";
+}
+
+<div class="container">
+    <h2>ARABA LİSTESİ</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Yaş</th>
+            </tr>
+            @{ 
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CarBrand</td>
+                        <td>@item.CarModel</td>
+                        <td>@item.CarAge</td>
+                     </tr>
+                   
+                   
+
+                }
+            }
+        </thead>
+   
+    </table>
+</div>
+
