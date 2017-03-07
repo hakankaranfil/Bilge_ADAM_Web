@@ -1,0 +1,46 @@
+﻿@model List<WebApplication1.Controllers.Car>
+@{
+    ViewBag.Title = "list";
+}
+
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Basic Table
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Yaş</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ 
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID</td>
+                                    <td>@item.Brand</td>
+                                    <td>@item.Model</td>
+                                    <td>@item.Age</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                  
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+
+
