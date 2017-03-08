@@ -1,0 +1,49 @@
+﻿
+@model List<MVCCRUD_Simple.Models.Motor>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Karanfil Kiralama Motor Filosu
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Yaş</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MotorBrand</td>
+                                        <td>@item.MotorModel</td>
+                                        <td>@item.MotorAge</td>
+                                        <td width="20%">
+                                            <a class="btn btn-warning btn-circle"
+                                               href="#">
+                                                <i class="fa fa-try"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-circle"
+                                               href="/Motor/Delete/@item.MotorID">
+                                                <i class="fa fa-minus "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
