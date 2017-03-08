@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EA486611-451F-4459-8810-0739CBD6F5EC}</ProjectGuid>
+    <ProjectGuid>{E87F34ED-B198-40C5-8DD8-8BD406CBC026}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCCRUD</RootNamespace>
-    <AssemblyName>MVCCRUD</AssemblyName>
+    <RootNamespace>MVCCRUD_Simple</RootNamespace>
+    <AssemblyName>MVCCRUD_Simple</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -127,11 +127,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Concent\css\bootstrap.min.css" />
-    <Content Include="Concent\css\font-awesome.min.css" />
-    <Content Include="Concent\css\metisMenu.min.css" />
-    <Content Include="Concent\css\sb-admin-2.css" />
-    <Content Include="Concent\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\metisMenu.min.css" />
+    <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -140,10 +143,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="KaranfilDBContext.cs" />
+    <Compile Include="Models\Base.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,12 +162,12 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Concent\fonts\fontawesome-webfont.eot" />
-    <Content Include="Concent\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Concent\fonts\fontawesome-webfont.woff" />
-    <Content Include="Concent\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Concent\fonts\FontAwesome.otf" />
     <Content Include="Views\Car\Add.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Car\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,8 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_Start\" />
-    <Folder Include="fonts\" />
+    <Folder Include="Content\fonts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -186,9 +192,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57638</DevelopmentServerPort>
+          <DevelopmentServerPort>64235</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57638/</IISUrl>
+          <IISUrl>http://localhost:64235/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

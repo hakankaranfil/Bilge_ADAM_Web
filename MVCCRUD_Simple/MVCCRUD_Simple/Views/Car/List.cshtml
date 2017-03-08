@@ -1,0 +1,91 @@
+﻿
+@model List<MVCCRUD_Simple.Models.Car>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Karanfil Kiralama Araç Filosu
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Yaş</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CarBrand</td>
+                                        <td>@item.CarModel</td>
+                                        <td>@item.CarAge</td>
+                                        <td width="20%">
+                                            <a class="btn btn-warning btn-circle"
+                                               href="#"
+                                               data-toggle="modal"
+                                               data-target="#myModal"
+                                               onclick="ArabaID(@item.CarID)">
+                                                <i class="fa fa-try"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-circle"
+                                               href="/Car/Delete/@item.CarID">
+                                                <i class="fa fa-minus "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Kiralama İşlemi</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <input type="hidden" id="carID" />
+                            <div class="form-group">
+                                <label>Fiyat</label>
+                                <input class="form-control" type="text" placeholder="Fiyat" name="">
+                            </div>
+                            <div class="form-group">
+                                <label>Kiralayan Kişi</label>
+                                <input class="form-control" type="text" placeholder="Kiralayan Kişi" name="">
+                            </div>
+
+                            @*Tarih Gelecek*@
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function ArabaID(id)
+        {
+            document.getElementById("carID").value = id;
+        }
+    </script>
+
