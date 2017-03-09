@@ -56,10 +56,10 @@ namespace MVCCRUD_Simple.Controllers
             using (KaranfilDBContext1 db=new KaranfilDBContext1())
             {
                 db.Rent.Add(model);
-                db.Vehicle.FirstOrDefault(p => p.VehicleID == model.VehicleID).IsRented = true;
+                //db.Vehicle.FirstOrDefault(p => p.VehicleID == model.VehicleID).IsRented = true;
                 db.SaveChanges();
             }
-            return View();
+            return RedirectToAction("List", "Vehicle");
         }
     }
 }

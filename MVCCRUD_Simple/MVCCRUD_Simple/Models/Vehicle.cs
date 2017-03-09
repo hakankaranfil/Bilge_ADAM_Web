@@ -18,7 +18,7 @@ namespace MVCCRUD_Simple.Models
         public string VehicleAge { get; set; }
         public double RentPrice { get; set; }
         public Type VehicleType { get; set; }
-        public bool IsRented { get; set; }
+        
         public bool IsDeleted { get; set; }
         public string LicencePlate { get; set; }
     }

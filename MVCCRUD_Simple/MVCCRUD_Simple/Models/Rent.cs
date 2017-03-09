@@ -7,22 +7,20 @@ namespace MVCCRUD_Simple.Models
 {
     public class Rent
     {
-
         public int ID { get; set; }
         public string Customer { get; set; }
         public DateTime RentDate { get; set; }
         public int RentDay { get; set; }
-        public double PriceDay { get; set; }
+        public double DayPrice { get; set; }
+        public int VehicleID { get; set; }
         public double TotalPrice
         {
             get
             {
-                return RentDay * PriceDay;
+                return RentDay * DayPrice;
             }
+        }
 
-}
-        public int VehicleID { get; set; }
         public Vehicle Vehicle { get; set; }
-
     }
 }
