@@ -144,29 +144,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\MotorController.cs" />
+    <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="KaranfilDBContext.cs" />
-    <Compile Include="Migrations\201703081454550_InitialCreate.cs" />
-    <Compile Include="Migrations\201703081454550_InitialCreate.Designer.cs">
-      <DependentUpon>201703081454550_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703081944031_Ekle.cs" />
-    <Compile Include="Migrations\201703081944031_Ekle.Designer.cs">
-      <DependentUpon>201703081944031_Ekle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703081953047_Ekle1.cs" />
-    <Compile Include="Migrations\201703081953047_Ekle1.Designer.cs">
-      <DependentUpon>201703081953047_Ekle1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Base.cs" />
-    <Compile Include="Models\Car.cs" />
-    <Compile Include="Models\Motor.cs" />
+    <Compile Include="Models\Rent.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,14 +162,12 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Car\Add.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\Car\List.cshtml" />
-    <Content Include="Views\Motor\Add.cshtml" />
-    <Content Include="Views\Motor\List.cshtml" />
+    <Content Include="Views\Vehicle\Add.cshtml" />
+    <Content Include="Views\Vehicle\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,17 +178,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\fonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703081454550_InitialCreate.resx">
-      <DependentUpon>201703081454550_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703081944031_Ekle.resx">
-      <DependentUpon>201703081944031_Ekle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703081953047_Ekle1.resx">
-      <DependentUpon>201703081953047_Ekle1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

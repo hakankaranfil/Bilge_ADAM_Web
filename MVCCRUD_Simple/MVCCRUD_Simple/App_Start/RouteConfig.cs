@@ -14,18 +14,10 @@ namespace MVCCRUD_Simple
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default6",
-                url: "add-motor",
-                defaults: new { controller = "Motor", action = "Add", id = UrlParameter.Optional }
-            );
+       
+           
 
-            routes.MapRoute(
-                name: "Default5",
-                url: "list-motor",
-                defaults: new { controller = "Motor", action = "List", id = UrlParameter.Optional }
-            );
-
+       
             routes.MapRoute(
                 name: "Default4",
                 url: "panel",
@@ -34,14 +26,14 @@ namespace MVCCRUD_Simple
 
             routes.MapRoute(
                 name: "Default3",
-                url: "add-car",
-                defaults: new { controller = "Car", action = "Add", id = UrlParameter.Optional }
+                url: "add-vehicle",
+                defaults: new { controller = "Vehicle", action = "Add", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Default2",
-                url: "list-car",
-                defaults: new { controller = "Car", action = "List", id = UrlParameter.Optional }
+                url: "list-vehicle",
+                defaults: new { controller = "Vehicle", action = "List", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
