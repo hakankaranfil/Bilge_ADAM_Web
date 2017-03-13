@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div> 
+        @*@Html.TextBox("txtPassword", null, new {@class="form-control", placeholder = "Şifre Giriniz" })
+
+        @Html.Label("txtlabel","Bu bir label dır.",new {@style="color:blue;font-size:30pt;"})*@
+      
+        @if (Session["name"]!= null)
+        {
+            Response.Write(Session["name"].ToString() + "isimli kullanıcı giriş yaptı");
+            @Html.ActionLink("Çıkış yap","Logout")
+        }
+        else
+        {
+            @Html.ActionLink("Giriş Yap", "Login")
+        }
+    </div>
+</body>
+</html>

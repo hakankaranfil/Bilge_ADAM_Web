@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <style>
+        table tr td{
+            border:2px solid black;
+            padding:5px;
+            font-size:15px;
+            width:200px;
+            height:30px;
+        }
+  #btnGiris{
+      padding:5px;
+      font-size:20px;
+
+  }
+
+    </style>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td>Kullanıcı Adı</td>
+                    <td>@Html.TextBox("txtusername",null, new { placeholder = ViewBag.Ad})</td>
+                </tr>
+                <tr>
+
+                    <td>Şifre</td>
+                    <td>@Html.Password("txtPassword", null , new { placeholder = ViewBag.pass})</td>
+                   
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Giriş" id="btnGiris" /></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="AjaxLogin" onclick="Login()"/></td>
+
+                </tr>
+            </table>
+        }
+        @if (String.IsNullOrEmpty(ViewBag.message))
+        {
+            Response.Write("Kullanıcı Adı" + ViewBag.Ad);
+            Response.Write("Kullanıcı Adı" + ViewBag.pass);
+        }
+
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    function Login() {
+        var uname = document.getElementById("txtusername").value;
+        var pass = document.getElementById("txtPassword").value;
+        var user = JSON.stringify({
+            'uname': uname,
+            'pass': pass
+        });
+        $.ajax({
+            type:"POST",
+            url: '/Home/LoginAjax/',
+            data: user,
+            contentType: 'application/json',
+            success: function (response)
+            {
+                alert(response.message);
+            },
+            error: function (response)
+            {
+                alert(response.message);
+            }
+        })
+        
+    }
+</script>
