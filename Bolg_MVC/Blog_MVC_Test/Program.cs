@@ -13,90 +13,92 @@ namespace Blog_MVC_Test
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                //    Admin adm = new Admin();
-                //    adm.UserName = "HakanKaranfil";
-                //    adm.Password = "1234";
-                //    db.Admin.Add(adm);
+                //Admin adm = new Admin();
+                //adm.UserName = "HakanKaranfil";
+                //adm.Password = "1234";
+                //db.Admin.Add(adm);
 
-                //    Category cat = new Category();
-                //    cat.Name = "OOP";
-                //    db.Category.Add(cat);
+                //Category cat = new Category();
+                //cat.Name = "OOP";
+                //db.Category.Add(cat);
 
-               
+                //Post pt = new Post()
+                //{
+                //    Title = "Title 3",
+                //    Concent = "Buraya İçerik gelcek",
+                //    PostDate = DateTime.Now,
+                //    AdminID = 1,
+                //    CategoryID = 1,
 
+                //};
 
-                //    };
+                //Post pt2 = new Post()
+                //{
+                //    Title = "Title 4",
+                //    Concent = "Buraya İçerik gelcek",
+                //    PostDate = DateTime.Now,
+                //    AdminID = 1,
+                //    CategoryID = 1
+                //};
+                //Post pt3 = new Post()
+                //{
+                //    Title = "Title 3",
+                //    Concent = "Buraya İçerik gelcek",
+                //    PostDate = DateTime.Now,
+                //    AdminID = 1,
+                //    CategoryID = 1
 
-                //    Post pt2 = new Post()
-                //    {
-                //        Title = "Title 2",
-                //        Concent = "Buraya İçerik gelcek",
-                //        PostDate = DateTime.Now,
-                //        AdminID = 1,
-                //        CategoryID = 1
-                //    };
-                //    Post pt3 = new Post()
-                //    {
-                //        Title = "Title 3",
-                //        Concent = "Buraya İçerik gelcek",
-                //        PostDate = DateTime.Now,
-                //        AdminID = 1,
-                //        CategoryID = 1
-                //    };
+                //};
 
-                //    db.Post.Add(pt);
-                //    db.Post.Add(pt2);
-                //    db.Post.Add(pt3);
+                //db.Post.Add(pt);
+                //db.Post.Add(pt2);
+                //db.Post.Add(pt3);
 
-                //    Tag tag1 = new Tag()
-                //    {
-                //        Name = "ASP.NET MVC",
-                //        Posts = new List<Post>()
-                //        {
-                //            pt,
-                //            pt2
+                //Tag tag1 = new Tag()
+                //{
+                //    Name = "ASP.NET MVC",
+                //    Posts = new List<Post>()
+                //            {
+                //                pt,
+                //                pt2
 
-                //        }
-                //    };
+                //            }
+                //};
 
-                //    Tag tag2 = new Tag()
-                //    {
-                //        Name = "ASP.NET MVC",
-                //        Posts = new List<Post>()
-                //        {
-                //           pt3
+                //Tag tag2 = new Tag()
+                //{
+                //    Name = "ASP.NET MVC",
+                //    Posts = new List<Post>()
+                //            {
+                //               pt3
 
-                //        }
-                //    };
-                //    db.Tag.Add(tag1);
-                //    db.Tag.Add(tag2);
-                //    Post pt = new Post();
-                //    pt.AdminID = 1;
-                //    pt.CategoryID = 1;
-                //    pt.Title = "Title";
-                //    pt.Concent = "Concent";
-                //    pt.PostDate = DateTime.Now;
-                //    //pt.Tags = new List<Tag>
-                //    //{
-                //    //    new Tag {Name="Tag1" },
-                //    //    new Tag {Name="Tag2" },
+                //            }
+                //};
+                //db.Tag.Add(tag1);
+                //db.Tag.Add(tag2);
+                //db.SaveChanges();
 
-                //    //};
-                //    pt.Tags = db.Tag.Where(t => t.Name == "Tag1" || t.Name == "Tag2").ToList();
-                //    db.Post.Add(pt);
-                //    db.SaveChanges();
-                //}
+                Post pt = new Post();
+                pt.AdminID = 1;
+                pt.CategoryID = 1;
+                pt.Title = "Title";
+                pt.Concent = "Concent";
+                pt.PostDate = DateTime.Now;
+                pt.Tags = new List<Tag>
+                {
+                    new Tag {Name="Tag1" },
+                    new Tag {Name="Tag2" },
 
-             //    Post pt = new Post()
-                //    {
-                //        Title = "Title 1",
-                //        Concent = "Buraya İçerik gelcek",
-                //        PostDate = DateTime.Now,
-                //        AdminID = 1,
-                //        CategoryID = 1,
-
+                };
+                pt.Tags = db.Tag.Where(t => t.Name == "Tag1" || t.Name == "Tag2").ToList();
+                db.Post.Add(pt);
+                //db.SaveChanges();
             }
+
+
+        }
         }
     }
-}
+
+
 

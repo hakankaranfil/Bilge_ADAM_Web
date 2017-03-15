@@ -21,7 +21,7 @@ namespace Blog_MVC_DAL.Repos
         {
             using (BlogDBContext db=new BlogDBContext())
             {
-                foreach (var itemTag in post.Tags )
+                foreach (var itemTag in post.Tags)
                 {
                     var result = db.Tag.Include("Posts").FirstOrDefault(t => t.Name == itemTag.Name);
                     if (result!=null)
