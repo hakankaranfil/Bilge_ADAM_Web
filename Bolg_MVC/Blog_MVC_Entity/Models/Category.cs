@@ -10,5 +10,6 @@ namespace Blog_MVC_Entity.Models
     {
         public int CategoryID { get; set; }
         public string Name { get; set; }
+        public List<Post> Post { get; set; }
     }
 }
