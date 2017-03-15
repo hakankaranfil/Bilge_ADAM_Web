@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\PostRepo.cs" />
   </ItemGroup>
   <ItemGroup>
