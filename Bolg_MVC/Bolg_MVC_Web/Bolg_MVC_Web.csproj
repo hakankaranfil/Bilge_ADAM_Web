@@ -195,6 +195,7 @@
     <Content Include="Content\css\Summernote\font\summernote.eot" />
     <Content Include="Content\css\Summernote\font\summernote.ttf" />
     <Content Include="Content\css\Summernote\font\summernote.woff" />
+    <Content Include="Views\Home\PostDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

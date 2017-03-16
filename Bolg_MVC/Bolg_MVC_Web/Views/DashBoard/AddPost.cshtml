@@ -10,7 +10,7 @@
 <script src="~/Scripts/Summernote/summernote.js"></script>
 
 
-</head>
+
 <body>
 
     <div class="row">
@@ -31,13 +31,9 @@
                                            placeholder="Başlık"
                                            name="Title">
                                 </div>
-                                @*<div class="form-group">
-                                    <textarea class="form-control"
-                                              placeholder="Concent"
-                                              name=""
-                                              rows="5"></textarea>*@
-                                <div id="summernote" name="Concent">
-                                    <p>Hello Summernote </p>
+                              
+                                <div class="form-group">
+                                    <textarea id="summernote" name="Concent"></textarea>                                    
                                 </div>
 
 
@@ -52,7 +48,7 @@
 
                                     <input class="form-control"
                                            type="text"
-                                           placeholder="Etiketleri virgül ile"
+                                           placeholder="Css,Html"
                                            name="Tags">
 
                                 </div>
@@ -78,10 +74,8 @@
 <script>
     $(document).ready(function () {
         $('#summernote').summernote(); $('#summernote').summernote({
-            height: 300,                 // set editor height
-            minHeight: null,             // set minimum height of editor
-            maxHeight: null,             // set maximum height of editor
-            focus: true                  // set focus to editable area after initializing summernote
+            height: 300,                 
+                          
         });
     });
 </script>

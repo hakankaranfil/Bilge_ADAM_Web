@@ -12,12 +12,11 @@ namespace Bolg_MVC_Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(PostRepo.GetAll());
         }
         public ActionResult PostDetail(int id)
         {
-
-            return View(PostRepo);
+            return View(PostRepo.Get(id));
         }
         public ActionResult About()
         {

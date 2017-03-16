@@ -33,7 +33,7 @@ namespace Bolg_MVC_Web.Controllers
                 tags.Add(new Tag { Name = item });
             }
             int catID;
-         if(  CatagoryRepo .Get(model.Category)==null)
+            if (CatagoryRepo.Get(model.Category) == null)
             {
                 CatagoryRepo.Add(new Category { Name = model.Category });
                 catID = CatagoryRepo.Get(model.Category).CategoryID;
@@ -51,12 +51,14 @@ namespace Bolg_MVC_Web.Controllers
             pst.AdminID = 1;
             PostRepo.Add(pst);
 
-            return RedirectToAction("ListPost", "Dashboard");
+            return RedirectToAction("List", "Dashboard");
         }
         public ActionResult List()
         {
             ViewBag.Header = "Tüm Yazılar";
-            return View();
+
+            var result = PostRepo.GetAll();
+            return View(result);
         }
     }
 }

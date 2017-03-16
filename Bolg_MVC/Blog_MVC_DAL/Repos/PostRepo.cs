@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog_MVC_DAL.Repos
 {
-  public  class PostRepo
+    public class PostRepo
     {
         public static List<Post> GetAll()
         {
@@ -19,12 +19,13 @@ namespace Blog_MVC_DAL.Repos
         }
         public static void Add(Post post)
         {
-            using (BlogDBContext db=new BlogDBContext())
+            using (BlogDBContext db = new BlogDBContext())
             {
                 foreach (var itemTag in post.Tags)
                 {
                     var result = db.Tag.Include("Posts").FirstOrDefault(t => t.Name == itemTag.Name);
-                    if (result!=null)
+
+                    if (result != null)
                     {
                         post.Tags = null;
 
@@ -41,11 +42,11 @@ namespace Blog_MVC_DAL.Repos
         }
         public static Post Get(int Postid)
         {
-            using (BlogDBContext db=new BlogDBContext())
+            using (BlogDBContext db = new BlogDBContext())
             {
                 return db.Post.Find(Postid);
             }
-            
+
         }
 
     }
