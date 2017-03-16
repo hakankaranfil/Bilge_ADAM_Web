@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blog_MVC_DAL.Repos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace Bolg_MVC_Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult PostDetail(int id)
+        {
+
+            return View(PostRepo);
         }
         public ActionResult About()
         {
