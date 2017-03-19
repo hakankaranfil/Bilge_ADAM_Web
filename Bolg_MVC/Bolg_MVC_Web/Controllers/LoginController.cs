@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blog_MVC_DAL.Repos;
+using Bolg_MVC_Web.Models.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +15,15 @@ namespace Bolg_MVC_Web.Controllers
         {
             return View();
         }
+        public ActionResult GET(WAdmin model)
+        {
+            if (AdminRepo.Get(model.UserName,model.Password)!=null)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }    
+                return View();
+            
+        }
+       
     }
 }

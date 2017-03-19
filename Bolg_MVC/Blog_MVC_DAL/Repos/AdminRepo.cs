@@ -9,12 +9,12 @@ namespace Blog_MVC_DAL.Repos
 {
    public class AdminRepo
     {
-        public static void Add(Admin adm)
+        public static Admin Get(string name,string passsword)
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                db.Admin.Add(adm);
-                db.SaveChanges();
+                return db.Admin.FirstOrDefault(a => a.UserName == name && a.Password == passsword);
+
             }
         }
     }
