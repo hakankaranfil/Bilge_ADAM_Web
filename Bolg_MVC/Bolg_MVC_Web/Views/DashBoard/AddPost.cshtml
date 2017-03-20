@@ -1,4 +1,4 @@
-﻿
+﻿@model Blog_MVC_Entity.Models.Post
 @{
     ViewBag.Title = "AddPost";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -29,11 +29,12 @@
                                     <input class="form-control"
                                            type="text"
                                            placeholder="Başlık"
-                                           name="Title">
+                                           name="Title"
+                                           value="@(Model != null ? Model.Title:"")" >
                                 </div>
                               
                                 <div class="form-group">
-                                    <textarea id="summernote" name="Concent"></textarea>                                    
+                                    <textarea id="summernote" name="Concent">@</textarea>                                    
                                 </div>
 
 

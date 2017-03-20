@@ -13,7 +13,7 @@ namespace Blog_MVC_DAL.Repos
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                return db.Post.ToList();
+                return db.Post.Where(p => p.IsDeleted == false).OrderByDescending(p => p.PostDate).ToList();
 
             }
         }
@@ -48,6 +48,23 @@ namespace Blog_MVC_DAL.Repos
             }
 
         }
+        public static List<Post> GetALLRating()
+        {
+            using (BlogDBContext db=new BlogDBContext())
+            {
+                return db.Post.OrderByDescending(p => p.PostDate).ToList();
+            }
+        }
+        public static void Delete(int id)
+        {
+            using (BlogDBContext db = new BlogDBContext())
+            {
 
+                var result = db.Post.FirstOrDefault(p => p.PostID == id);
+                result.IsDeleted = true;
+                db.SaveChanges();
+    
+            }
+        }
     }
 }

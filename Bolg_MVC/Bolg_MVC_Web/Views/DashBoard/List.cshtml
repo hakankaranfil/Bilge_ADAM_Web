@@ -18,6 +18,7 @@
                             <tr>
                                 <th>Ad</th>
                                 <th>Tarih</th>
+                                <th>İşlemler</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,12 @@
                                     <tr>
                                         <td>@item.Title</td>
                                         <td>@item.PostDate</td>
+                                        <td>
+                                            <a class="btn btn-warning btn-circle" href="/DashBoard/AddPost/@item.PostID"><i class="fa fa-pencil">Düzenle</i></a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-danger btn-circle" href="/DashBoard/Delete/@item.PostID"><i class="fa fa-minus">Sil</i></a>
+                                        </td>
                                     </tr>
 
                                 }

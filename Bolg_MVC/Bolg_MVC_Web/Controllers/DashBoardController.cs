@@ -22,6 +22,12 @@ namespace Bolg_MVC_Web.Controllers
             ViewBag.Header = "Yazı Ekle";
             return View();
         }
+        public ActionResult AddPost(int id)
+        {
+            ViewBag.Header = "Yazı Güncelle";
+            var result = PostRepo.Get(id);
+            return View(result);
+        }
         [ValidateInput(false)]
         [HttpPost]
         public ActionResult AddPost(WPost model)
@@ -57,8 +63,13 @@ namespace Bolg_MVC_Web.Controllers
         {
             ViewBag.Header = "Tüm Yazılar";
 
-            var result = PostRepo.GetAll();
+            var result = PostRepo.GetALLRating();
             return View(result);
+        }
+        public ActionResult Delete(int id)
+        {
+            PostRepo.Delete(id);
+            return RedirectToAction("List","DashBoard");
         }
     }
 }
