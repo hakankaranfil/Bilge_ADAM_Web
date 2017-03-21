@@ -1,4 +1,5 @@
-﻿using Blog_MVC_DAL.Repos;
+﻿using Blog_MVC_DAL.Models;
+using Blog_MVC_DAL.Repos;
 using Blog_MVC_Entity.Models;
 using Bolg_MVC_Web.Models.ViewModel;
 using System;
@@ -17,16 +18,30 @@ namespace Bolg_MVC_Web.Controllers
             ViewBag.Header = "Panel";
             return View();
         }
-        public ActionResult AddPost()
+
+        public ActionResult AddPost(int? id)//patametrenin null geldiğini gösterebilmek için ? koyuyoruz
         {
-            ViewBag.Header = "Yazı Ekle";
-            return View();
-        }
-        public ActionResult AddPost(int id)
-        {
-            ViewBag.Header = "Yazı Güncelle";
-            var result = PostRepo.Get(id);
-            return View(result);
+            if (id.HasValue)
+            {
+                ViewBag.Header = "Yazı Güncelle";
+                var post = PostRepo.Get((int)id);
+                var cat = CatagoryRepo.Get(post.CategoryID);
+
+                WPost vmpost = new WPost();
+                vmpost.Title = post.Title;
+                vmpost.Content = post.Concent;
+                vmpost.Category = cat.Name;
+                vmpost.PostID = post.PostID;
+                vmpost.Tags = post.Tags;
+
+                return View(vmpost);
+            }
+            else
+            {
+                ViewBag.Header = "Yazı Ekle";
+                return View();
+            }
+
         }
         [ValidateInput(false)]
         [HttpPost]
@@ -36,7 +51,7 @@ namespace Bolg_MVC_Web.Controllers
             List<Tag> tags = new List<Tag>();
             foreach (var item in etiketler)
             {
-                tags.Add(new Tag { Name = item });
+                tags.Add(new Tag { Name = item.Trim() });//Trim baştaki ve sondaki boşlıkları siler.
             }
             int catID;
             if (CatagoryRepo.Get(model.Category) == null)
@@ -51,12 +66,20 @@ namespace Bolg_MVC_Web.Controllers
             Post pst = new Post();
             pst.Title = model.Title;
             pst.PostDate = DateTime.Now;
-            pst.Concent = model.Concent;
+            pst.Concent = model.Content;
             pst.Tags = tags;
             pst.CategoryID = catID;
             pst.AdminID = 1;
-            PostRepo.Add(pst);
-
+           
+            if (model.PostID == 0)
+            {
+                PostRepo.Add(pst);
+            }
+            else
+            {
+                pst.PostID = model.PostID;
+                PostRepo.Uptade(pst);
+            }
             return RedirectToAction("List", "Dashboard");
         }
         public ActionResult List()
@@ -69,7 +92,7 @@ namespace Bolg_MVC_Web.Controllers
         public ActionResult Delete(int id)
         {
             PostRepo.Delete(id);
-            return RedirectToAction("List","DashBoard");
+            return RedirectToAction("List", "DashBoard");
         }
     }
 }

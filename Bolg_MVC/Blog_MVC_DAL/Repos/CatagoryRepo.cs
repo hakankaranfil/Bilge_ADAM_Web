@@ -33,5 +33,13 @@ namespace Blog_MVC_DAL.Repos
             }
 
         }
+        public static Category Get(int categoryID)
+        {
+            using (BlogDBContext db = new BlogDBContext())
+            {
+                return db.Category.FirstOrDefault(c => c.CategoryID == categoryID);
+            }
+
+        }
     }
 }

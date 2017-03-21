@@ -44,13 +44,13 @@ namespace Blog_MVC_DAL.Repos
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                return db.Post.Find(Postid);
+                return db.Post.Include("Tags").FirstOrDefault(p=>p.PostID==Postid);
             }
 
         }
         public static List<Post> GetALLRating()
         {
-            using (BlogDBContext db=new BlogDBContext())
+            using (BlogDBContext db = new BlogDBContext())
             {
                 return db.Post.OrderByDescending(p => p.PostDate).ToList();
             }
@@ -63,8 +63,19 @@ namespace Blog_MVC_DAL.Repos
                 var result = db.Post.FirstOrDefault(p => p.PostID == id);
                 result.IsDeleted = true;
                 db.SaveChanges();
-    
+
+            }
+        }
+        public static void Uptade(Post post)
+        {
+            using (BlogDBContext db = new BlogDBContext())
+            {
+                Delete(post.PostID);
+                Add(post);
+                db.SaveChanges();
+            }
+               
             }
         }
     }
-}
+
