@@ -1,4 +1,5 @@
 ﻿using Blog_MVC_DAL.Repos;
+using Blog_MVC_Entity.Models;
 using Bolg_MVC_Web.Models.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,23 @@ namespace Bolg_MVC_Web.Controllers
         {
             return View();
         }
-        public ActionResult GET(WAdmin model)
+        
+        public ActionResult GET(Admin model)
         {
-            if (AdminRepo.Get(model.UserName,model.Password)!=null)
+            var admin = AdminRepo.Get(model);
+            if (admin != null)
             {
+                Session["ID"] = admin.AdminID;
+                Session["UserName"] = admin.UserName;
+                Session["Password"] = admin.Password;
                 return RedirectToAction("Index", "Dashboard");
-            }    
+            }
+            else
+            {
+                Response.Write("Kullanıcı Bulunamadı!");
                 return View();
-            
+            }
+
         }
        
     }

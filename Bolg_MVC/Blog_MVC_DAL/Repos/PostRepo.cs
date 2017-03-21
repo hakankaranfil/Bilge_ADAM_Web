@@ -44,7 +44,7 @@ namespace Blog_MVC_DAL.Repos
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                return db.Post.Include("Tags").FirstOrDefault(p=>p.PostID==Postid);
+                return db.Post.Include("Tags").FirstOrDefault(p => p.PostID == Postid);
             }
 
         }
@@ -55,12 +55,12 @@ namespace Blog_MVC_DAL.Repos
                 return db.Post.OrderByDescending(p => p.PostDate).ToList();
             }
         }
-        public static void Delete(int id)
+        public static void Delete(int postID)
         {
             using (BlogDBContext db = new BlogDBContext())
             {
 
-                var result = db.Post.FirstOrDefault(p => p.PostID == id);
+                var result = db.Post.FirstOrDefault(p => p.PostID == postID);
                 result.IsDeleted = true;
                 db.SaveChanges();
 
@@ -72,10 +72,10 @@ namespace Blog_MVC_DAL.Repos
             {
                 Delete(post.PostID);
                 Add(post);
-                db.SaveChanges();
+
             }
-               
-            }
+
         }
     }
+}
 

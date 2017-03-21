@@ -9,11 +9,11 @@ namespace Blog_MVC_DAL.Repos
 {
    public class AdminRepo
     {
-        public static Admin Get(string name,string passsword)
+        public static Admin Get(Admin admin)
         {
             using (BlogDBContext db = new BlogDBContext())
             {
-                return db.Admin.FirstOrDefault(a => a.UserName == name && a.Password == passsword);
+                return db.Admin.FirstOrDefault(a => a.UserName == admin.UserName&& a.Password == admin.Password);
 
             }
         }

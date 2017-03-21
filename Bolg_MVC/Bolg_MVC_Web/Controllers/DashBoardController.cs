@@ -32,7 +32,10 @@ namespace Bolg_MVC_Web.Controllers
                 vmpost.Content = post.Concent;
                 vmpost.Category = cat.Name;
                 vmpost.PostID = post.PostID;
-                vmpost.Tags = post.Tags;
+                foreach (var item in post.Tags)
+                {
+                    vmpost.Tags += item.Name + ",";
+                }
 
                 return View(vmpost);
             }
