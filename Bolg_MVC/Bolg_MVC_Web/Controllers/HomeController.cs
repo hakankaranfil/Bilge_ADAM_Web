@@ -1,4 +1,6 @@
 ﻿using Blog_MVC_DAL.Repos;
+using Blog_MVC_Entity.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,10 @@ namespace Bolg_MVC_Web.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(PostRepo.GetAll());
+
+            return View(PostRepo.GetAll().ToPagedList(page ?? 1, 2));
         }
         public ActionResult PostDetail(int id)
         {

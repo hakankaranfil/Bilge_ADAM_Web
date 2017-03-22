@@ -1,4 +1,5 @@
 ﻿using Blog_MVC_Entity.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Blog_MVC_DAL.Repos
             using (BlogDBContext db = new BlogDBContext())
             {
                 return db.Post.Where(p => p.IsDeleted == false).OrderByDescending(p => p.PostDate).ToList();
+               
 
             }
         }

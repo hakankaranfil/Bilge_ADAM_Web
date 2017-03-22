@@ -1,7 +1,11 @@
-﻿@{
+﻿@using PagedList
+@using PagedList.Mvc
+@{
     ViewBag.Title = "Index";
 }
-@model List<Blog_MVC_Entity.Models.Post>
+
+
+@model IPagedList<Blog_MVC_Entity.Models.Post>
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('/img/sunglasses-apple-iphone-desk.jpg')">
@@ -41,13 +45,13 @@
             }
 
 
-
+@Html.PagedListPager(Model,page=> Url.Action("Index", new { page}))
             <!-- Pager -->
-            <ul class="pager">
+            @*<ul class="pager">
                 <li class="next">
                     <a href="#">Older Posts &rarr;</a>
                 </li>
-            </ul>
+            </ul>*@
         </div>
     </div>
 </div>
