@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
@@ -8,7 +7,11 @@
         <div class="col-md-3">
             <p class="lead">Shop Name</p>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
+                @foreach (var item in ViewBag.Category)
+                {
+                    <a href="#" class="list-group-item">@item.CategoryName</a>
+                }
+
             </div>
         </div>
         <div class="col-md-9">
@@ -41,30 +44,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$24.99</h4>
-                            <h4>
-                                <a href="#">First Product</a>
-                            </h4>
-                            <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">15 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
+                @foreach (var item in ViewBag.Book)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="@item.BookPhotoURL" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">@item.Price</h4>
+                                <h4>
+                                    <a href="/Home/BookDeatails/@item.BookID">@item.BookName</a>
+                                </h4>
+                                <p> <a target="_blank" href="/Home/BookDeatails/@item.WriterID">@item.WriterName</a></p>
+                            </div>
+                            
                         </div>
                     </div>
-                </div>
-
+                }
             </div>
+            
         </div>
     </div>
 </div>

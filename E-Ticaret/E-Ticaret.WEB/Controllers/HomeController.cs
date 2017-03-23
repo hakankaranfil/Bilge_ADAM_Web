@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Ticaret.DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,11 +12,14 @@ namespace E_Ticaret.WEB.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Category = CategoryRepo.GetAllForHome();
+            ViewBag.Book = BookRepo.GetAllForHome();
             return View();
         }
-        public ActionResult BookDeatails()
+        public ActionResult BookDeatails(int id)
         {
-            return View();
+         var result=BookRepo.Get(id);
+            return View(result);
         }
     }
 }
