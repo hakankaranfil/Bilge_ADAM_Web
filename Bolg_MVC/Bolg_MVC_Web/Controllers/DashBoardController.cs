@@ -46,7 +46,7 @@ namespace Bolg_MVC_Web.Controllers
             }
 
         }
-        [ValidateInput(false)]
+        [ValidateInput(false)]//İçerik düzgün gelmemesi halinde bile o veriyi alabiliyoruz
         [HttpPost]
         public ActionResult AddPost(WPost model)
         {
@@ -97,5 +97,6 @@ namespace Bolg_MVC_Web.Controllers
             PostRepo.Delete(id);
             return RedirectToAction("List", "DashBoard");
         }
+      
     }
 }
