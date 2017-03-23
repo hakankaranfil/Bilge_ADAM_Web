@@ -1,0 +1,58 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@model IPagedList<Blog_MVC_Entity.Models.Post>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/sunglasses-apple-iphone-desk.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Hakan Karanfil</h1>
+                    <hr class="small">
+                    <span class="subheading">Everything that suits me</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @{
+                foreach (var item in Model)
+                {
+                    <div class="post-preview">
+                        <a href="/Home/PostDetail/@item.PostID">
+                            <h2 class="post-title">
+                                @item.Title
+                            </h2>
+                            @*<h3 class="post-subtitle">
+                                    Problems look mighty small from 150 miles up
+                                </h3>*@
+                        </a>
+                        <p class="post-meta">Posted by <a href="/Home/About">Hakan Karanfil</a> @item.PostDate.ToLongDateString()</p> @*ToString("dd-MM-yyyy")*@
+                    </div>
+                    <hr>
+                }
+            }
+
+
+@Html.PagedListPager(Model,page=> Url.Action("Index", new { page}))
+            <!-- Pager -->
+            @*<ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>*@
+        </div>
+    </div>
+</div>
+<hr>
