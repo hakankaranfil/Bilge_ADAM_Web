@@ -5,11 +5,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">Shop Name</p>
+            <p class="lead">Kategoriler</p>
             <div class="list-group">
                 @foreach (var item in ViewBag.Category)
                 {
-                    <a href="#" class="list-group-item">@item.CategoryName</a>
+                    <a href="/Home/Category/@item.CategoryID" class="list-group-item">@item.CategoryName</a>
                 }
 
             </div>
@@ -54,14 +54,13 @@
                                 <h4>
                                     <a href="/Home/BookDeatails/@item.BookID">@item.BookName</a>
                                 </h4>
-                                <p> <a target="_blank" href="/Home/BookDeatails/@item.WriterID">@item.WriterName</a></p>
+                                <p> <a target="_blank" href="/Home/Writer/@item.WriterID">@item.WriterName</a></p>
                             </div>
-                            
+
                         </div>
                     </div>
                 }
             </div>
-            
         </div>
     </div>
 </div>

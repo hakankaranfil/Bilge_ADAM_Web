@@ -69,4 +69,4 @@ namespace E_Ticaret.Test
         //    }
         }
     }
-}
+

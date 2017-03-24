@@ -8,14 +8,21 @@ using System.Threading.Tasks;
 
 namespace E_Ticaret.DAL.Models
 {
-   public class CategoryRepo
+    public class CategoryRepo
     {
         public static List<Category> GetAllForHome()
         {
-            using (ETicaretContext db=new ETicaretContext())
+            using (ETicaretContext db = new ETicaretContext())
             {
                 return db.Category.ToList();
             }
+        }
+        public static string GetCategoryName(int id)
+        {
+            using (ETicaretContext db = new ETicaretContext())
+            {
+                return db.Category.Find(id).CategoryName;
+        }
         }
     }
 }

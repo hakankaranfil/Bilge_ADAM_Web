@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace E_Ticaret.DAL.Models
 {
-   public class BookRepo
+    public class BookRepo
     {
         public static List<ViewBookForHome> GetAllForHome()
         {
-            using (ETicaretContext db=new ETicaretContext())
+            using (ETicaretContext db = new ETicaretContext())
             {
                 return db.Book.
                     Select(b => new ViewBookForHome
                     {
-                        BookID =b.BookID,
-                        WriterID=b.WriterID,
-                        BookName=b.BookName,
-                        WriterName=b.Writer.WriterName,
-                        Price=b.Price,
-                        BookPhotoURL=b.BookPhotoURL
+                        BookID = b.BookID,
+                        WriterID = b.WriterID,
+                        BookName = b.BookName,
+                        WriterName = b.Writer.WriterName,
+                        Price = b.Price,
+                        BookPhotoURL = b.BookPhotoURL
                     }).ToList();
             }
         }
@@ -44,6 +44,59 @@ namespace E_Ticaret.DAL.Models
                     }).FirstOrDefault();
             }
         }
+        public static List<ViewBookForCategory> GetAllBook(int id)
+        {
+            using (ETicaretContext db = new ETicaretContext())
+            {
+                return db.Book.Where(b => b.CategoryID == id)
+                        .Select(b => new ViewBookForCategory
+                        {
+                            BookID = b.BookID,
+                            WriterID = b.WriterID,
+                            BookName = b.BookName,
+                            WriterName = b.Writer.WriterName,
+                            Price = b.Price,
+                            BookPhotoURL = b.BookPhotoURL,
+                            CategoryID = b.CategoryID,
+                        }).ToList();
 
+            }
+        }
+        public static List<ViewBookForHome> GetAllForWriter(int id)
+        {
+            using (ETicaretContext db = new ETicaretContext())
+            {
+                return db.Book.Where(w => w.WriterID == id)
+                    .Select(b => new ViewBookForHome
+                    {
+                        BookID = b.BookID,
+                        WriterID = b.WriterID,
+                        BookName = b.BookName,
+                        WriterName = b.Writer.WriterName,
+                        Price = b.Price,
+                        BookPhotoURL = b.BookPhotoURL
+                    }).ToList();
+            }
+        }
+        public static ViewBookForHome GetBookForShop(int id)
+        {
+            using (ETicaretContext db = new ETicaretContext())
+            {
+                return db.Book.Where(b => b.BookID == id)
+                   .Select(b => new ViewBookForHome
+                   {
+                       BookID = b.BookID,
+                       WriterID = b.WriterID,
+                       BookName = b.BookName,
+                       WriterName = b.Writer.WriterName,
+                       Price = b.Price,
+                       BookPhotoURL = b.BookPhotoURL
+                   }).FirstOrDefault();
+
+
+            }
+
+        }
     }
 }
+

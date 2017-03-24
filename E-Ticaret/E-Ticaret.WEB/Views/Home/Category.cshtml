@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <p class="lead">Kategoriler > @ViewBag.Message</p>
+    <div class="row">
+        <div class="col-md-3">
+           
+            <div class="list-group">
+                @foreach (var item in ViewBag.Category)
+                {
+                    <a href="/Home/Category/@item.CategoryID" class="list-group-item">@item.CategoryName</a>
+                }
+
+            </div>
+        </div>
+        <div class="col-md-9">          
+            <div class="row">
+                @foreach (var item in ViewBag.Book)
+                {
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                            <img src="@item.BookPhotoURL" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">@item.Price</h4>
+                                <h4>
+                                    <a href="/Home/BookDeatails/@item.BookID">@item.BookName</a>
+                                </h4>
+                                <p> <a target="_blank" href="/Home/BookDeatails/@item.WriterID">@item.WriterName</a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
