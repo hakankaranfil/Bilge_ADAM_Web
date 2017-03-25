@@ -8,6 +8,7 @@
         color: black;
     }
 </style>
+<form
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-lg-offset-4">
@@ -26,21 +27,18 @@
                 </h4>
                 <h4 id="Sayfa">Sayfa Sayısı:@Model.PageCount</h4>
                 <p>@Model.BookSubject</p>
-                <p>
-
-                </p>
-                
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-lg-offset-2">
+                <a role="button" class="btn-info btn-lg" href="/Home/Sepetim/@Model.BookID">Sepete Ekle</a>
+                <label>Adet:</label><input id="Text1" type="number" min="1" value="1" />
+            </div>
+            <div>
             </div>
         </div>
     </div>
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-           
-            <label for="demo2" class="col-md-4 control-label">Adet:</label> <input id="demo2" type="text" value="0" name="demo2" class="col-md-8 form-control">           
-        </div>
-        <p><a role="button" class="btn-info btn-lg" href="/Home/Sepetim/@Model.BookID">Sepete Ekle</a></p>
-    </form>
-</div>
+    </div>
 
 
 
