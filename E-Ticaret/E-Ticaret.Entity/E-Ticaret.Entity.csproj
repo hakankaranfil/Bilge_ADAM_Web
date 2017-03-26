@@ -56,7 +56,7 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Sale.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ViewModel\ViewBookForCategory.cs" />
     <Compile Include="Model\ViewModel\ViewBookForDetails.cs" />
     <Compile Include="Model\ViewModel\ViewBookForHome.cs" />

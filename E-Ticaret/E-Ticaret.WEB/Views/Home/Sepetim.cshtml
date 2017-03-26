@@ -1,41 +1,70 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Sepetim";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<br />
 
 <div class="container">
-    <p class="col-lg-offset-4 lead">SEPET</p>
-    <br />
-    <br />
-    <div class="col-lg-9">
-        <div class="row">
-            @foreach (var item in ViewBag.Liste)
-            {
-                <div class="col-sm-3 col-lg-3 col-md-3">
-                    <div class="thumbnail">
-                        <img src="@item.BookPhotoURL">
-                        <div class="wordBreak caption">
-                            <p class="title"><a class="aApp" href="/Home/BookDetails/@item.BookID">@item.BookName</a></p>
-                            <p><a class="aApp" target="_blank" href="/Home/Writer/@item.WriterID">@item.WriterName</a></p>
-                            <h4 class="pull-right">@item.Price TL</h4>
-                        </div>
-                    </div>
-                </div>
+    <p class="lead">SEPETİM</p>
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <td>ÜRÜN</td>             
+                <td>ADET</td>
+                <td>TOPLAM FİYAT</td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in ViewBag.Liste)
+                {
+                    <tr class="product-row">
+                        <td class="product-col">
+                            <figure>
+                                <img src="@item.BookPhotoURL" alt="">
+                            </figure>
+                        </td>
+                        <td>
+                            <p class="product-name">
+                                <a title="" href="/Home/BookDetails/@item.BookID"></a>@item.BookName
+                            </p>
+                            <h5 class="product-cat">Medya Tipi: İnce Kapak</h5>
+                        </td>
+                        <td>
+                            <h4 class="quantity">@item.BookCount</h4>
+                        </td>
+                        <td>
+                            <h4 class="price">@item.Price TL</h4>
+                        </td>
+                    </tr>
+                }
             }
-            
-        </div>
-        <div class="container">
-            <div class="col-lg-offset-2">
-                <label>Toplam Ücret:</label><input id="Text1" type="text" />
+
+            <tr>
+                <td>
+                    @{
+                        decimal Total = 0;
+                        foreach (var item in ViewBag.Liste)
+                        {
+                            Total += item.TotalPrice;
+                        }
+                    }
+                    <h2>@Total TL</h2>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="row">
+        <form role="form" method="post">
+            <input class="total" type="hidden" value="@Total" name="Total" />
+
+            <div class="col-lg-offset-8">
+                <button type="submit" class="buyBtn">SATIN AL</button>
             </div>
-            <div>
-            </div>
-        </div>
-        </div>
+
+        </form>
     </div>
-        
 
-
-
+</div> 

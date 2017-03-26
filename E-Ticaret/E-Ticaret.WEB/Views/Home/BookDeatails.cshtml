@@ -1,44 +1,82 @@
-﻿@model E_Ticaret.Entity.Model.ViewModel.ViewBookForDetails
+﻿
 @{
     ViewBag.Title = "BookDeatails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style type="text/css">
-    #Sayfa {
-        color: black;
-    }
-</style>
-<form
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-lg-offset-4">
-            <img class="img-responsive" src="@Model.BookPhotoURL" alt="">
-        </div>
-    </div>
-    <br />
-    <br />
-    <div class="col-md-9 col-lg-offset-1">
-        <div class="thumbnail">
 
-            <div class="caption-full">
-                <h4 class="pull-right">Fiyat:@Model.Price</h4>
-                <h4>
-                    <a href="#">@Model.BookName</a>
-                </h4>
-                <h4 id="Sayfa">Sayfa Sayısı:@Model.PageCount</h4>
-                <p>@Model.BookSubject</p>
+<div class="container">
+
+    <form role="form" method="post">
+
+        <input type="hidden" name="BookID" value="@Model.BookID" />
+        <input type="hidden" name="PhotoUrl" value="@Model.BookPhotoURL" />
+        <input type="hidden" name="BookName" value="@Model.BookName" />
+
+        <div class="row">
+            <div class="photo">
+                <img class="image"
+                     img-responsive"
+                     src="@Model.BookPhotoURL" />
+            </div>
+
+            <input type="hidden" name="BookPhotoURL" value="@Model.BookPhotoURL" />
+
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="detail col-lg-9">
+                <div class="thumbnail">
+                    <div class="caption-full">
+                        <p class="book-name">
+                            <a href="#"
+                               name="BookName">
+                                @Model.BookName
+                            </a>
+                        </p>
+                        <p class="who">
+                            <strong>Yazar : </strong>
+                            <a name="WriterName"
+                               target="_blank"
+                               href="/Home/Writer/@Model.WriterID">
+                                @Model.WriterName
+                            </a>
+                        </p>
+
+                        <p name="BookSubject">
+                        @Model.BookSubject</
+                          
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-3 col-lg-offset-5  text-right">
+
+                                <input type="hidden"
+                                       value="@Model.Price"
+                                       name="Price" />
+                                <h3>
+                                    <strong>@Model.Price TL</strong>
+                                </h3>
+                            </div>
+                            <div >
+                                <label>Adet:</label><input type="number" min="1" value="1"  name="BookCount" />
+                                     
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="submit"
+                                        class="myBtn btn btn-lg">
+                                    SEPETE EKLE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container">
-            <div class="col-lg-offset-2">
-                <a role="button" class="btn-info btn-lg" href="/Home/Sepetim/@Model.BookID">Sepete Ekle</a>
-                <label>Adet:</label><input id="Text1" type="number" min="1" value="1" />
-            </div>
-            <div>
-            </div>
-        </div>
-    </div>
-    </div>
+    </form>
+</div>
+
+
 
 
 

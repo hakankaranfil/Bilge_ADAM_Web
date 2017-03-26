@@ -1,4 +1,5 @@
 ﻿using E_Ticaret.DAL.Models;
+using E_Ticaret.Entity.Model;
 using E_Ticaret.Entity.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace E_Ticaret.WEB.Controllers
         }
         public ActionResult BookDeatails(int id)
         {
-         var result=BookRepo.Get(id);
+            var result = BookRepo.Get(id);
             return View(result);
         }
         public ActionResult Category(int id)
@@ -27,25 +28,65 @@ namespace E_Ticaret.WEB.Controllers
             ViewBag.Category = CategoryRepo.GetAllForHome();
             ViewBag.Book = BookRepo.GetAllBook(id);
             ViewBag.Message = CategoryRepo.GetCategoryName(id);
-            
+
             return View();
         }
         public ActionResult Writer(int id)
         {
             return View(BookRepo.GetAllForWriter(id));
         }
-        static List<ViewBookForHome> ShoppingList = new List<ViewBookForHome>();
 
-        public ActionResult Sepetim(int? id) //book id 
+
+        static List<Product> ShoppingList = new List<Product>();
+
+        [HttpPost]
+        public ActionResult BookDeatails(ViewBookForDetails model, int BookCount) //book id 
         {
-            if (id.HasValue)
+            if (ShoppingList.Count == 0)
             {
-                ShoppingList.Add(BookRepo.GetBookForShop((int)id));
+                Product p = new Product()
+                {
+                    BookID = model.BookID,
+                    BookName = model.BookName,
+                    BookCount = BookCount,
+                    Price = model.Price,
+                    BookPhotoURL = model.BookPhotoURL,
+                };
+                ShoppingList.Add(p);
 
-                ViewBag.Liste = ShoppingList;
-                return View();
+            }
+            else
+            {
+                foreach (var item in ShoppingList)
+                {
+                    if (item.BookID == model.BookID)
+                    {
+                        item.BookCount++;
+                        ViewBag.Liste = ShoppingList;
+                        return RedirectToAction("Sepetim", "Home");
+                    }
+                    else
+                    {
+                        Product p = new Product()
+                        {
+                            BookID = model.BookID,
+                            BookName = model.BookName,
+                            BookCount = BookCount,
+                            Price = model.Price,
+                            BookPhotoURL = model.BookPhotoURL,
+                        };
+                        ShoppingList.Add(p);
+                        ViewBag.Liste = ShoppingList;
+                        return RedirectToAction("Sepetim", "Home");
+                    }
+                }
             }
 
+            ViewBag.Liste = ShoppingList;
+            return RedirectToAction("Sepetim", "Home");
+        }
+        public ActionResult Sepetim()
+        {
             ViewBag.Liste = ShoppingList;
             return View();
 

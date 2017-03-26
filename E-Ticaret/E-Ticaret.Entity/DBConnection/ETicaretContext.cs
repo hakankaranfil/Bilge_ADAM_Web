@@ -18,7 +18,7 @@ namespace E_Ticaret.Entity.DBConnection
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Writer> Writer { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Sale> Sale{ get; set; }
+        public virtual DbSet<Product> Product{ get; set; }
         public virtual DbSet<Category> Category { get; set; }
 
 

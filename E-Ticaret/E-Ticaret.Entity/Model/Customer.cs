@@ -12,7 +12,7 @@ namespace E_Ticaret.Entity.Model
         public string NameSurname { get; set; }
         public string Address { get; set; }
         public int BookCount { get; set; }
-        public List<Sale> ShopList { get; set; }
+        public List<Product> ShopList { get; set; }
         public decimal Total { get; set; }
 
 
