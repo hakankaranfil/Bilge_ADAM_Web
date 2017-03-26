@@ -53,8 +53,9 @@ namespace E_Ticaret.WEB.Controllers
                     BookPhotoURL = model.BookPhotoURL,
                 };
                 ShoppingList.Add(p);
-
             }
+
+
             else
             {
                 foreach (var item in ShoppingList)
@@ -81,15 +82,30 @@ namespace E_Ticaret.WEB.Controllers
                     }
                 }
             }
+            
 
-            ViewBag.Liste = ShoppingList;
-            return RedirectToAction("Sepetim", "Home");
-        }
+                ViewBag.Liste = ShoppingList;
+                return RedirectToAction("Sepetim", "Home");
+            }
+        
         public ActionResult Sepetim()
         {
             ViewBag.Liste = ShoppingList;
             return View();
 
+        }
+        [HttpPost]
+        public ActionResult Sepetim(decimal Total)
+        {
+            //ViewBag.Total = Total;
+            ViewBag.Liste = ShoppingList;
+            return RedirectToAction("Ödeme", "Home");
+
+        }
+        public ActionResult Ödeme()
+        {
+            ViewBag.Liste = ShoppingList;
+            return View();
         }
     }
 }

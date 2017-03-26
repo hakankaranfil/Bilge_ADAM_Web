@@ -9,7 +9,7 @@
     <table class="table table-hover table-responsive">
         <thead>
             <tr>
-                <td>ÜRÜN</td>             
+                <td>ÜRÜN</td>
                 <td>ADET</td>
                 <td>TOPLAM FİYAT</td>
             </tr>
@@ -49,22 +49,26 @@
                             Total += item.TotalPrice;
                         }
                     }
-                    <h2>@Total TL</h2>
+                    
                 </td>
             </tr>
 
         </tbody>
     </table>
-
-    <div class="row">
-        <form role="form" method="post">
-            <input class="total" type="hidden" value="@Total" name="Total" />
-
-            <div class="col-lg-offset-8">
-                <button type="submit" class="buyBtn">SATIN AL</button>
+    <form role="form" method="post">
+        <div class="container">
+            <div class="col-lg-offset-5">
+                <input class="total" type="hidden" value="@Total" name="Total" />
+                <div class="col-lg-offset-8">
+                    <button type="submit" class="buyBtn">SATIN AL</button>
+                    <h2>@Total TL</h2>
+                </div>
             </div>
+        </div>
+    </form>
+</div>
 
-        </form>
-    </div>
 
-</div> 
+
+
+

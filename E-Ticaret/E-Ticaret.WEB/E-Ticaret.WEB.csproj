@@ -167,6 +167,7 @@
     <Content Include="Views\Home\Writer.cshtml" />
     <Content Include="Views\Home\BookDeatails.cshtml" />
     <Content Include="Views\Home\Sepetim.cshtml" />
+    <Content Include="Views\Home\Ödeme.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
