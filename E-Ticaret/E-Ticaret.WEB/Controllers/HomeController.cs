@@ -54,8 +54,6 @@ namespace E_Ticaret.WEB.Controllers
                 };
                 ShoppingList.Add(p);
             }
-
-
             else
             {
                 foreach (var item in ShoppingList)
@@ -66,27 +64,25 @@ namespace E_Ticaret.WEB.Controllers
                         ViewBag.Liste = ShoppingList;
                         return RedirectToAction("Sepetim", "Home");
                     }
-                    else
-                    {
-                        Product p = new Product()
-                        {
-                            BookID = model.BookID,
-                            BookName = model.BookName,
-                            BookCount = BookCount,
-                            Price = model.Price,
-                            BookPhotoURL = model.BookPhotoURL,
-                        };
-                        ShoppingList.Add(p);
-                        ViewBag.Liste = ShoppingList;
-                        return RedirectToAction("Sepetim", "Home");
-                    }
                 }
-            }
-            
-
+                Product p = new Product()
+                {
+                    BookID = model.BookID,
+                    BookName = model.BookName,
+                    BookCount = BookCount,
+                    Price = model.Price,
+                    BookPhotoURL = model.BookPhotoURL,
+                };
+                ShoppingList.Add(p);
                 ViewBag.Liste = ShoppingList;
                 return RedirectToAction("Sepetim", "Home");
+
             }
+
+            ViewBag.Liste = ShoppingList;
+            return RedirectToAction("Sepetim", "Home");
+        }
+            
         
         public ActionResult Sepetim()
         {
@@ -105,6 +101,16 @@ namespace E_Ticaret.WEB.Controllers
         public ActionResult Ödeme()
         {
             ViewBag.Liste = ShoppingList;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Ödeme(Customer model)
+        {
+            Customer c = new Customer();
+            c.NameSurname = model.NameSurname;
+            c.BookCount = model.BookCount;
+            c.Address = model.Address;
+            c.Total = model.Total;
             return View();
         }
     }

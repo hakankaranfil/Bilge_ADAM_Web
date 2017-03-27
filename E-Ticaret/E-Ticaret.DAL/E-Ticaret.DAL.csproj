@@ -52,6 +52,7 @@
     <Compile Include="Models\AdminRepo.cs" />
     <Compile Include="Models\BookRepo.cs" />
     <Compile Include="Models\CategoryRepo.cs" />
+    <Compile Include="Models\CustomerRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

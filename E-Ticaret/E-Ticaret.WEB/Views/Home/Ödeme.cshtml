@@ -6,13 +6,7 @@
 
 <div class="container">
     @{
-        int count = 0;
-        decimal Total = 0;
-        foreach (var item in ViewBag.Liste)
-        {
-            count += item.BookCount;
-            Total += item.TotalPrice;
-        }
+  
     }
     <h2>Toplam @count ürün</h2>
     <h2>Toplam Fiyat: @Total TL</h2>
@@ -54,6 +48,11 @@
                class="form-control"
                name="Address"
                placeholder="Adres"
+               required />
+        <input type="text"
+               class="form-control"
+               name="BookCount"
+               placeholder="BookCount"
                required />
         <br />
         <button type="submit"

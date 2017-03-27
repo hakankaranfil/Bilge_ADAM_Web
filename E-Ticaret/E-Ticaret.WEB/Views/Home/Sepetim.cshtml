@@ -18,12 +18,8 @@
             @{
                 foreach (var item in ViewBag.Liste)
                 {
-                    <tr class="product-row">
-                        <td class="product-col">
-                            <figure>
-                                <img src="@item.BookPhotoURL" alt="">
-                            </figure>
-                        </td>
+                    <tr>
+
                         <td>
                             <p class="product-name">
                                 <a title="" href="/Home/BookDetails/@item.BookID"></a>@item.BookName
@@ -49,7 +45,7 @@
                             Total += item.TotalPrice;
                         }
                     }
-                    
+
                 </td>
             </tr>
 
