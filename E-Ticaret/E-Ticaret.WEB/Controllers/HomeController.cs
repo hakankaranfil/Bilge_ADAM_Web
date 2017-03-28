@@ -42,7 +42,7 @@ namespace E_Ticaret.WEB.Controllers
         [HttpPost]
         public ActionResult BookDeatails(ViewBookForDetails model, int BookCount) //book id 
         {
-            if (ShoppingList.Count == 0)
+            if ( ShoppingList.Count == 0)
             {
                 Product p = new Product()
                 {
@@ -82,8 +82,8 @@ namespace E_Ticaret.WEB.Controllers
             ViewBag.Liste = ShoppingList;
             return RedirectToAction("Sepetim", "Home");
         }
-            
-        
+
+
         public ActionResult Sepetim()
         {
             ViewBag.Liste = ShoppingList;
@@ -104,14 +104,12 @@ namespace E_Ticaret.WEB.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Ödeme(Customer model)
+        public ActionResult Ödeme(Customer customer)
         {
-            Customer c = new Customer();
-            c.NameSurname = model.NameSurname;
-            c.BookCount = model.BookCount;
-            c.Address = model.Address;
-            c.Total = model.Total;
-            return View();
+            customer.ShopList = ShoppingList;
+            CustomerRepo.AddCustomer(customer);
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }
