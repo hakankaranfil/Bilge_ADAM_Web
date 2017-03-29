@@ -1,4 +1,4 @@
-﻿@model E_Ticaret.Entity.Model.Product
+﻿
 @{
     ViewBag.Title = "Ödeme";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,7 +14,7 @@
             Total += item.TotalPrice;
         }
     }
-    
+
     <h2>Toplam @count ürün</h2>
     <h2>Toplam Fiyat: @Total TL</h2>
 
@@ -37,39 +37,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <form role="form" method="post">
-                        <input type="hidden" value="" name="Total" />
-                        <input type="text"
-                               class="form-control"
-                               name="NameSurname"
-                               placeholder="İsim Soyisim"
-                               required />
-                        <br />
-                        <input type="text"
-                               class="form-control"
-                               name="Address"
-                               placeholder="Adres"
-                               required />
-                        <br />
-                        <input type="hidden"
-                               class="form-control"
-                               name="BookCount"
-                               placeholder="BookCount"
-                               value="@item.BookCount"
-                               required />
-                        <button type="submit"
-                                class="btn btn-danger btn-lg">
-                            SİPARİŞİ TAMAMLA
-                        </button>
+               <div class="container">
+                        <form role="form" method="post">
+                            <input type="text"
+                                   class="form-control"
+                                   name="NameSurname"
+                                   placeholder="İsim Soyisim"
+                                   required />
+                            <br />
+                            <input type="text"
+                                   class="form-control"
+                                   name="Address"
+                                   placeholder="Adres"
+                                   required />
 
-                    </form>
-                </div>
+                            <input type="hidden"
+                                   class="form-control"
+                                   name="BookCount"
+                                   value="@item.BookCount"
+                                   required />
+                            <input type="hidden"
+                                   class="form-control"
+                                   name="Total"
+                                   value="@item.TotalPrice"
+                                   required />
+                            <br />
+
+                            <button type="submit"
+                                    class="btn btn-danger btn-lg">
+                                SİPARİŞİ TAMAMLA
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                
             }
-           
-        </div>
-    </div>
+                    
+
+
+                    
+
 </div>
+    </div>
 
 
 

@@ -1,4 +1,5 @@
 ﻿using E_Ticaret.Entity.DBConnection;
+using E_Ticaret.Entity.Model;
 using E_Ticaret.Entity.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,28 @@ namespace E_Ticaret.DAL.Models
                         Price = b.Price,
                         BookPhotoURL = b.BookPhotoURL
                     }).ToList();
+            }
+        }
+        public static List<Book> SearchAll(string search)
+        {
+            using (ETicaretContext db = new ETicaretContext())
+            {
+                //var name= db.Book.
+                //          Select(b => new ViewBookForHome
+                //          {
+                //              BookID = b.BookID,
+                //              WriterID = b.WriterID,
+                //              BookName = b.BookName,
+                //              WriterName = b.Writer.WriterName,
+                //              Price = b.Price,
+                //              BookPhotoURL = b.BookPhotoURL
+                //          }).ToList();
+                // name.Where(m => m.BookName.Contains(search));
+                // return (name);
+                var name = db.Book.Where(n => n.BookName.Contains(search));
+                return name.ToList();
+
+
             }
         }
         public static ViewBookForDetails Get(int id)

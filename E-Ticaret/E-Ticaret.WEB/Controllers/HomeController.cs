@@ -111,5 +111,14 @@ namespace E_Ticaret.WEB.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        [HttpPost]
+        public ActionResult Search(string search)
+        {
+            if (!String.IsNullOrEmpty(search))
+            {
+                return View( BookRepo.SearchAll(search));
+            }
+            return View();
+        }
     }
 }
