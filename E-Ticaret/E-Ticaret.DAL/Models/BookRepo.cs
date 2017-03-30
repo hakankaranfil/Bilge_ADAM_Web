@@ -27,24 +27,24 @@ namespace E_Ticaret.DAL.Models
                     }).ToList();
             }
         }
-        public static List<Book> SearchAll(string search)
+        public static List<ViewBookForHome> SearchAll(string search)
         {
             using (ETicaretContext db = new ETicaretContext())
             {
-                //var name= db.Book.
-                //          Select(b => new ViewBookForHome
-                //          {
-                //              BookID = b.BookID,
-                //              WriterID = b.WriterID,
-                //              BookName = b.BookName,
-                //              WriterName = b.Writer.WriterName,
-                //              Price = b.Price,
-                //              BookPhotoURL = b.BookPhotoURL
-                //          }).ToList();
-                // name.Where(m => m.BookName.Contains(search));
-                // return (name);
-                var name = db.Book.Where(n => n.BookName.Contains(search));
-                return name.ToList();
+               return  db.Book.
+                Select(b => new ViewBookForHome
+                {
+                    BookID = b.BookID,
+                    WriterID = b.WriterID,
+                    BookName = b.BookName,
+                    WriterName = b.Writer.WriterName,
+                    Price = b.Price,
+                    BookPhotoURL = b.BookPhotoURL
+                }).Where(n => n.BookName.Contains(search)).ToList();
+                //name.Where(m => m.BookName.Contains(search));
+              
+                //var name = db.Book.Where(n => n.BookName.Contains(search));
+                //return name.ToList();
 
 
             }

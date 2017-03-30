@@ -1,4 +1,4 @@
-﻿@model List<E_Ticaret.Entity.Model.Book>
+﻿@model List<E_Ticaret.Entity.Model.ViewModel.ViewBookForHome>
 
 @foreach (var item in Model)
 {
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="image">
                             <img class="image"
-                                
+                                style="max-height:136px; max-width:87px;"
                                  src="@item.BookPhotoURL" />
                         </div>
                         <p class="book-name">
@@ -17,13 +17,7 @@
                                name="BookName">
                                 @item.BookName
                             </a>
-                        </p>
-                        <p class="who">
-                            <strong>Yazar : </strong>
-                            <a name="BookSubject">    
-                                @item.BookSubject
-                            </a>
-                        </p>
+                    
                         <br />
                         <div class="row">
                             <div class="col-lg-3 col-lg-offset-5  text-right">

@@ -1,4 +1,4 @@
-﻿@model List<E_Ticaret.Entity.Model.Book>
+﻿@model List <E_Ticaret.Entity.Model.ViewModel.ViewBookForHome>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Kitap Evi</title>
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/css/Home/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/Home/shop-homepage.css" rel="stylesheet" />
@@ -35,13 +35,14 @@
                 </button>
                
             </div>
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
             <a class="navbar-brand" href="/Home/Index">Ana Sayfa</a>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/Home/Sepetim/"><span class="glyphicon glyphicon-shopping-cart"></span> Sepetim</a></li>                   
                 </ul>
-@using (Html.BeginForm("Search", "Home", FormMethod.Post))
-{
+
                 <ul>
                     <li>
                         <form class="navbar-text" role="search" method="post">
@@ -54,8 +55,9 @@
                         </form>
                     </li>                  
                 </ul>
-}
+
             </div>
+}
         </div>
     </nav>
     <div class="container">
