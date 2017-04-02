@@ -17,6 +17,7 @@ namespace Protein.Entity
         public virtual DbSet<Brand> Brand { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<ShoppingCart> ShoppingCart { get; set; }
 
     }
 }

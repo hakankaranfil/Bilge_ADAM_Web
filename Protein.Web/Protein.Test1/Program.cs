@@ -38,15 +38,11 @@ namespace Protein.Test1
                     ProductContent = "aaaaa",
                     CategoryID = 1,
                     Price = 230,
-                   BrandID= 1, 
-                  ProductCount=1,
-                        
+                   BrandID= 1,                        
                    ProductPhoto = "http://placehold.it/800x300",
                 };
 
                 db.Product.Add(b);
-
-
                 Customer cu = new Customer()
                 {
                     CustomerName = "Hakan Karanfil",

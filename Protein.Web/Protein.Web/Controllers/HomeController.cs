@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Protein.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace Protein.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Category = CategoryRepo.GetAllForHome();
+            ViewBag.Product = ProductRepo.GetAllForHome();
             return View();
         }
     }

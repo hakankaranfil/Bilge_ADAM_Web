@@ -28,19 +28,18 @@
                 <a class="navbar-brand" href="#">Ana Sayfa</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Protein Tozu</a>
-                    </li>
-                    <li>
-                        <a href="#">Bcaa</a>
-                    </li>
-                    <li>
-                        <a href="#">Kilo Aldırıcı</a>
-                    </li>
-                </ul>
-            </div>
+            @foreach (var item in ViewBag.Category)
+            {
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">@item.CategoryName</a>
+                        </li>
+            
+                    </ul>
+                </div>
+            }
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
