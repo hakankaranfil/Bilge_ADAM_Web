@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protein.Web", "Protein.Web\Protein.Web.csproj", "{B202D7B3-CA8B-4CD0-8B46-ECC36F3679ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protein.Entity", "Protein.Entity\Protein.Entity.csproj", "{5F9A62AC-B395-44CA-B17C-E6A04B276535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protein.Test1", "Protein.Test1\Protein.Test1.csproj", "{322E3E71-D50A-4629-BF9E-56133C309FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B202D7B3-CA8B-4CD0-8B46-ECC36F3679ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B202D7B3-CA8B-4CD0-8B46-ECC36F3679ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B202D7B3-CA8B-4CD0-8B46-ECC36F3679ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B202D7B3-CA8B-4CD0-8B46-ECC36F3679ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9A62AC-B395-44CA-B17C-E6A04B276535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9A62AC-B395-44CA-B17C-E6A04B276535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9A62AC-B395-44CA-B17C-E6A04B276535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9A62AC-B395-44CA-B17C-E6A04B276535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322E3E71-D50A-4629-BF9E-56133C309FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322E3E71-D50A-4629-BF9E-56133C309FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322E3E71-D50A-4629-BF9E-56133C309FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322E3E71-D50A-4629-BF9E-56133C309FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
