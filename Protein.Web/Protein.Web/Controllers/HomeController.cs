@@ -16,5 +16,10 @@ namespace Protein.Web.Controllers
             ViewBag.Product = ProductRepo.GetAllForHome();
             return View();
         }
+        public ActionResult ProductDetails(int id)
+        {
+            var result = ProductRepo.Get(id);
+            return View(result);
+        }
     }
 }
