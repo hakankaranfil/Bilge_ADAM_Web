@@ -1,0 +1,40 @@
+﻿@model List< ApiSimple.Web.Kategori>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+      </div>
+        <h2>Kategoriler</h2>
+        <ul class="list-group">
+            
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">@item.CategoriName </li>
+                }
+           
+</ul>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <input class="form-control" type="text" id="Catname"/>
+                <button class="btn btn-primary" onclick="Ekle()">Ekle</button>
+            </div>
+        </div>
+</div>
+    <script type="text/javascript">
+        function Ekle()
+        {
+            var name = document.getElementById("Catname").value;
+            $.ajax({
+                url: "http://localhost:49494/Api/Category",
+                type: "Post",
+                data: { "CategoriID": null, "CategoriName": name },
+                dataType: "json",
+            });
+                
+            window.location.href = "/Home/Index";
+                
+        }
+    </script>
