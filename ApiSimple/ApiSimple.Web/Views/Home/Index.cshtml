@@ -26,7 +26,7 @@
     <script type="text/javascript">
         function Ekle()
         {
-            var name = document.getElementById("Catname").value;
+            var name = $("Catname").val();
             $.ajax({
                 url: "http://localhost:49494/Api/Category",
                 type: "Post",
