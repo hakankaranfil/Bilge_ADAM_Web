@@ -1,6 +1,5 @@
-﻿
+﻿<!DOCTYPE html>
 
-    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,63 +7,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-   
-    <title>Protein</title> 
-    <link href="~/Content/Css/Home/bootstrap.min.css" rel="stylesheet" />  
-    <link href="~/Content/Css/Home/heroic-features.css" rel="stylesheet" /> 
+    <title>Protein</title>
+    <link href="~/Content/Css/Home/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/Home/shop-homepage.css" rel="stylesheet" />
+    <link href="~/Content/Css/Home/NavBar.css" rel="stylesheet" />
+    <style type="text/css">
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-   
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Ana Sayfa</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-           
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                   
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="#">About</a>
+    <header>
+        <div class="head-menu logged-in">
+            <ul>
+                @{
+
+                    if (Session["Email"] != null)
+                    {
+                        <li class="giris">
+                            <a href="#">@ViewBag.Email</a>
+                        </li>
+
+                            <li class="giris">
+                                <a href="/Customer/Account">HESABIM</a>
                             </li>
-                            <li>
-                                <a href="#">Services</a>
+
+                            <li class="separator"></li>
+
+                            <li class="giris">
+                                <a href="/Customer/Logout">ÇIKIŞ</a>
                             </li>
-                            <li>
-                                <a href="#">Contact</a>
+
+                            <li class="#"></li>
+
+                            <li class="sepet">
+                                <a href="/Home/Sepetim">SEPETİM</a>
                             </li>
-                        </ul>
-                    </div>
-                </div>
-            <div class="container">
-              
-            </div>
-            @RenderBody()
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Copyright &copy; Your Website 2017</p>
-                    </div>
-                </div>
-            </footer>
-            <!-- /.navbar-collapse -->
+                        }
+                    else
+                    {
+                <li class="sepet"><a href="/Customer/Login">Üye Girişi</a></li>
+                <li><span>&</span></li>
+                <li class="sepet"><a href="/Customer/Register">Üye ol</a> </li>
+                <li class="sepet"><a href="/Home/Sepetim/"><span class="glyphicon glyphicon-shopping-cart"></span> Sepetim</a></li>
+                        }
+                    }
+            </ul>
         </div>
-        <!-- /.container -->
-    </nav>
+        <ul></ul>
+        <figure class="logo">
+            <a href="/Home/Index">
+                <img src="~/img/header_left.png" alt="logo">
+            </a>
+        </figure>
+        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+        {
+            <form class="search" method="post">
+                <div class="search-bar logged-in">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" class="searchInput" maxlength="60" placeholder="HANGİ ÜRÜNÜ ARIYORSUN?" autocomplete="off" name="Search">
+                    <input type="submit" value="ARA" id="searchIcon">
+                    <div class="search-suggests">
+                        <ul class="product"></ul>
+                        <ul class="category"></ul>
+                        <ul class="author"></ul>
+                        <ul class="brand"></ul>
+                    </div>
+                </div>
+            </form>
+        }
+    </header>
     <!-- Page Content -->
+    <!-- /.container -->
+    <div class="container">
+        @RenderBody()
+    </div>
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Hakkımızda</a>
+                    </li>
+                    <li>
+                        <a href="#">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+
+        </footer>
+
+    </div>
     <script src="~/Scripts/jquery.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-       

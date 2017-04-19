@@ -1,0 +1,30 @@
+﻿@model Protein.Entity.Model.Customer
+@{
+    ViewBag.Title = "Login";
+}
+<section class="user-landing">
+    <div class="container">
+        <div class="half">
+            <div class="content" style="height: 557px;">
+                <h3>Üye Girişi</h3>
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary()
+                    <div class="form-row">
+                        <input autofocus="autofocus" data-val="true" data-val-email="Hatalı E-posta" data-val-required="E-Posta adresi zorunlu" id="EmailField" maxlength="500" name="Email" placeholder="E-Posta Adresi" title="Sisteme kayıtlı olan mail adresinizi yazınız!" type="text" autocomplete="off" style="font-weight:500">
+                    </div>
+                    <div class="form-row">
+
+                        <input id="PasswordField" maxlength="40" name="Password" placeholder="Şifre" title="Lütfen şifrenizi giriniz!" type="password" autocomplete="off" style="font-weight:500">
+                    </div>
+
+                    <div class="clear"></div>
+                    <div class="form-row buttons">
+                        <input class="btn green btn-arrow-login" type="submit" name="login_btn" id="login_btn" value="GİRİŞ YAP">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

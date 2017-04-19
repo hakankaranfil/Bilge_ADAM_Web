@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Sepetim";
+}
+
+<div class="container">
+    <p class="lead">SEPETİM</p>
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <td></td>
+                <td>ÜRÜN</td>
+                <td>ADET</td>
+                <td>TOPLAM FİYAT</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in ViewBag.Liste)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.ProductPhoto" height="200" width="200" alt="">
+                        </td>
+                        <td>
+                            <p class="product-name">
+                                <a title="" href="/Home/BookDetails/@item.ProductID"></a>@item.ProductName
+                            </p>
+
+                        </td>
+                        <td>
+                            <h4 class="quantity">@item.ProductCount</h4>
+                        </td>
+                        <td>
+                            <h4 class="price">@item.Price TL</h4>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-circle" href="/Home/DeleteProduct/@item.ProductID"><i class="fa fa-minus">Sil</i></a>
+                        </td>
+                    </tr>
+                }
+            }
+
+            <tr>
+                <td>
+                    @{
+                        decimal Total = 0;
+                        foreach (var item in ViewBag.Liste)
+                        {
+                            Total += item.TotalPrice;
+                        }
+                    }
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <a href="/Home/Payment" role="button" class="btn green">
+        SATIN AL
+    </a>
+

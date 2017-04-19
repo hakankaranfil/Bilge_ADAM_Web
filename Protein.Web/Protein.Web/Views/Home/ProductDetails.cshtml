@@ -2,19 +2,92 @@
 @{
     ViewBag.Title = "ProductDetails";
 }
+<style type="text/css">
+    #marka {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: initial;
+        font-size: 20px;
+    }
 
-<div class="row">
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="@Model.ProductPhoto" alt="">
-        </a>
+    #icerik {
+        font-size: 16px;
+    }
+
+    #name {
+        font-size: 22px;
+    }
+</style>
+<form role="form" method="post">
+    <input type="hidden" name="ProductPhoto" value="@Model.ProductPhoto" />
+    <input type="hidden" name="ProductName" value="@Model.ProductName" />
+    <div class="row">
+        <div class="photo">
+            <img class="image"
+                 id="photo"
+                 name="ProductPhoto"
+                 value="@Model.ProductPhoto"
+                 img-responsive"
+                 src="@Model.ProductPhoto" />
+
+            <div class="row">
+                <div class="detail col-lg-9">
+                    <div class="thumbnail">
+                        <div class="product-name">
+                            <p class="product-name">
+                                <a href="#"
+                                   id="name"
+                                   value="@Model.ProductName"
+                                   name="ProductName">
+                                    @Model.ProductName
+                                </a>
+                            </p>
+
+                            <p class="who">
+                                <strong>Marka: </strong>
+                                <a name="Brand"
+                                   target="_blank"
+                                   id="marka"
+                                   href="#">
+                                    @Model.Brand
+                                </a>
+                            </p>
+                            <p name="ProductContent" id="icerik">
+
+                                @(new HtmlString(Model.ProductContent.ToString()))
+                            </p>
+                            <br />
+
+                            <input type="hidden" name="ProductId" value="@Model.ProductID" />
+                            <div class="row">
+                                <div class="col-lg-3 col-lg-offset-5  text-right">
+
+                                    <input type="hidden"
+                                           value="@Model.Price"
+                                           id="ucret"
+                                           name="Price" />
+                                    <h3>
+                                        <strong>@Model.Price TL</strong>
+                                    </h3>
+                                </div>
+                                <div class="col-lg-1">
+                                    <input type="number"
+                                           class="numeric form-control"
+                                           value="1"
+                                           min="1"
+                                           name="ProductCount" />
+                                </div>
+                                <div class="col-lg-1">
+                                    <button type="submit"
+                                            class="myBtn btn btn-lg">
+                                        SEPETE EKLE
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-5">
-        <h3>@Model.Brand</h3>
-        <h4>@Model.ProductName</h4>
-        <p>@Model.ProductContent</p>
-        <p>@Model.Price</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-    </div>
+</form>
 

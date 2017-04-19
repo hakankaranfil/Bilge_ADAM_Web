@@ -22,5 +22,6 @@ namespace Protein.Entity.Model
             }
         }
         public string ProductPhoto { get; set; }
+        
     }
 }

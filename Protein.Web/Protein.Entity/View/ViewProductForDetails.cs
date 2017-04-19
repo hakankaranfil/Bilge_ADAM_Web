@@ -14,7 +14,8 @@ namespace Protein.Entity.View
         public string ProductContent{ get; set; }
         public string ProductPhoto { get; set; }
         public int Price { get; set; }
-        
+        public int ProductCount { get; set; }
+
 
 
     }

@@ -38,6 +38,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,6 +59,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201704021125363_InitialCreate.cs" />
+    <Compile Include="Migrations\201704021125363_InitialCreate.Designer.cs">
+      <DependentUpon>201704021125363_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704061141551_ekle.cs" />
+    <Compile Include="Migrations\201704061141551_ekle.Designer.cs">
+      <DependentUpon>201704061141551_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704071509500_ekle1.cs" />
+    <Compile Include="Migrations\201704071509500_ekle1.Designer.cs">
+      <DependentUpon>201704071509500_ekle1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704071519546_ekle2.cs" />
+    <Compile Include="Migrations\201704071519546_ekle2.Designer.cs">
+      <DependentUpon>201704071519546_ekle2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704081239530_ekle3.cs" />
+    <Compile Include="Migrations\201704081239530_ekle3.Designer.cs">
+      <DependentUpon>201704081239530_ekle3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704081935062_ekle4.cs" />
+    <Compile Include="Migrations\201704081935062_ekle4.Designer.cs">
+      <DependentUpon>201704081935062_ekle4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171434442_ekle5.cs" />
+    <Compile Include="Migrations\201704171434442_ekle5.Designer.cs">
+      <DependentUpon>201704171434442_ekle5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171948373_ekle6.cs" />
+    <Compile Include="Migrations\201704171948373_ekle6.Designer.cs">
+      <DependentUpon>201704171948373_ekle6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Brand.cs" />
     <Compile Include="Model\Category.cs" />
@@ -59,11 +100,42 @@
     <Compile Include="Model\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\ProteinDBContext.cs" />
+    <Compile Include="View\ViewPayment.cs" />
+    <Compile Include="View\ViewProductAndCategory.cs" />
     <Compile Include="View\ViewProductForDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704021125363_InitialCreate.resx">
+      <DependentUpon>201704021125363_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704061141551_ekle.resx">
+      <DependentUpon>201704061141551_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704071509500_ekle1.resx">
+      <DependentUpon>201704071509500_ekle1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704071519546_ekle2.resx">
+      <DependentUpon>201704071519546_ekle2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081239530_ekle3.resx">
+      <DependentUpon>201704081239530_ekle3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081935062_ekle4.resx">
+      <DependentUpon>201704081935062_ekle4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171434442_ekle5.resx">
+      <DependentUpon>201704171434442_ekle5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171948373_ekle6.resx">
+      <DependentUpon>201704171948373_ekle6.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,8 +30,25 @@ namespace Protein.DAL
                         ProductName=b.ProductName,
                         Price=b.Price,
                         ProductContent=b.ProductContent,
-                        ProductPhoto=b.ProductPhoto,               
+                        ProductPhoto=b.ProductPhoto, 
+                                      
                     }).FirstOrDefault();
+            }
+        }
+        public static List<Product> ProductCategory(int id)
+        {
+            using (ProteinDBContext db = new ProteinDBContext())
+            {
+              return  db.Product.Where(p => p.CategoryID == id).ToList();
+                
+                
+            }
+        }
+        public static List<Product> ProductSearch(string search)
+        {
+            using (ProteinDBContext db = new ProteinDBContext())
+            {
+                return db.Product.Where(p => p.ProductName.Contains(search)||p.Category.CategoryName.Contains(search)).ToList();
             }
         }
     }
