@@ -37,5 +37,17 @@ namespace ApiSimple.Service.Controllers
             db.Categories.Add(cat);
             db.SaveChanges();
         }
+        public void Put(Categori kategori)
+        {
+            var cat = db.Categories.FirstOrDefault(c => c.CategoryID == kategori.CategoriID);
+            cat.CategoryName = kategori.CategoriName;
+            db.SaveChanges();
+        }
+        public void Delete(int id)
+        {
+            var cat = db.Categories.FirstOrDefault(c => c.CategoryID == id);
+            db.Categories.Remove(cat);
+            db.SaveChanges();
+        }
     }
 }
