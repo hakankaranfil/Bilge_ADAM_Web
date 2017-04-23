@@ -29,25 +29,24 @@
         <header>
             <h2>Ödeme</h2>
         </header>
+        <div class="checkout-details">
 
-
-        @*<div class="checkout-details">
-
-                <div class="row">
-                    @using (Html.BeginForm("Update", "Home", FormMethod.Post))
-                    {
-                        <div id="billingAddressList">
-                            <div id="billingList">
-                                <header>
-                                    <h2>Kargo Teslim Adresi</h2>
-                                </header>
-                                <div id="billingAddress">
-                                    <div class="address-cell bill-address-cell" id="billing-address-cell">
-                                        <div class="address-detail">
-                                            <div class="text">
-                                                <input type="text" name="shippingAddress" value="@Model.Address" />
-                                                <hr>
-                                                <p>T. @Model.Phone</p>
+            <div class="row">
+                @using (Html.BeginForm("Update", "Home", FormMethod.Post))
+                {
+                    <div id="billingAddressList">
+                        <div id="billingList">
+                            <header>
+                                <h2>Kargo Teslim Adresi</h2>
+                            </header>
+                            <div id="billingAddress">
+                                <div class="address-cell bill-address-cell" id="billing-address-cell">
+                                    <div class="address-detail">
+                                        <div class="text">
+                                            <input type="text" name="shippingAddress" value="@Model.Address" />
+                                            <hr>
+                                            <p>İsim:@Model.Name</p>
+                                                <p>Tel: @Model.Phone</p>
                                             </div>
                                             <div class="cta">
                                                 <input type="submit" class="btn white-border" value="GÜNCELLE">
@@ -57,10 +56,10 @@
                                 </div>
                             </div>
                         </div>
-                    }
+                }
 
-                </div>
-            </div>*@
+            </div>
+        </div>
 
 
         <div id="orderSummary">
@@ -88,7 +87,7 @@
                                     <div class="detail">
                                         <p class="product-name"><a href="/Kitap-Bilgileri/@item.ProductID" title="">@item.ProductName</a></p>
                                         <p class="product-type"> @item.ProductCount ADET </p>
-                                        <p class="product-price"><a href="/Kitap-Bilgileri/@item.ProductID">@item.Price TL</a></p>
+                                        <p class="product-price"><a href="@item.ProductID">@item.Price TL</a></p>
                                     </div>
                                 </li>
                             }
@@ -119,11 +118,11 @@
 
                         }
 
-</div>
+                    </div>
                     <form role="form" method="post">
                         <div class="cta">
-                            <a class="btn white-border" href="/Sepetim">SEPETİ DÜZENLE</a>
-                            <a class="btn white-border" href="/Anasayfa">ALIŞVERİŞE DEVAM ET</a>
+                            <a class="btn white-border" href="/Home/Sepetim">SEPETİ DÜZENLE</a>
+                            <a class="btn white-border" href="/Home/Index">ALIŞVERİŞE DEVAM ET</a>
                             <button type="submit" class="btn white-border red" style="max-width:767px;">SİPARİŞİ TAMAMLA</button>
                             <input type="hidden" value="@Total" name="Total" />
                         </div>

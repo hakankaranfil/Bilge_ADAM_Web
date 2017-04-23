@@ -29,11 +29,9 @@ namespace Protein.Web.Controllers
         [HttpPost]
         public ActionResult Search(string search)
         {
-            if (!String.IsNullOrEmpty(search))
-            {
+          
                 return View(ProductRepo.ProductSearch(search));
-            }
-            return View();
+          
         }
         public ActionResult ProductDetails(int id)
         {
@@ -97,7 +95,7 @@ namespace Protein.Web.Controllers
         }
         public ActionResult DeleteProduct(int id)
         {
-            var ls = Chart.ShoppingList.Find(c=>c.ProductID==id);
+            var ls = Chart.ShoppingList.Find(c => c.ProductID == id);
             Chart.ShoppingList.Remove(ls);
             return RedirectToAction("Sepetim", "Home");
         }
@@ -111,7 +109,8 @@ namespace Protein.Web.Controllers
                 {
                     Address = logedCustomer.Address,
                     Phone = logedCustomer.Phone,
-                    ShoppingList = Chart.ShoppingList
+                    ShoppingList = Chart.ShoppingList,
+                    Name = logedCustomer.Name
                 };
 
                 return View(model);
@@ -120,9 +119,21 @@ namespace Protein.Web.Controllers
             {
                 return RedirectToAction("Login", "Customer");
             }
-
+        }
+        [HttpPost]
+        public ActionResult Payment(decimal Total)
+        {
+            Custom cs = new Custom();
+            cs.TotalBill=(double)Total;
+            cs.ShoppingBag = Chart.ShoppingList;
+            cs.OrderDate = DateTime.Now;
+            var logedCustomer = Session["Customer"] as Customer;
+            cs.ShippingAddress = logedCustomer.Address;
+            cs.CustomerID = logedCustomer.CustomerID;
+            CustomRepo.AddCustom(cs);
+            return RedirectToAction("Index", "Home");
         }
     }
-    }
+}
 
 

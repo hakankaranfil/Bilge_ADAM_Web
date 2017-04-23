@@ -45,9 +45,8 @@ namespace Protein.Test1
                 db.Product.Add(b);
                 Customer cu = new Customer()
                 {
-                    CustomerName = "Hakan Karanfil",
-                    Address = "izmir",
-                    Total = 30,
+                    Name = "Hakan Karanfil",
+                    Address = "izmir"
 
                 };
 

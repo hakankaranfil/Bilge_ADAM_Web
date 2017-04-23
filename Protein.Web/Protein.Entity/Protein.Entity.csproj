@@ -91,15 +91,29 @@
     <Compile Include="Migrations\201704171948373_ekle6.Designer.cs">
       <DependentUpon>201704171948373_ekle6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704201235268_ekle7.cs" />
+    <Compile Include="Migrations\201704201235268_ekle7.Designer.cs">
+      <DependentUpon>201704201235268_ekle7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704232117514_ekle8.cs" />
+    <Compile Include="Migrations\201704232117514_ekle8.Designer.cs">
+      <DependentUpon>201704232117514_ekle8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704232138525_ekle9.cs" />
+    <Compile Include="Migrations\201704232138525_ekle9.Designer.cs">
+      <DependentUpon>201704232138525_ekle9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Brand.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Custom.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\ProteinDBContext.cs" />
+    <Compile Include="View\ViewCustomerCustom.cs" />
     <Compile Include="View\ViewPayment.cs" />
     <Compile Include="View\ViewProductAndCategory.cs" />
     <Compile Include="View\ViewProductForDetails.cs" />
@@ -132,6 +146,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704171948373_ekle6.resx">
       <DependentUpon>201704171948373_ekle6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704201235268_ekle7.resx">
+      <DependentUpon>201704201235268_ekle7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704232117514_ekle8.resx">
+      <DependentUpon>201704232117514_ekle8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704232138525_ekle9.resx">
+      <DependentUpon>201704232138525_ekle9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

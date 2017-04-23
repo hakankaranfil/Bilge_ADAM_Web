@@ -9,5 +9,6 @@ namespace Protein.Web.Model
     public class Chart
     {
         public static List<ShoppingCart> ShoppingList = new List<ShoppingCart>();
+        
     }
 }

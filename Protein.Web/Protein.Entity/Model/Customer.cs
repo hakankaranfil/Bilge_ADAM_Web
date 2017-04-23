@@ -10,25 +10,27 @@ namespace Protein.Entity.Model
   public  class Customer
     {
         public int CustomerID { get; set; }
-        //[Required(ErrorMessage = "Lütfen adınızı giriniz.")]
+        [Required]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "* A valid first name is required.")]
+        [Display(Name = "First Name")]
         public string Name { get; set; }
-        //[Required(ErrorMessage = "Lütfen soyadınızı giriniz.")]
-        
+        [Required]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "* A valid last name is required.")]
+        [Display(Name = "Last Name")]
         public string Surname { get; set; }
-        //[Required(ErrorMessage = "Lütfen telefon numaranızı giriniz.")]
-        [DataType(DataType.PhoneNumber)]
+        [Required]
+        [StringLength(15, MinimumLength = 9, ErrorMessage = "* A valid phone nunber is required.")]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
         public string Phone { get; set; }
-        [Required(ErrorMessage = "Email boş bırakılamaz")]
-        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                             @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                             @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
-                             ErrorMessage = "Email adresi geçersiz")]
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "Mail adresiniz geçersiz")]
+        [EmailAddress(ErrorMessage = "Mail adresiniz geçersiz")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Lütfen şifrenizi giriniz.")]
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Şifre")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
-
         public string Address { get; set; }
     }
 }

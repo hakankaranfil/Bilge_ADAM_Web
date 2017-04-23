@@ -1,5 +1,5 @@
 ﻿
-@model Protein.Entity.Model.Customer
+    @model Tuple<Protein.Entity.Model.Customer,Protein.Entity.Model.Custom>
 
 
 @{
@@ -14,32 +14,54 @@
             <header>
                 <h2>Kişisel Bilgilerim</h2>
             </header>
+         
             <div class="half">
                 <div class="form-row">
                     <label for="name">Ad</label>
-                    <input type="text" value="@Model.Name" name="Name" maxlength="25" autocomplete="off">
+                    <input type="text" value="@Model.Item1.Name" name="Name" maxlength="25" autocomplete="off">
                 </div>
                 <div class="form-row">
                     <label for="surname">Soyad</label>
-                    <input type="text" value="@Model.Surname" name="Surname" maxlength="25" autocomplete="off">
+                    <input type="text" value="@Model.Item1.Surname" name="Surname" maxlength="25" autocomplete="off">
                 </div>
 
             </div>
             <div class="half">
                 <div class="form-row">
                     <label for="mobile">Cep Telefonu</label>
-                    <input type="text" value="@Model.Phone" name="Phone" maxlength="30" autocomplete="off">
+                    <input type="text" value="@Model.Item1.Phone" name="Phone" maxlength="30" autocomplete="off">
                 </div>
                 <div class="form-row">
                     <label for="mobile">Adres</label>
-                    <input type="text" value="@Model.Address" name="Address" maxlength="30" autocomplete="off">
+                    <input type="text" value="@Model.Item1.Address" name="Address" maxlength="30" autocomplete="off">
                 </div>
             </div>
+            
             </div>
-            <input type="hidden" name="CustomerID" value=@Model.CustomerID>
+        <div class="container">
+            <header>
+                <h2>Sipariş Bilgilerim</h2>
+            </header>
+
+            <div class="half">
+                <div class="form-row">
+                    <label for="name">Ad</label>
+                    <input type="text" value="@Model.Item2.TotalBill" name="Name" maxlength="25" autocomplete="off">
+                </div>
+                <div class="form-row">
+                    <label for="surname">Soyad</label>
+                    <input type="text" value="@Model.Item2.OrderDate" name="Surname" maxlength="25" autocomplete="off">
+                </div>
+
+            </div>
+
+        </div>
+
+
+            @*<input type="hidden" name="CustomerID" value=@Model.CustomerID>
             <div class="full">
                 <input type="submit" class="btn grey" value="Bilgilerimi Güncelle">
-            </div>
+            </div>*@
      
     </section>
 }

@@ -46,10 +46,15 @@ namespace Protein.DAL
         }
         public static List<Product> ProductSearch(string search)
         {
-            using (ProteinDBContext db = new ProteinDBContext())
+            var response = new List<Product>();
+            if (string.IsNullOrEmpty(search)==false)
             {
-                return db.Product.Where(p => p.ProductName.Contains(search)||p.Category.CategoryName.Contains(search)).ToList();
+                using (ProteinDBContext db = new ProteinDBContext())
+                {
+                    return db.Product.Where(p => p.ProductName.Contains(search) || p.Category.CategoryName.Contains(search)).ToList();
+                }
             }
+            return response;  
         }
     }
 }

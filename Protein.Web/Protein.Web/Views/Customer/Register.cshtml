@@ -16,14 +16,17 @@
                     <div class="form-row">
                         <label for="name">Ad *</label>
                         <input type="text" id="name" maxlength="35" name="Name" title="Lütfen Adınızı Giriniz" autocomplete="off" required>
+                        @Html.ValidationMessageFor(m => m.Name)
                     </div>
                     <div class="form-row">
                         <label for="name">Soyad *</label>
                         <input type="text" id="surNameField" maxlength="35" name="Surname" title="Lütfen Soyadnızı Giriniz." autocomplete="off" required>
+                        @Html.ValidationMessageFor(m => m.Surname)
                     </div>
                     <div class="form-row">
                         <label for="e-mail">E-posta Adresiniz *</label>
                         <input type="text" id="e-mail" title="Lütfen e-posta adresinizi giriniz" maxlength="60" name="Email" autocomplete="off" required>
+                        @Html.ValidationMessageFor(m => m.Email)
                     </div>
                 </div>
 
@@ -31,15 +34,19 @@
                     <div class="form-row">
                         <label for="mobile">Cep Telefonu</label>
                         <input type="tel" id="mobile" maxlength="30" name="Phone" class="form-control" autocomplete="off">
+                        @Html.ValidationMessageFor(m => m.Phone)
                     </div>
 
                     <div class="form-row">
                         <label for="password">Parola *</label>
                         <input type="password" id="password" name="Password" maxlength="30" title="Şifreniz minimum 8 karakter olmalı en az 1 rakam ve büyük/küçük harf içermelidir." autocomplete="off" required>
+                        @Html.ValidationMessageFor(m => m.Password)
                     </div>
+
                     <div class="form-row">
                         <label for="address">Adres *</label>
                         <input type="text" id="adress" name="Address" maxlength="30" title="Lütden adresinizi giriniz" autocomplete="off" required>
+
                     </div>
                 </div>
 

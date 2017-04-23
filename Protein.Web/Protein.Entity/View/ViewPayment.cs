@@ -15,6 +15,8 @@ namespace Protein.Entity.View
 
         public string Address { get; set; }
 
+        public string Name { get; set; }
+
         public List<ShoppingCart> ShoppingList { get; set; }
     }
 }

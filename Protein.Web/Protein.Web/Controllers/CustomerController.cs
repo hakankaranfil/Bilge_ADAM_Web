@@ -1,5 +1,7 @@
 ﻿using Protein.DAL.Repo;
+using Protein.Entity;
 using Protein.Entity.Model;
+using Protein.Entity.View;
 using Protein.Web.Model;
 using System;
 using System.Collections.Generic;
@@ -72,24 +74,27 @@ namespace Protein.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Account(Customer newCustomer, int? id)
+        public ActionResult Account()
         {
-            //if (id != null)
+            using (ProteinDBContext db = new ProteinDBContext())
+            {
+                var cs = new Tuple<List<Customer>, List<Custom>>(db.Customer.ToList<Customer>(), db.Custom.ToList<Custom>());
+                return View(cs);
+            }
+    
+           
             //{
-            //    return View(CustomerRepo.GetID((int)id));
+            //    if (newcustomer.CustomerID == 0)
+            //    {
+            //        var customer = Session["Customer"] as Customer;
+            //        return View(customer);
+            //    }
+            //    else
+            //    {
+            //        return View(newcustomer);
+            //    }
             //}
-            //else
-            //{
-            if (newCustomer.CustomerID == 0)
-            {
-                var customer = Session["Customer"] as Customer;
-                return View(customer);
-            }
-            else
-            {
-                return View(newCustomer);
-            }
-}
+        }
         [HttpPost]
         public ActionResult UpdatedInfo(Customer customer)
         {
