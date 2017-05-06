@@ -11,6 +11,7 @@ namespace Protein.Entity
         public ProteinDBContext()
             : base("name=ProteinDB")
         {
+           
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

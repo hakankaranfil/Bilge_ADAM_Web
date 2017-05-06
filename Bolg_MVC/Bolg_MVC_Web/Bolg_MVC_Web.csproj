@@ -180,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin2\admin2AreaRegistration.cs" />
+    <Compile Include="Areas\admin2\Controllers\Admin2Controller.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -191,7 +193,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -216,6 +220,10 @@
     <Content Include="Content\css\Summernote\font\summernote.woff" />
     <Content Include="Views\Home\PostDetail.cshtml" />
     <Content Include="Views\Login\GET.cshtml" />
+    <Content Include="Areas\admin2\Views\web.config" />
+    <Content Include="Areas\admin2\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\admin2\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\admin2\Views\Admin2\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin2\Models\" />
     <Folder Include="Scripts\Summernote\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>

@@ -74,26 +74,20 @@ namespace Protein.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Account()
+        public ActionResult Account(Customer newcustomer)
         {
-            using (ProteinDBContext db = new ProteinDBContext())
             {
-                var cs = new Tuple<List<Customer>, List<Custom>>(db.Customer.ToList<Customer>(), db.Custom.ToList<Custom>());
-                return View(cs);
+                if (newcustomer.CustomerID == 0)
+                {
+                    var customer = Session["Customer"] as Customer;
+                    return View(customer);
+                }
+                else
+                {
+                    return View(newcustomer);
+                }
             }
-    
-           
-            //{
-            //    if (newcustomer.CustomerID == 0)
-            //    {
-            //        var customer = Session["Customer"] as Customer;
-            //        return View(customer);
-            //    }
-            //    else
-            //    {
-            //        return View(newcustomer);
-            //    }
-            //}
+
         }
         [HttpPost]
         public ActionResult UpdatedInfo(Customer customer)

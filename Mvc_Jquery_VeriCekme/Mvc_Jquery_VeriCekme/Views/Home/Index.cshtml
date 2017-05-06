@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+   
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+     <button id="btncek">Veri çek</button>
+        <ul></ul>
+    </div>
+</body>
+</html>
+<script>
+    $("#btncek").click(function () {
+        $.getJSON("/Home/GetProducts", function (data)
+        {
+            $.each(data, function (key, value)
+            {
+                $("ul").append("<li>" + value.BookName + "</li>")
+            })
+        })
+    
+    })
+</script>

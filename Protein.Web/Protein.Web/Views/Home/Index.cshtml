@@ -12,7 +12,7 @@
                 @foreach (var item in ViewBag.Category)
                 {
                     <ul>
-                        <li class="sepet">
+                        <li id="sep" class="sepet">
                             <a href="/Home/ProductCategory/@item.CategoryID" class="list-group-item">@item.CategoryName</a>
                         </li>
                     </ul>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Ürünlerimiz</h2>
+            <h2 id="ü">Ürünlerimiz</h2>
             <div class="row">
                 @foreach (var item in Model)
                 {
@@ -75,6 +75,7 @@
         </div>
     </div>
 </div>
+  
 
 
 

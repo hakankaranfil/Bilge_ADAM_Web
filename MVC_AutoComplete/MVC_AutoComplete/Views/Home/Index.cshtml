@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p> Arama</p>
+
+<input type="text" id="search"  />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#search").autocomplete({
+            source:'/Home/Search',
+            minLenght: 1,
+            select: function (event, ui)
+            {
+                window.location = ui.item.url;//home controllerdan gelen url 
+            }
+        });
+    });
+</script>

@@ -1,0 +1,75 @@
+﻿
+@model Yemek.Entity.Model.Student
+@{
+    ViewBag.Title = "Admin";
+}
+
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Yazı Bilgileri
+            </div>
+            @using (Html.BeginForm())
+            {
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StudentName, new { @placeholder = "İsim" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StudentSurName, new { @placeholder = "Soyad" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StudentNumber, new { @placeholder = "Numara" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StudentEmail, new { @placeholder = "Email" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StudentPassword, new { @placeholder = "Şifre" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.StartingDate, new { @placeholder = "Kayıt Tarihi" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.DueDate, new { @placeholder = "Bitiş Tarihi" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(s => s.Balance, new { @placeholder = "Bakiye" })
+                        </div>
+                        <button type="submit"
+                                class="btn btn-primary btn-block">
+                            Kaydet
+                        </button>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    $('.form-group input').attr('class', 'form-control')
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

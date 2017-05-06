@@ -1,0 +1,37 @@
+﻿@model List<PartialView.Models.CustomerInformation>
+<style type="text/css">
+    .table-user tr td {
+        width: 150px;
+    }
+</style>
+<table class="table-user">
+    <thead>
+        <tr>
+            <td>
+                Ad
+            </td>
+            <td>
+                Soyad
+            </td>
+            <td>
+                İşlem
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                   @item.Name
+                </td>
+                <td>
+                   @item.Surname
+                </td>
+                <td>
+                    <input type="button" value="Güncelle" data-id="@item.CustomerID" class="btn-update" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

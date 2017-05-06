@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee4865e6c6c245d18e9c3c5319db7818" Name="Diagram1">
+        <EntityTypeShape EntityType="KutuphaneDBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.Rent" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.User" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneDBModel.Writer" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="KutuphaneDBModel.FK_dbo_Books_dbo_Writers_WriterID" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneDBModel.FK_dbo_Rents_dbo_Books_BookID" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneDBModel.FK_dbo_Rents_dbo_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneDBModel.FK_dbo_Rents_dbo_Writers_Writer_WriterID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

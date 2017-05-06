@@ -36,7 +36,8 @@
                             <h4 class="price">@item.Price TL</h4>
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-circle" href="/Home/DeleteProduct/@item.ProductID"><i class="fa fa-minus">Sil</i></a>
+                            @*<a class="btn btn-danger btn-circle" href="/Home/DeleteProduct/@item.ProductID"><i class="fa fa-minus">Sil</i></a>*@
+                            <input type="button" class="delete" value="Sil" data-id="@item.ProductID" />
                         </td>
                     </tr>
                 }
@@ -60,4 +61,25 @@
     <a href="/Home/Payment" role="button" class="btn green">
         SATIN AL
     </a>
+    <script type="text/javascript">
+        $(document).on("click", ".delete", function () {
+            var confirmdelete = confirm("Ürünü silmek istiyor musunuz?");
+            if (confirmdelete) {
+                var id = $(this).attr("data-id");
+                var deletetr = $(this).closest("tr");
+                $.ajax({
+                    url: '/Home/DeleteProduct/' + id,
+                    type: 'Post',
+                    success: function (result) {
+                        if (result == "1") {
+                           alert("Silindi")
+                        }
+                        else {
+                            alert("Hata oluştu")
+                        }
+                    }
+               })
+            }
+        });
+    </script>
 

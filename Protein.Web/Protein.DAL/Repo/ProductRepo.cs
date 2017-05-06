@@ -39,9 +39,7 @@ namespace Protein.DAL
         {
             using (ProteinDBContext db = new ProteinDBContext())
             {
-              return  db.Product.Where(p => p.CategoryID == id).ToList();
-                
-                
+              return  db.Product.Where(p => p.CategoryID == id).ToList();  
             }
         }
         public static List<Product> ProductSearch(string search)

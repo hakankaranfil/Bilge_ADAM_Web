@@ -93,11 +93,21 @@ namespace Protein.Web.Controllers
             ViewBag.Total = Total;
             return RedirectToAction("Payment", "Home");
         }
-        public ActionResult DeleteProduct(int id)
+        [HttpPost]
+        public string DeleteProduct(int id)
         {
-            var ls = Chart.ShoppingList.Find(c => c.ProductID == id);
-            Chart.ShoppingList.Remove(ls);
-            return RedirectToAction("Sepetim", "Home");
+            try
+            {
+                var ls = Chart.ShoppingList.Find(c => c.ProductID == id);
+                Chart.ShoppingList.Remove(ls);
+                //return RedirectToAction("Sepetim", "Home");
+                return "1";
+            }
+            catch (Exception)
+            {
+                return "-1";
+             
+            }
         }
         public ActionResult Payment()
         {

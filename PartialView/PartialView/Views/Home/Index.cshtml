@@ -1,0 +1,60 @@
+﻿@model PartialView.Models.CustomerInformation
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kullanıcı Listesi</h2>
+<input type="button"  value="Yeni kullanıcı" id="btn-create"/>
+<div id="user-content">
+    @Html.Action("UserList", "Home")
+    </div>
+    <div id="dialog-user" title="Kullanıcı İşlemleri">
+        @using (Ajax.BeginForm("Add", "Home", FormMethod.Post, new AjaxOptions { OnSuccess = "Create" }, new { id = "frm-create" }))
+        {
+            @Html.HiddenFor(m => m.CustomerID)
+
+            <div>
+                Ad:
+                <br />
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <div>
+                Soyad
+                <br />
+                @Html.TextBoxFor(m => m.Surname)
+            </div>
+            <div style="margin-top:10px;">
+                <input type="submit" value="Kaydet" />
+            </div>
+        }
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn-create").click(function () {
+                $("#dialog-user").dialog("open");
+                //$("#frm-create")[0].reset();
+                $("#KullaniciID").val("0");
+            });
+
+            $("#dialog-user").dialog({
+                width: 350,
+                height: 400,
+                autoOpen: false
+            });
+        });
+        function Create(result) {
+            if (result == "1") {
+                $.ajax({
+                    url: '/Home/UserList',
+                    type: 'get',
+                    dataType: 'html',
+                    success: function (data) {
+                        $("#user-content").html(data);
+                        $("#dialog-user").dialog("close");
+                    }
+                });
+            }
+        }
+    </script>
+
