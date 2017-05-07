@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Yemek.Web.Attiribute;
 
 namespace Yemek.Web.Controllers
 {
-    [LoginControl]
-    public class OgrenciController : Controller
+    public class HomeController : Controller
     {
-        // GET: Ogrenci
+        // GET: Home
         public ActionResult Index()
         {
             return View();

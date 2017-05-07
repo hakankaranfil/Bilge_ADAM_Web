@@ -135,6 +135,9 @@
     <Content Include="Content\Css\morris.css" />
     <Content Include="Content\Css\sb-admin-2.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Home\materialize.css" />
+    <Content Include="Content\Home\materialize.min.css" />
+    <Content Include="Content\Home\modal.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -151,7 +154,21 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="Content\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="Content\fonts\roboto\Roboto-Thin.woff2" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Photos\Facebook.png" />
+    <Content Include="Photos\Home.png" />
+    <Content Include="Photos\Insatagram_1.png" />
+    <Content Include="Photos\Swarm.png" />
     <Content Include="Scripts\Admin\bootstrap.min.js" />
     <Content Include="Scripts\Admin\jquery.min.js" />
     <Content Include="Scripts\Admin\metisMenu.min.js" />
@@ -161,6 +178,8 @@
     <Content Include="Scripts\Admin\sb-admin-2.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Home\materialize.js" />
+    <Content Include="Scripts\Home\materialize.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -175,8 +194,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attiribute\LoginControl.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\OgrenciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,6 +214,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Admin\Add.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

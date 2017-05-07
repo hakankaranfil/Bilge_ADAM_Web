@@ -28,7 +28,7 @@ namespace Yemek.Web.Controllers
                     if (s != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Email, true);
-                        return RedirectToAction("Index", "Ogrenci");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }
