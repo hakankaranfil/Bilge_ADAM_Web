@@ -15,8 +15,7 @@ namespace Blog_MVC_DAL.Repos
             using (BlogDBContext db = new BlogDBContext())
             {
                 return db.Post.Where(p => p.IsDeleted == false).OrderByDescending(p => p.PostDate).ToList();
-               
-
+              
             }
         }
         public static void Add(Post post)

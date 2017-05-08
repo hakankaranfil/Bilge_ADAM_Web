@@ -1,8 +1,7 @@
-﻿
-    @*<meta name="viewport" content="width=device-width" />
+﻿@*<meta name="viewport" content="width=device-width" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="~/Content/Home/materialize.min.css" rel="stylesheet" />
-    
+
     <script src="~/Scripts/jquery-3.1.1.js"></script>
     <script src="~/Scripts/Home/materialize.min.js"></script>*@
 <!DOCTYPE html>
@@ -24,60 +23,57 @@
     <script src="~/Scripts/Home/sForm.js"></script>
     <script src="~/Scripts/Home/jquery.carouFredSel-6.1.0-packed.js"></script>
     <script src="~/Scripts/Home/tms-0.4.1.js"></script>
-    <style type="text/css">
-        #icons{
-          
+    <style>
+        .responsive-img{
+            max-height:50px;
+        }
             
-        }
     </style>
+
     <script>
-       
-$(window).load(function () {
-    $('.slider')._TMS({
-        show: 0,
-        pauseOnHover: false,
-        prevBu: '.prev',
-        nextBu: '.next',
-        playBu: false,
-        duration: 800,
-        preset: 'fade',
-        pagination: true, //'.pagination',true,'<ul></ul>'
-        pagNums: false,
-        slideshow: 8000,
-        numStatus: false,
-        banners: false,
-        waitBannerAnimation: false,
-        progressBar: false
-    })
-});
-$(window).load(function () {
-    $('.carousel1').carouFredSel({
-        auto: false,
-        prev: '.prev',
-        next: '.next',
-        width: 960,
-        items: {
-            visible: {
-                min: 1,
-                max: 4
-            },
-            height: 'auto',
-            width: 240,
-        },
-        responsive: false,
-        scroll: 1,
-        mousewheel: false,
-        swipe: {
-            onMouse: false,
-            onTouch: false
-        }
-    });
-});
+
+        $(window).load(function () {
+            $('.slider')._TMS({
+                show: 0,
+                pauseOnHover: false,
+                prevBu: '.prev',
+                nextBu: '.next',
+                playBu: false,
+                duration: 800,
+                preset: 'fade',
+                pagination: true, //'.pagination',true,'<ul></ul>'
+                pagNums: false,
+                slideshow: 8000,
+                numStatus: false,
+                banners: false,
+                waitBannerAnimation: false,
+                progressBar: false
+            })
+        });
+        $(window).load(function () {
+            $('.carousel1').carouFredSel({
+                auto: false,
+                prev: '.prev',
+                next: '.next',
+                width: 960,
+                items: {
+                    visible: {
+                        min: 1,
+                        max: 4
+                    },
+                    height: 'auto',
+                    width: 240,
+                },
+                responsive: false,
+                scroll: 1,
+                mousewheel: false,
+                swipe: {
+                    onMouse: false,
+                    onTouch: false
+                }
+            });
+        });
     </script>
-    [if lt IE 9]>
-    @*<script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" media="screen" href="css/ie.css">*@
-    <![endif]
 </head>
 <body>
     <div class="main">
@@ -89,17 +85,9 @@ $(window).load(function () {
                         <nav>
                             <ul class="sf-menu">
                                 <li class="current"><a href="index.html">Ana Sayfa</a></li>
-                                @*<li class="with_ul">
-                                    <a href="about-us.html">About Us</a>
-                                    <ul>
-                                        <li><a href="#"> cuisine</a></li>
-                                        <li><a href="#">Good rest</a></li>
-                                        <li><a href="#">Services</a></li>
-                                    </ul>*@
-                                @*</li>*@
                                 <li><a href="menu.html">Günün Menüsü</a></li>
                                 <li><a href="portfolio.html">Fotoğraflar</a></li>
-                                <li><a href="news.html">Hakkımızda</a></li>
+                                <li><a href="news.html">İletişim</a></li>
                                 <li><a href="contacts.html">Üye OL</a></li>
                             </ul>
                         </nav>
@@ -109,101 +97,33 @@ $(window).load(function () {
                 </div>
             </div>
         </header>
-        <div class="slider-relative">
-            <div class="slider-block">
-                <div class="slider">
-                    <ul class="items">
-                        <li><img src="~/Photos/slide.jpg" alt=""></li>
-                        <li><img src="~/Photos/slide1.jpg" alt=""></li>
-                        <li class="mb0"><img src="~/Photos/slide2.jpg" alt=""></li>
-                    </ul>
-                </div>
+        @RenderBody()
+        <footer>
+            <div id="icons">
+                <center>
+                    <br>
+                    <a href="/login"><img src="/Photos/Home.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="http://4sq.com/wEunrC" target="_blank"><img src="/Photos/Swarm.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.facebook.com/Pirin%C3%A7-Cafe-Alsancak-388155611243335" target="_blank"><img src="/Photos/Facebook.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.instagram.com/pirinccafe/" target="_blank"><img src="/Photos/Insatagram_1.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                </center>
             </div>
-        </div>
-        <div class="content page1">
-            <div class="container_12">
-                <div class="grid_7">
-                    <h2>Hoşgeldiniz</h2>
-                    <div class="page1_block col1">
-                        <img src="~/Content/images/welcome_img.png" alt="">
-                        <div class="extra_wrapper">
-                            <p><span class="col2"></span> Sitemize üye olun Günün Menüsü her gün kayıtlı mail adresinize gelsin </p>
-                            
-                           
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="grid_5">
-                    <h2>Features</h2>
-                    <ul class="list">
-                        <li><a href="#">Unlimited consultations and/or planning</a></li>
-                        <li><a href="#">Expert advice on traditions, customs, aetiquette</a></li>
-                        <li><a href="#">Determine and stay within budget</a></li>
-                        <li><a href="#">Choosing the right Wedding Venue</a></li>
-                        <li><a href="#">Provide preferred vendor's list</a></li>
-                        <li><a href="#">Assist with wedding scheme and design</a></li>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-                <div class="grid_12">
-                    <div class="hor_separator"></div>
-                </div>
-                <div class="clear"></div>
-                <div id="icons">
-                    <center>
-                        <br>
-                        <a href="/login"><img src="/Photos/Home.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="http://4sq.com/wEunrC" target="_blank"><img src="/Photos/Swarm.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://www.facebook.com/Pirin%C3%A7-Cafe-Alsancak-388155611243335" target="_blank"><img src="/Photos/Facebook.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://www.instagram.com/pirinccafe/" target="_blank"><img src="/Photos/Insatagram_1.png" alt="" class="responsive-img"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#modal1"><img src="/Photos/Mail.png" alt="" class="responsive-img"></a>
-                    </center>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    @*<div class="bottom_block">
-            <div class="grid_6">
-                <h3>Follow Us</h3>
-                <div class="socials"> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
-                <nav>
-                    <ul>
-                        <li class="current"><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="grid_6">
-                <h3>Email Updates</h3>
-                <p class="col1">
-                    Join our digital mailing list and get news<br>
-                    deals and be first to know about events
-                </p>
-                <form id="newsletter" action="#">
-                    <div class="success">Your subscribe request has been sent!</div>
-                    <label class="email">
-                        <input type="email" value="Enter e-mail address">
-                        <a href="#" class="btn" data-type="submit">subscribe</a> <span class="error">*This is not a valid email address.</span>
-                    </label>
-                </form>
-            </div>
-        </div>*@
+        </footer>     
+    </div> 
+</body>
+</html>
 
 
-    <footer>
+
+@*<footer>
         <div class="container_12">
             <div class="grid_12"> Gourmet Traditional Restaurant &copy; 2045 | <a href="#">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com/">TemplateMonster.com</a> </div>
             <div class="clear"></div>
         </div>
-    </footer>,
-    @RenderBody()
-</body>
-</html>
+    </footer>*@
+
+
 
 
 
