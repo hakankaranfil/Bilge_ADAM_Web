@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Staff.cs" />
-    <Compile Include="Model\Student.cs" />
     <Compile Include="Model\YemekDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
