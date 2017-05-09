@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoupRepo.cs" />
     <Compile Include="StaffRepo.cs" />
-    <Compile Include="StudentRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yemek.Entity\Yemek.Entity.csproj">

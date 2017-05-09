@@ -20,31 +20,18 @@ namespace Yemek.Web.Controllers
         [HttpPost]
         public ActionResult Login(ViewLoginType model)
         {
-            if (model.Logintype == LoginType.student)
+            using (YemekDBContext db = new YemekDBContext())
             {
-                using (YemekDBContext db = new YemekDBContext())
+                var staff = db.Staffs.FirstOrDefault(s => s.StaffEmail == model.Email && s.StaffPassword == model.Password);
+                if (staff != null)
                 {
-                    var s = db.Students.FirstOrDefault(j => j.StudentEmail == model.Email && j.StudentPassword == model.Password);
-                    if (s != null)
-                    {
-                        FormsAuthentication.SetAuthCookie(model.Email, true);
-                        return RedirectToAction("Index", "Home");
-                    }
+                    FormsAuthentication.SetAuthCookie(model.Email, true);
+                    return RedirectToAction("Admin", "Admin");
                 }
+                return RedirectToAction("Login", "Login");
             }
-            else
-            {
-                using (YemekDBContext db = new YemekDBContext())
-                {
-                    var staff = db.Staffs.FirstOrDefault(s => s.StaffEmail == model.Email && s.StaffPassword == model.Password);
-                    if (staff != null)
-                    {
-                        FormsAuthentication.SetAuthCookie(model.Email, true);
-                        return RedirectToAction("Admin", "Admin");
-                    }
-                }
-            }
-            return RedirectToAction("Login", "Login");
         }
     }
 }
+
+

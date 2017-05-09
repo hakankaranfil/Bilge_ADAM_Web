@@ -7,6 +7,7 @@ using System.Web.Security;
 using Yemek.DAL;
 using Yemek.Entity.Model;
 using Yemek.Web.Attiribute;
+using Yemek.Web.Models;
 
 namespace Yemek.Web.Controllers
 {
@@ -26,23 +27,9 @@ namespace Yemek.Web.Controllers
         }
         public ActionResult Add()
         {
+            ViewBag.Soup = new SelectList(SoupRepo.GetAllSoup(), "ID", "Name");
             return View();
         }
-        [HttpPost]
-        public ActionResult Add(Student model)
-        {
-            StudentRepo.Add(model);
-            return View();
-            //Student st = new Student();
-            //st.StudentName = model.StudentName;
-            //st.StudentSurName = model.StudentSurName;
-            //st.StudentPassword = model.StudentPassword;
-            //st.StudentNumber = model.StudentNumber;
-            //st.StudentEmail = model.StudentEmail;
-            //st.StartingDate = model.DueDate;
-            //st.Balance = model.Balance;
-            //st.StartingDate = model.StartingDate;
-            //return View(model);
-        }
+
     }
 }
