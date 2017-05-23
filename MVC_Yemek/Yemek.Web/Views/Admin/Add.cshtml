@@ -1,4 +1,4 @@
-﻿@model IList<Yemek.Entity.Model.Product>
+﻿@model  List<Yemek.Entity.Model.Product>
 
 
 @{
@@ -12,21 +12,32 @@
             <div class="panel-heading">
                 Yazı Bilgileri
             </div>
-            
+
             @using (Html.BeginForm("Add", "Admin", FormMethod.Post))
             {
-                foreach (var item in Model)
-                {
-                 @Html.CheckBoxFor(m => item.IsSelected) @item.ProductName;<br />
-                    
-                }
-                <button type="submit"
-                        class="btn btn-primary btn-block">
-                    Kaydet
 
-                </button>
+                @*for (int i = 0; i <Model.Count(); i++)
+                    {
+                        @Html.CheckBoxFor(m=>m.Products[i].IsSelected) @Model.Products[i].ProductName;
+                    }*@
+            for (int i = 0; i < Model.Count(); i++)
+            {
+                @Html.HiddenFor(it => it[i].ProductID)
+                @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName
+                <br />
+                @*@Html.HiddenFor(it => it[i].ProductName)
+                @Html.HiddenFor(it => it[i].ProductType)
+                @Html.HiddenFor(it => it[i].ProductPrice)*@
+
+                @*@Html.CheckBoxFor(m => m.) @item.ProductName;<br />*@
+
             }
-   
+            <button type="submit"
+                    class="btn btn-primary btn-block">
+                Kaydet
+            </button>
+            }
+
         </div>
     </div>
 </div>
@@ -35,6 +46,8 @@
     $('.form-group input').attr('class', 'form-control')
 </script>
 
+
+    
 
 
 

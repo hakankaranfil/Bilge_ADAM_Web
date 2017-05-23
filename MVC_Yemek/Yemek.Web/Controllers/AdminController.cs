@@ -31,11 +31,18 @@ namespace Yemek.Web.Controllers
             var model = ProductRepo.GetAllForHome();
             return View(model);
         }
+
         [HttpPost]
-        public ActionResult Add(Product model)
+        public ActionResult Add(List<Product> list)
         {
-           
-            return View(model);
+            foreach (var item in list.ToArray())
+            {
+                if (item.IsSelected == true)
+                {
+                    MenuRepo.AddMenu(item);                   
+                }
+            }
+            return View();
         }
     }
 }

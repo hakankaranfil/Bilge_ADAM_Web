@@ -12,7 +12,6 @@ namespace Yemek.Entity.Model
         MainCourse,
         Dessert
     }
-
     public class Product
     {
         public int ProductID { get; set; }
