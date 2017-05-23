@@ -40,5 +40,9 @@ namespace Yemek.Web.Controllers
             return Json(jmodel, JsonRequestBehavior.AllowGet);
 
         }
+        public ActionResult Menu()
+        {
+            return View();
+        }
     }
 }

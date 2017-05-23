@@ -1,0 +1,17 @@
+﻿body 
+{
+    background-color:black;
+}
+     .logo{
+            float:left;
+            max-width:25px;
+            padding-right:20px;
+        }
+     .kunye{
+         float:none; 
+         width:65%; 
+         color:#FFF;  
+         font-size:13px; 
+         text-align:right 
+     }
+  

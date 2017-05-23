@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Yemek.Entity.Model
 {
-  public  class Menu
+   public class Menu
     {
         public int MenuID { get; set; }
-        List<Dessert> Dessert { get; set;}
-        List<MainCourse> MainCourse = new List<MainCourse>();
-        List<Salad> Salad { get; set; }
-        List<Soup> Soup { get; set; }
-        
-
-
+        public int ProductID { get; set; }
+        public DateTime Datetime { get; set; }
+        public Product Product { get; set; }
 
     }
 }

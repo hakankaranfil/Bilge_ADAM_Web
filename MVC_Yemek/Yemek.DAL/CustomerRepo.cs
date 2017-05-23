@@ -7,15 +7,16 @@ using Yemek.Entity.Model;
 
 namespace Yemek.DAL
 {
-   public class CustomerRepo
+  public  class CustomerRepo
     {
-        public static void Add(Customer customer)
+        public static void Add(Customer model)
         {
             using (YemekDBContext db=new YemekDBContext())
             {
-                db.Customers.Add(customer);
+                db.Customers.Add(model);
                 db.SaveChanges();
             }
         }
+   
     }
 }

@@ -13,27 +13,11 @@ namespace Yemek.Test
         {
             using (YemekDBContext db=new YemekDBContext())
             {
-                Soup s = new Soup();
-                Dessert d = new Dessert();
-                MainCourse m = new MainCourse();
-                Salad sa = new Salad();
-                Staff st = new Staff();
-                s.Name="Mercimek Çorbası";
-                s.Price = 7;
-                db.Soups.Add(s);
-                d.Name = "Baklava";
-                d.Price = 5;
-                db.Desserts.Add(d);
-                m.Name = "Tavuk Sote";
-                m.Price = 6;
-                db.MainCourses.Add(m);
-                sa.Name = "Çoban Salatası";
-                sa.Price = 3;
-                db.Salads.Add(sa);  
-                st.StaffEmail = "a@hotmail.com";
-                st.StaffName = "Emre";
-                st.StaffPassword = "1234";
-                db.Staffs.Add(st);
+                Product pr = new Product();
+                pr.ProductName = "Baklava";
+                pr.ProductPrice = 4;
+                pr.ProductType = ProductType.Dessert;
+                db.Products.Add(pr);
                 db.SaveChanges();
             }
         }

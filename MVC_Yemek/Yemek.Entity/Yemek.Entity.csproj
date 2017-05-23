@@ -59,15 +59,47 @@
     <Compile Include="Migrations\201705092042411_ekle.Designer.cs">
       <DependentUpon>201705092042411_ekle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705191110247_ekle1.cs" />
+    <Compile Include="Migrations\201705191110247_ekle1.Designer.cs">
+      <DependentUpon>201705191110247_ekle1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705201752064_ekle2.cs" />
+    <Compile Include="Migrations\201705201752064_ekle2.Designer.cs">
+      <DependentUpon>201705201752064_ekle2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705202112307_ekle3.cs" />
+    <Compile Include="Migrations\201705202112307_ekle3.Designer.cs">
+      <DependentUpon>201705202112307_ekle3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705202206474_ekle4.cs" />
+    <Compile Include="Migrations\201705202206474_ekle4.Designer.cs">
+      <DependentUpon>201705202206474_ekle4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705202238502_ekle5.cs" />
+    <Compile Include="Migrations\201705202238502_ekle5.Designer.cs">
+      <DependentUpon>201705202238502_ekle5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705202248309_ekle6.cs" />
+    <Compile Include="Migrations\201705202248309_ekle6.Designer.cs">
+      <DependentUpon>201705202248309_ekle6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705212130517_ekle7.cs" />
+    <Compile Include="Migrations\201705212130517_ekle7.Designer.cs">
+      <DependentUpon>201705212130517_ekle7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705212151100_ekle8.cs" />
+    <Compile Include="Migrations\201705212151100_ekle8.Designer.cs">
+      <DependentUpon>201705212151100_ekle8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705222051416_ekle9.cs" />
+    <Compile Include="Migrations\201705222051416_ekle9.Designer.cs">
+      <DependentUpon>201705222051416_ekle9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\BaseEntity.cs" />
+    <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Dessert.cs" />
-    <Compile Include="Model\MainCourse.cs" />
     <Compile Include="Model\Menu.cs" />
-    <Compile Include="Model\Salad.cs" />
-    <Compile Include="Model\Soup.cs" />
-    <Compile Include="Model\Staff.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\YemekDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\JsonResultModel.cs" />
@@ -77,15 +109,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Scripts\jquery-3.1.1.min.map" />
-    <None Include="Scripts\jquery-3.1.1.slim.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705091202148_InitialCreate.resx">
@@ -93,6 +116,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705092042411_ekle.resx">
       <DependentUpon>201705092042411_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191110247_ekle1.resx">
+      <DependentUpon>201705191110247_ekle1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201752064_ekle2.resx">
+      <DependentUpon>201705201752064_ekle2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705202112307_ekle3.resx">
+      <DependentUpon>201705202112307_ekle3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705202206474_ekle4.resx">
+      <DependentUpon>201705202206474_ekle4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705202238502_ekle5.resx">
+      <DependentUpon>201705202238502_ekle5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705202248309_ekle6.resx">
+      <DependentUpon>201705202248309_ekle6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705212130517_ekle7.resx">
+      <DependentUpon>201705212130517_ekle7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705212151100_ekle8.resx">
+      <DependentUpon>201705212151100_ekle8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705222051416_ekle9.resx">
+      <DependentUpon>201705222051416_ekle9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

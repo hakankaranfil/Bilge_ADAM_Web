@@ -11,6 +11,5 @@ namespace Yemek.Entity.ViewModel
         public bool IsSuccess { get; set; }
 
         public string UserMessage { get; set; }
-
     }
 }

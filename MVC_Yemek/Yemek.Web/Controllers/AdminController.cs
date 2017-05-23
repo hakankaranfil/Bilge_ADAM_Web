@@ -6,8 +6,9 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Yemek.DAL;
 using Yemek.Entity.Model;
+using Yemek.Entity.ViewModel;
 using Yemek.Web.Attiribute;
-using Yemek.Web.Models;
+
 
 namespace Yemek.Web.Controllers
 {
@@ -27,9 +28,14 @@ namespace Yemek.Web.Controllers
         }
         public ActionResult Add()
         {
-            ViewBag.Soup = new SelectList(SoupRepo.GetAllSoup(), "ID", "Name");
-            return View();
+            var model = ProductRepo.GetAllForHome();
+            return View(model);
         }
-
+        [HttpPost]
+        public ActionResult Add(Product model)
+        {
+           
+            return View(model);
+        }
     }
 }

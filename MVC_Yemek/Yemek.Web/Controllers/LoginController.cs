@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Yemek.DAL;
 using Yemek.Entity.Model;
-using Yemek.Web.Models;
+
 
 namespace Yemek.Web.Controllers
 {
@@ -18,17 +18,18 @@ namespace Yemek.Web.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(ViewLoginType model)
+        public ActionResult Login(Admin model)
         {
             using (YemekDBContext db = new YemekDBContext())
             {
-                var staff = db.Staffs.FirstOrDefault(s => s.StaffEmail == model.Email && s.StaffPassword == model.Password);
-                if (staff != null)
+
+            var result=AdminRepo.AdminLogin(model);
+                if (result!=null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Email, true);
                     return RedirectToAction("Admin", "Admin");
                 }
-                return RedirectToAction("Login", "Login");
+                return View();       
             }
         }
     }
