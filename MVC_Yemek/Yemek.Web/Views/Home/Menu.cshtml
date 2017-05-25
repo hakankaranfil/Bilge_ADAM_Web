@@ -1,11 +1,52 @@
-﻿@model List<Yemek.Entity.Model.Dessert>
+﻿@model List<Yemek.Entity.ViewModel.ViewMenu>
 @{
     ViewBag.Title = "Menu";
     Layout = "~/Views/Shared/_LayoutOgrenci.cshtml";
 }
+<style type="text/css">
+    center {
+        font-size: 30px;
+        margin-top: 10px;
+    }
 
-@foreach (var item in Model)
-{
-    item.Name;
-}
+    #menu {
+        font-size: 15px;
+    }
+    #date{
+        font-size:20px;
+    }
+    #fiyat{
+        color:black;
+        font-size:20px;
+    }
+</style>
+<html>
+<body>
+    <div class="container">
+        <center>Sakız Lokantası Günün Menüsü</center>
+        <br />
+        <center id="date">@DateTime.Now.ToShortDateString()</center>
+       
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td style="font-size:25px;">Yemekler</td>
+                    <td style="font-size:25px;">Fiyat</td>
+                   
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductPrice TL</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <center id="fiyat">Menü Fiyati:12 TL</center>
+        <center id="fiyat">Menü Açılımı: Çorba+AnaYemek+Pilav+Tatlı</center>
+    </div>
+</body>
+</html>
+
 

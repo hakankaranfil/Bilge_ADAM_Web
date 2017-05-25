@@ -99,6 +99,14 @@
     <Compile Include="Migrations\201705232141337_ekle10.Designer.cs">
       <DependentUpon>201705232141337_ekle10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705241246583_ekle11.cs" />
+    <Compile Include="Migrations\201705241246583_ekle11.Designer.cs">
+      <DependentUpon>201705241246583_ekle11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251501062_ekle12.cs" />
+    <Compile Include="Migrations\201705251501062_ekle12.Designer.cs">
+      <DependentUpon>201705251501062_ekle12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -107,6 +115,7 @@
     <Compile Include="Model\YemekDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\JsonResultModel.cs" />
+    <Compile Include="ViewModel\ViewMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -150,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705232141337_ekle10.resx">
       <DependentUpon>201705232141337_ekle10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241246583_ekle11.resx">
+      <DependentUpon>201705241246583_ekle11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251501062_ekle12.resx">
+      <DependentUpon>201705251501062_ekle12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

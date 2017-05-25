@@ -1,0 +1,10 @@
+﻿@model List< Yemek.Entity.ViewModel.ViewMenu>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@foreach (var item in Model)
+{
+    @item.ProductName;
+}
+

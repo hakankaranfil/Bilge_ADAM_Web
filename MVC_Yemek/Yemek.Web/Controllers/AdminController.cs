@@ -35,14 +35,24 @@ namespace Yemek.Web.Controllers
         [HttpPost]
         public ActionResult Add(List<Product> list)
         {
+          
             foreach (var item in list.ToArray())
             {
                 if (item.IsSelected == true)
                 {
-                    MenuRepo.AddMenu(item);                   
+                    MenuRepo.AddMenu(item);
+
                 }
             }
+
             return View();
         }
+
     }
+    //public ActionResult List()
+    //{
+    //    var model = MenuRepo.MenuList();
+    //    return View(model);
+    //}
 }
+

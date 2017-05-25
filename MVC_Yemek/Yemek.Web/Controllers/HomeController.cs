@@ -24,25 +24,23 @@ namespace Yemek.Web.Controllers
         public JsonResult Register(Customer customer)
         {
             JsonResultModel jmodel = new JsonResultModel();
-            try
-            {
 
+            var c = CustomerRepo.GetCustomer(customer);
+            if (c == null)
+            {
                 CustomerRepo.Add(customer);
                 jmodel.IsSuccess = true;
-                jmodel.UserMessage = "Kayıt Başarılı";
-
             }
-            catch (Exception ex)
+            else
             {
                 jmodel.IsSuccess = false;
-                jmodel.UserMessage = "Hata: " + ex.Message;
             }
             return Json(jmodel, JsonRequestBehavior.AllowGet);
-
         }
         public ActionResult Menu()
         {
-            return View();
+            var model = MenuRepo.MenuList();
+            return View(model);
         }
     }
 }

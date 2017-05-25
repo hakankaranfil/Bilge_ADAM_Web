@@ -11,6 +11,7 @@ namespace Yemek.Entity.Model
         public int MenuID { get; set; }
         public int ProductID { get; set; }
         public DateTime Datetime { get; set; }
+        public bool IsDelete { get; set; }
 
         //mapping
         public Product Product { get; set; }

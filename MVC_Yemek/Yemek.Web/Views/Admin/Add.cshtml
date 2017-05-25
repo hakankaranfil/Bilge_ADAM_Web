@@ -5,49 +5,67 @@
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<style type="text/css">
 
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Yazı Bilgileri
-            </div>
+</style>
+@*@Html.HiddenFor(it => it[i].ProductName)
+    @Html.HiddenFor(it => it[i].ProductType)
+    @Html.HiddenFor(it => it[i].ProductPrice)*@
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Yemek Çeşitleri</h2>
+            <div id="userMessage"></div>
 
-            @using (Html.BeginForm("Add", "Admin", FormMethod.Post))
-            {
 
-                @*for (int i = 0; i <Model.Count(); i++)
+        @using (Ajax.BeginForm("Add", "Admin", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+        {
+                for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (Model[i].ProductType == Yemek.Entity.Model.ProductType.Soup)
                     {
-                        @Html.CheckBoxFor(m=>m.Products[i].IsSelected) @Model.Products[i].ProductName;
-                    }*@
-            for (int i = 0; i < Model.Count(); i++)
-            {
-                @Html.HiddenFor(it => it[i].ProductID)
-                @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName
-                <br />
-                @*@Html.HiddenFor(it => it[i].ProductName)
-                @Html.HiddenFor(it => it[i].ProductType)
-                @Html.HiddenFor(it => it[i].ProductPrice)*@
+                        @Html.HiddenFor(it => it[i].ProductID)
+                        @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName<br />
+                    }
+                    else if (Model[i].ProductType == Yemek.Entity.Model.ProductType.MainCourse)
+                    {
 
-                @*@Html.CheckBoxFor(m => m.) @item.ProductName;<br />*@
+                       
+                            @Html.HiddenFor(it => it[i].ProductID)
+                            @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName<br />
+                       
+                    }
+                    else if (Model[i].ProductType == Yemek.Entity.Model.ProductType.Dessert)
+                    {
 
+                        @Html.HiddenFor(it => it[i].ProductID)
+                        @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName<br />
+                    }
+                }
+                <button type="submit"
+                        class="btn btn-primary btn-block">
+                    Kaydet
+                </button>
             }
-            <button type="submit"
-                    class="btn btn-primary btn-block">
-                Kaydet
-            </button>
-            }
-
         </div>
     </div>
-</div>
-
+</body>
+</html>
+<script type="text/javascript">
+        function success(result) {
+            if (result.IsSuccess == true) {
+                $("form")[0].reset();
+                alert("Kaydınız Başarılı.... ")
+            }
+        }
+</script>
 <script>
     $('.form-group input').attr('class', 'form-control')
 </script>
 
 
-    
+
 
 
 

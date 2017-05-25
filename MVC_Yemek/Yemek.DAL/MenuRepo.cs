@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Yemek.Entity.Model;
+using Yemek.Entity.ViewModel;
 
 namespace Yemek.DAL
 {
@@ -13,15 +14,33 @@ namespace Yemek.DAL
         {
             using (YemekDBContext db = new YemekDBContext())
             {
-                Menu menu = new Menu() {
-                    
+                Menu menu = new Menu()
+                {
+
                     ProductID = product.ProductID,
-                    Datetime = DateTime.Now
-                   
+                    Datetime = DateTime.Today
+
                 };
 
                 db.Menu.Add(menu);
                 db.SaveChanges();
+            }
+        }
+        public static List<ViewMenu> MenuList()
+        {
+            using (YemekDBContext db = new YemekDBContext())
+            {
+                return db.Menu.Where(m=>m.Datetime==DateTime.Today)
+                    .Select(m => new ViewMenu
+                    {
+                        ProductID = m.ProductID,
+                        MenuID = m.MenuID,
+                        Datetime = m.Datetime,
+                        ProductName = m.Product.ProductName,
+                        ProductPrice = m.Product.ProductPrice,
+                        ProductType = m.Product.ProductType
+                    }).ToList();
+
             }
         }
     }
