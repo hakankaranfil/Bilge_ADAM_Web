@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminRepo.cs" />
-    <Compile Include="CustomerRepo.cs" />
-    <Compile Include="MenuRepo.cs" />
-    <Compile Include="ProductRepo.cs" />
+    <Compile Include="Repo\AdminRepo.cs" />
+    <Compile Include="Repo\CustomerRepo.cs" />
+    <Compile Include="Repo\MenuRepo.cs" />
+    <Compile Include="Repo\ProductRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

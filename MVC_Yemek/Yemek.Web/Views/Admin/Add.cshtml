@@ -19,8 +19,9 @@
             <div id="userMessage"></div>
 
 
-        @using (Ajax.BeginForm("Add", "Admin", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
-        {
+            @using (Ajax.BeginForm("Add", "Admin", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+            {
+
                 for (int i = 0; i < Model.Count(); i++)
                 {
                     if (Model[i].ProductType == Yemek.Entity.Model.ProductType.Soup)
@@ -31,10 +32,10 @@
                     else if (Model[i].ProductType == Yemek.Entity.Model.ProductType.MainCourse)
                     {
 
-                       
-                            @Html.HiddenFor(it => it[i].ProductID)
-                            @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName<br />
-                       
+
+                        @Html.HiddenFor(it => it[i].ProductID)
+                        @Html.EditorFor(it => it[i].IsSelected)  @Model[i].ProductName<br />
+
                     }
                     else if (Model[i].ProductType == Yemek.Entity.Model.ProductType.Dessert)
                     {
@@ -53,12 +54,15 @@
 </body>
 </html>
 <script type="text/javascript">
-        function success(result) {
-            if (result.IsSuccess == true) {
-                $("form")[0].reset();
-                alert("Kaydınız Başarılı.... ")
-            }
+    function success(result) {
+        if (result.IsSuccess == true) {
+            $("form")[0].reset();
+            alert("Kaydınız Başarılı.... ")
         }
+        else {
+            alert("Böyle Bir E-Posta zaten var!!!")
+        }
+    }
 </script>
 <script>
     $('.form-group input').attr('class', 'form-control')

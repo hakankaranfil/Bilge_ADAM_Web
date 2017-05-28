@@ -20,8 +20,8 @@
 </body>
 </html>
 <script>
-    $("#btncek").click(function () {
-        $.getJSON("/Home/GetProducts", function (data)
+    $("#getir").click(function () {
+        $.getJSON("/Admin/AdminMenuList", function (data)
         {
             $.each(data, function (key, value)
             {

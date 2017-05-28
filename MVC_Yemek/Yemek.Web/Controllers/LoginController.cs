@@ -27,7 +27,7 @@ namespace Yemek.Web.Controllers
                 if (result!=null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Email, true);
-                    return RedirectToAction("Admin", "Admin");
+                    return RedirectToAction("Add", "Admin");
                 }
                 return View();       
             }

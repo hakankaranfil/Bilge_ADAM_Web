@@ -43,5 +43,22 @@ namespace Yemek.DAL
 
             }
         }
+        public static List<ViewMenu> AdminMenuList(DateTime datetime)
+        {
+            using (YemekDBContext db = new YemekDBContext())
+            {
+                return db.Menu.Where(m => m.Datetime == datetime)
+                    .Select(m => new ViewMenu
+                    {
+                        ProductID = m.ProductID,
+                        MenuID = m.MenuID,
+                        Datetime = m.Datetime,
+                        ProductName = m.Product.ProductName,
+                        ProductPrice = m.Product.ProductPrice,
+                        ProductType = m.Product.ProductType
+                    }).ToList();
+
+            }
+        }
     }
 }

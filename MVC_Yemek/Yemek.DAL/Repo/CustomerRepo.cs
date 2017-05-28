@@ -23,7 +23,8 @@ namespace Yemek.DAL
         {
             using (YemekDBContext db = new YemekDBContext())
             {
-                return db.Customers.FirstOrDefault(c=>c.Email==customer.Email);
+              
+                    return db.Customers.FirstOrDefault(c => c.Email == customer.Email);
 
             }
         }

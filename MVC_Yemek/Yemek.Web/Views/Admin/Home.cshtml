@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+
+            @using (Ajax.BeginForm("AdminMenuList", new AjaxOptions() { OnSuccess = "menuListSuccess", OnFailure = "onError", HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "menuList", LoadingElementId = "loadingDiv" }))
+            {
+                @Html.Label("Tarihi Girin:")
+                <input id="menuDate" type="date" name="menuDate" />
+                <input id="getir" type="submit" value="Getir" />
+            }
+        </div>
+        <div class="row" id="menuList">
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+
+    function menuListSuccess() {
+    }
+    function onError() {
+    }
+    //$("#getir").click(function () {
+    //    var url = '/Admin/AdminMenuList';
+
+    //    var date = $("#menuDate").val();
+    //    var data= {
+    //        menuDate: date
+    //    };
+    //    PostData(url, data,
+    //    function (response) {
+    //        $('#menuList').html(response);
+    //    }, function (error)
+    //    {
+    //        console.log(error);
+    //    });
+
+    //    //postWithAjax(url, data);
+    //    //postWithJqueryPostMethod(url,data);
+    // });
+
+    //function postWithAjax(url, data) {
+
+    //    $.ajax({
+    //        url: url,
+    //        type: 'POST',
+    //        data:data,
+    //        dataType: 'json',
+    //        statusCode: {
+    //            200: function (data) {
+    //                $('#menuList').html(data.responseText);
+    //            },
+    //            500: function (erro) { alert(erro); }
+    //        }
+    //    });
+    //}
+
+    //function postWithJqueryPostMethod(url,data)
+    //{
+    //    $.post(url, data, function (result, status) {
+    //        if (status=="success") {
+
+    //            $('#menuList').html(result);
+    //        }
+    //        else {
+    //            //hata
+    //        }
+    //    });
+
+    //}
+</script>

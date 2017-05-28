@@ -107,6 +107,14 @@
     <Compile Include="Migrations\201705251501062_ekle12.Designer.cs">
       <DependentUpon>201705251501062_ekle12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705251705166_ekle13.cs" />
+    <Compile Include="Migrations\201705251705166_ekle13.Designer.cs">
+      <DependentUpon>201705251705166_ekle13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251740151_ekle14.cs" />
+    <Compile Include="Migrations\201705251740151_ekle14.Designer.cs">
+      <DependentUpon>201705251740151_ekle14.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -166,6 +174,17 @@
     <EmbeddedResource Include="Migrations\201705251501062_ekle12.resx">
       <DependentUpon>201705251501062_ekle12.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251705166_ekle13.resx">
+      <DependentUpon>201705251705166_ekle13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251740151_ekle14.resx">
+      <DependentUpon>201705251740151_ekle14.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

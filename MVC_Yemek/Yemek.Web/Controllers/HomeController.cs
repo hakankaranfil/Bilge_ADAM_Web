@@ -24,16 +24,22 @@ namespace Yemek.Web.Controllers
         public JsonResult Register(Customer customer)
         {
             JsonResultModel jmodel = new JsonResultModel();
-
-            var c = CustomerRepo.GetCustomer(customer);
-            if (c == null)
+            if (customer.Email != null)
             {
-                CustomerRepo.Add(customer);
-                jmodel.IsSuccess = true;
+                var c = CustomerRepo.GetCustomer(customer);
+                if (c == null)
+                {
+                    CustomerRepo.Add(customer);
+                    jmodel.IsSuccess = true;
+                }
+                else
+                {
+                    jmodel.IsSuccess = false;
+                }
             }
             else
             {
-                jmodel.IsSuccess = false;
+                return null;
             }
             return Json(jmodel, JsonRequestBehavior.AllowGet);
         }
