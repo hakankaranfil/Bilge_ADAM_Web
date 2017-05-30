@@ -42,10 +42,12 @@ namespace Yemek.Web.Controllers
                 if (item.IsSelected == true)
                 {
                     MenuRepo.AddMenu(item);
+
                 }
             }
+            return RedirectToAction("Menu", "Home");
 
-            return RedirectToAction("GununMenusu", "Menu");
+
         }
         public ActionResult Home()
         {
@@ -57,6 +59,12 @@ namespace Yemek.Web.Controllers
             var model = MenuRepo.AdminMenuList(menuDate);
             return PartialView("~/views/Shared/Admin/_viewMenu.cshtml", model);
         }
+        public ActionResult Delete(int id)
+        {
+            MenuRepo.DeleteMenu(id);
+            return RedirectToAction("Home", "Admin");
+        }
+
     }
 }
 

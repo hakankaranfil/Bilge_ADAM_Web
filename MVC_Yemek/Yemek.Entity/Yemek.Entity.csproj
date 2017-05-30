@@ -115,6 +115,14 @@
     <Compile Include="Migrations\201705251740151_ekle14.Designer.cs">
       <DependentUpon>201705251740151_ekle14.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705291125333_ekle15.cs" />
+    <Compile Include="Migrations\201705291125333_ekle15.Designer.cs">
+      <DependentUpon>201705291125333_ekle15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705291208536_ekle16.cs" />
+    <Compile Include="Migrations\201705291208536_ekle16.Designer.cs">
+      <DependentUpon>201705291208536_ekle16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -179,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705251740151_ekle14.resx">
       <DependentUpon>201705251740151_ekle14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291125333_ekle15.resx">
+      <DependentUpon>201705291125333_ekle15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291208536_ekle16.resx">
+      <DependentUpon>201705291208536_ekle16.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

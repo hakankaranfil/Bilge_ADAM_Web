@@ -30,7 +30,7 @@ namespace Yemek.DAL
         {
             using (YemekDBContext db = new YemekDBContext())
             {
-                return db.Menu.Where(m=>m.Datetime==DateTime.Today)
+                return db.Menu.Where(m=>m.Datetime==DateTime.Today && m.IsDelete==false)
                     .Select(m => new ViewMenu
                     {
                         ProductID = m.ProductID,
@@ -47,7 +47,7 @@ namespace Yemek.DAL
         {
             using (YemekDBContext db = new YemekDBContext())
             {
-                return db.Menu.Where(m => m.Datetime == datetime)
+                return db.Menu.Where(m => m.Datetime == datetime && m.IsDelete==false)
                     .Select(m => new ViewMenu
                     {
                         ProductID = m.ProductID,
@@ -57,6 +57,16 @@ namespace Yemek.DAL
                         ProductPrice = m.Product.ProductPrice,
                         ProductType = m.Product.ProductType
                     }).ToList();
+
+            }
+        }
+        public static void DeleteMenu(int id)
+        {
+            using (YemekDBContext db = new YemekDBContext())
+            {
+                var result = db.Menu.FirstOrDefault(m => m.MenuID == id);
+                result.IsDelete= true;
+                db.SaveChanges();
 
             }
         }

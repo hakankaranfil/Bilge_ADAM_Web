@@ -3,13 +3,17 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_LayoutOgrenci.cshtml";
 }
-<div id="userMessage"></div>
 
-@using (Ajax.BeginForm("Register", "Home", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+
+   
+
+@using (Html.BeginForm())
 {
+    
     <div class="panel-body">
         <div class="row">
             <div class="form-group">
+                @Html.ValidationSummary()
                 @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })            
                 </div>
             </div>
@@ -18,26 +22,9 @@
                     class="btn btn-primary btn-block">
                 Kaydet
             </button>
+            
 }
-<script type="text/javascript">
-    
-    function success(result) {
-        if (result.IsSuccess == true) {
-            $("form")[0].reset();
-            alert("Kaydınız Başarılı.... ")
-        }
-        else if (result.IsSuccess == false) {
 
-            alert("Böyle Bir E-Posta zaten var!!!")
-        }
-        else {
-           alert("Boş Bırakılamaz")
-        }
-    }
-
-    
-    
-</script>
 <script>
     $('.form-group input').attr('class', 'form-control')
 </script>

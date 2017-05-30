@@ -7,6 +7,7 @@ using Yemek.DAL;
 using Yemek.Entity.Model;
 using Yemek.Entity.ViewModel;
 
+
 namespace Yemek.Web.Controllers
 {
     public class HomeController : Controller
@@ -21,28 +22,20 @@ namespace Yemek.Web.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult Register(Customer customer)
+        public ActionResult Register(Customer customer)
         {
-            JsonResultModel jmodel = new JsonResultModel();
-            if (customer.Email != null)
+           
+            if (ModelState.IsValid)
             {
                 var c = CustomerRepo.GetCustomer(customer);
                 if (c == null)
                 {
                     CustomerRepo.Add(customer);
-                    jmodel.IsSuccess = true;
                 }
-                else
-                {
-                    jmodel.IsSuccess = false;
-                }
-            }
-            else
-            {
-                return null;
-            }
-            return Json(jmodel, JsonRequestBehavior.AllowGet);
+            }      
+            return View();
         }
+
         public ActionResult Menu()
         {
             var model = MenuRepo.MenuList();

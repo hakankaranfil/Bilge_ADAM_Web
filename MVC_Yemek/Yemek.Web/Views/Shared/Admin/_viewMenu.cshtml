@@ -1,16 +1,14 @@
 ﻿@model IEnumerable<Yemek.Entity.ViewModel.ViewMenu>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.IsSelected)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Datetime)
         </th>
@@ -22,16 +20,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.ProductName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.IsSelected)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Datetime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Sil", "Delete", new {id=item.MenuID })
         </td>
     </tr>
 }
