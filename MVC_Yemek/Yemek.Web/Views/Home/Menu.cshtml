@@ -4,9 +4,10 @@
     Layout = "~/Views/Shared/_LayoutOgrenci.cshtml";
 }
 <style type="text/css">
-    body{
-        background-color:white;
+    body {
+        background-color: white;
     }
+
     center {
         font-size: 30px;
         margin-top: 10px;
@@ -15,12 +16,14 @@
     #menu {
         font-size: 15px;
     }
-    #date{
-        font-size:20px;
+
+    #date {
+        font-size: 20px;
     }
-    #fiyat{
-        color:black;
-        font-size:20px;
+
+    #fiyat {
+        color: black;
+        font-size: 20px;
     }
 </style>
 <html>
@@ -29,21 +32,48 @@
         <center>Sakız Lokantası Günün Menüsü</center>
         <br />
         <center id="date">@DateTime.Now.ToShortDateString()</center>
-       
+
         <table class="table">
             <tbody>
                 <tr>
                     <td style="font-size:25px;">Yemekler</td>
                     <td style="font-size:25px;">Fiyat</td>
-                   
+
                 </tr>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.ProductName</td>
-                        <td>@item.ProductPrice TL</td>
-                    </tr>
+                    if (item.ProductType == Yemek.Entity.Model.ProductType.Soup)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.ProductPrice TL</td>
+                        </tr>
+                    }
+
                 }
+                @foreach (var item in Model)
+                {
+                    if (item.ProductType == Yemek.Entity.Model.ProductType.MainCourse)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.ProductPrice TL</td>
+                        </tr>
+                    }
+
+                }
+                @foreach (var item in Model)
+                {
+                    if (item.ProductType == Yemek.Entity.Model.ProductType.Dessert)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.ProductPrice TL</td>
+                        </tr>
+                    }
+
+                }
+
             </tbody>
         </table>
         <center id="fiyat">Menü Fiyati:12 TL</center>

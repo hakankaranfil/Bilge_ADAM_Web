@@ -16,7 +16,7 @@ namespace Yemek.Web.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-       
+
         public ActionResult Admin()
         {
             ViewBag.Name = HttpContext.User.Identity.Name;
@@ -34,18 +34,19 @@ namespace Yemek.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(List<Product> list)
+        public JsonResult Add(List<Product> list)
         {
-
+            JsonResultModel m = new JsonResultModel();
             foreach (var item in list.ToArray())
             {
                 if (item.IsSelected == true)
                 {
                     MenuRepo.AddMenu(item);
-
+                    
                 }
             }
-            return RedirectToAction("Menu", "Home");
+            m.IsSuccess = true;
+            return Json(m, JsonRequestBehavior.AllowGet);
 
 
         }
@@ -55,7 +56,7 @@ namespace Yemek.Web.Controllers
         }
         public PartialViewResult AdminMenuList(DateTime menuDate)
         {
-            
+
             var model = MenuRepo.AdminMenuList(menuDate);
             return PartialView("~/views/Shared/Admin/_viewMenu.cshtml", model);
         }

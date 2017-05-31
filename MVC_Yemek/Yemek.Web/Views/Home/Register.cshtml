@@ -7,26 +7,66 @@
 
    
 
-@using (Html.BeginForm())
-{
-    
+@*@using (Html.BeginForm())
+{*@
+@using (Ajax.BeginForm("Register", "Home", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+            {
+    <form>
     <div class="panel-body">
         <div class="row">
             <div class="form-group">
-                @Html.ValidationSummary()
-                @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })            
-                </div>
+                @*@Html.ValidationSummary()
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })*@
+                Name: <input type="text" name="Email" id="Email" /> <br />
             </div>
         </div>
-            <button type="submit"
-                    class="btn btn-primary btn-block">
-                Kaydet
-            </button>
-            
-}
+    </div>
+    <button id="kaydet" type="submit"
+            class="btn btn-primary btn-block">
+        Kaydet
+    </button>
+    <div class="resultForm"></div>
+        </form>
 
-<script>
-    $('.form-group input').attr('class', 'form-control')
-</script>
+    }
 
+    @*<script>
+            $('.form-group input').attr('class', 'form-control')
+        </script>*@
+    <script>
+    $(function () {
+        $("form").validate({
+            rules: {
+                Email: {
+                    required: true,
+                    email: true
+                }
+
+            },
+            messages: {
+                Email: "Bos birakilamaz.",
+                Email:"Doğru bir Email giriniz",              
+
+            }
+        });
+    });
+    $('#kaydet').click(function () {
+        if ($('form').valid()) {
+            $('.resultForm').text;
+        }
+    });
+    function success(result) {
+        if (result.IsSuccess == true) {
+            $("form")[0].reset();
+            alert("Kaydınız başarılı");         
+        }
+        else {
+          
+            $("form")[0].reset();
+            }
+        alert("Böyle Bir E-posta zaten kayıtlı");
+         
+        }
+    
+    </script>
 

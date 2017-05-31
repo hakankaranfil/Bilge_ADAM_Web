@@ -22,19 +22,21 @@ namespace Yemek.Web.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Register(Customer customer)
+        public JsonResult Register(Customer customer)
         {
-           
+            JsonResultModel m = new JsonResultModel();
             if (ModelState.IsValid)
             {
                 var c = CustomerRepo.GetCustomer(customer);
                 if (c == null)
                 {
                     CustomerRepo.Add(customer);
+                    m.IsSuccess = true;
                 }
-            }      
-            return View();
+            }
+         return Json(m, JsonRequestBehavior.AllowGet);
         }
+        //}
 
         public ActionResult Menu()
         {
