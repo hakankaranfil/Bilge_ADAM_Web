@@ -42,7 +42,7 @@ namespace Yemek.Web.Controllers
                 if (item.IsSelected == true)
                 {
                     MenuRepo.AddMenu(item);
-                    
+
                 }
             }
             m.IsSuccess = true;
@@ -62,11 +62,23 @@ namespace Yemek.Web.Controllers
         }
         public ActionResult Delete(int id)
         {
-            MenuRepo.DeleteMenu(id);
-            return RedirectToAction("Home", "Admin");
-        }
+            //var result=MenuRepo.DeleteMenu(id);
+            //    var model = MenuRepo.AdminMenuList(id);
+            //return RedirectToAction("Home", "Admin");
 
+            using (YemekDBContext db = new YemekDBContext())
+            {
+                var result = db.Menu.FirstOrDefault(m => m.MenuID == id);
+                result.IsDelete = true;
+                db.SaveChanges();
+                return  RedirectToAction("AdminMenuList", new { menuDate= result.Datetime });
+                //var model = MenuRepo.AdminMenuList(result.Datetime); ;
+                //return PartialView("~/views/Shared/Admin/_viewMenu.cshtml", model);
+            }
+        }
     }
 }
+
+
 
 

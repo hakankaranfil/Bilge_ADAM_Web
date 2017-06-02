@@ -60,13 +60,14 @@ namespace Yemek.DAL
 
             }
         }
-        public static void DeleteMenu(int id)
+        public static void  DeleteMenu(int id)
         {
             using (YemekDBContext db = new YemekDBContext())
             {
                 var result = db.Menu.FirstOrDefault(m => m.MenuID == id);
                 result.IsDelete= true;
                 db.SaveChanges();
+              
 
             }
         }

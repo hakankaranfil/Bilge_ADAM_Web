@@ -12,18 +12,17 @@
             @using (Ajax.BeginForm("AdminMenuList", new AjaxOptions() { OnSuccess = "menuListSuccess", OnFailure = "onError", HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "menuList", LoadingElementId = "loadingDiv" }))
             {
                 @Html.Label("Tarihi Girin:")
-                <input id="menuDate" type="date" name="menuDate" />
+                <input id="menuDate" type="date" name="menuDate" value="@(TempData["tarih"] != null  ? TempData["tarih"] : null)"/>
                 <input id="getir" type="submit" value="Getir" />
             }
         </div>
         <div class="row" id="menuList">
         </div>
-
     </div>
 </body>
 </html>
 <script>
-
+    
     function menuListSuccess() {
     }
     function onError() {

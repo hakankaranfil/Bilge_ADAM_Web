@@ -3,37 +3,31 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_LayoutOgrenci.cshtml";
 }
-
-
-   
-
-@*@using (Html.BeginForm())
-{*@
 @using (Ajax.BeginForm("Register", "Home", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
             {
     <form>
-    <div class="panel-body">
-        <div class="row">
-            <div class="form-group">
-                @*@Html.ValidationSummary()
-                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })*@
-                Name: <input type="text" name="Email" id="Email" /> <br />
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    @*@Html.ValidationSummary()
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })*@
+                    E-Mail: <input type="text" name="Email" id="Email" /> <br />
+                </div>
             </div>
         </div>
-    </div>
-    <button id="kaydet" type="submit"
-            class="btn btn-primary btn-block">
-        Kaydet
-    </button>
-    <div class="resultForm"></div>
-        </form>
+        <button id="kaydet" type="submit"
+                class="btn btn-primary btn-block">
+            Kaydet
+        </button>
+        <div class="resultForm"></div>
+    </form>
 
-    }
+}
 
-    @*<script>
-            $('.form-group input').attr('class', 'form-control')
-        </script>*@
-    <script>
+<script>
+    $('.form-group input').attr('class', 'form-control')
+</script>
+<script>
     $(function () {
         $("form").validate({
             rules: {
@@ -44,9 +38,10 @@
 
             },
             messages: {
-                Email: "Bos birakilamaz.",
-                Email:"Doğru bir Email giriniz",              
-
+                Email: {
+                    required: "Email alanı boş bırakılamaz",
+                    email: "Email formatında giriniz"
+                },
             }
         });
     });
@@ -58,15 +53,13 @@
     function success(result) {
         if (result.IsSuccess == true) {
             $("form")[0].reset();
-            alert("Kaydınız başarılı");         
+            alert("Kaydınız başarılı");
+
         }
         else {
-          
+            alert("Böyle Bir E-posta zaten kayıtlı");
             $("form")[0].reset();
-            }
-        alert("Böyle Bir E-posta zaten kayıtlı");
-         
         }
-    
-    </script>
+    }
+</script>
 
