@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Quartz;
 namespace Yemek.Entity.Model
 {
   public  class Admin

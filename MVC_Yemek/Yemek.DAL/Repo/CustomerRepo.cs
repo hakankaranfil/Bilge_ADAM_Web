@@ -28,5 +28,12 @@ namespace Yemek.DAL
 
             }
         }
+        public static List<Customer> CustomerList()
+        {
+            using (YemekDBContext db = new YemekDBContext())
+            {
+                return db.Customers.ToList();
+            }
+        }
     }
 }

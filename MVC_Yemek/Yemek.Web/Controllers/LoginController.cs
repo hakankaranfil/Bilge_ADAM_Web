@@ -23,13 +23,13 @@ namespace Yemek.Web.Controllers
             using (YemekDBContext db = new YemekDBContext())
             {
 
-            var result=AdminRepo.AdminLogin(model);
-                if (result!=null)
+                var result = AdminRepo.AdminLogin(model);
+                if (result != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Email, true);
                     return RedirectToAction("Add", "Admin");
                 }
-                return View();       
+                return View();
             }
         }
     }

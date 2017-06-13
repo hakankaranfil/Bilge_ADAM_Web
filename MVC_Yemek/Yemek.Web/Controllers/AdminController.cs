@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
 using Yemek.DAL;
+using Yemek.DAL.Repo;
 using Yemek.Entity.Model;
 using Yemek.Entity.ViewModel;
 using Yemek.Web.Attiribute;
-
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
+using System.Net;
+using System.Net.Security;
 
 namespace Yemek.Web.Controllers
 {
@@ -71,13 +76,70 @@ namespace Yemek.Web.Controllers
                 var result = db.Menu.FirstOrDefault(m => m.MenuID == id);
                 result.IsDelete = true;
                 db.SaveChanges();
-                return  RedirectToAction("AdminMenuList", new { menuDate= result.Datetime });
-                //var model = MenuRepo.AdminMenuList(result.Datetime); ;
-                //return PartialView("~/views/Shared/Admin/_viewMenu.cshtml", model);
+                return RedirectToAction("AdminMenuList", new { menuDate = result.Datetime });
             }
         }
+        public ActionResult Mail()
+        {
+            var model = MailRepo.Menu();
+            return View(model);
+        }
+
+        //foreach ( var item in model)
+        //{
+        //    c.Add(item.Email);
+        //}
+        //    foreach (var item in maillist.ToArray())
+        //    {
+        //        WebMail.SmtpServer = "smtp.gmail.com";
+        //        WebMail.EnableSsl = true;
+        //        WebMail.UserName = "hakankaranfil123@gmail.com";
+        //        WebMail.Password = "hakan123.";
+        //        WebMail.SmtpPort = 587;
+        //        WebMail.Send(
+        //                c.ToList(),
+        //                item.Konu,
+        //               "hakan"
+        //);                  
+        //    }
+        [HttpPost]
+        public ActionResult Mail(List<ViewMail> maillist)
+        {
+            
+            List<Menu> c = new List<Menu>();
+            Customer cs = new Customer();
+            var model = CustomerRepo.CustomerList();
+            MailMessage msg = new MailMessage();//yeni bir mail nesnesi Oluşturuldu.
+            msg.IsBodyHtml = true; //mail içeriğinde html etiketleri kullanılsın mı?
+            foreach (var item in model)
+            {
+                msg.To.Add(item.Email);//Kime mail gönderilecek.
+            }
+            msg.From = new MailAddress("hakankaranfil123@gmail.com", "İletişim ", System.Text.Encoding.UTF8);//mail kimden geliyor, hangi ifade görünsün?
+            msg.Subject = "Siteden gelen mesaj (İletişim formu)";//mailin konus 
+            foreach (var item in c)
+            {
+                msg.Body = "a";
+            }
+          
+            msg.IsBodyHtml = true;
+            SmtpClient smp = new SmtpClient();
+            smp.Credentials = new NetworkCredential("hakankaranfil123@gmail.com", "hakan123.");//mailin gönderileceği adres ve kullanıcı adı,şifresi
+            smp.Port = 587;
+            smp.Host = "smtp.gmail.com";//gmail üstrzerinden gönderiliyor.
+            smp.EnableSsl = true;
+            smp.Send(msg);//msg isimli mail gönderiliyor.
+            return View();
+        }
+
     }
+
 }
+
+
+
+
+
 
 
 

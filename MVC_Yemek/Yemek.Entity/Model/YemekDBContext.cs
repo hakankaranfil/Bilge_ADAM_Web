@@ -21,5 +21,7 @@ namespace Yemek.Entity.Model
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<Mail> Mail { get; set; }
+        public virtual DbSet<Concent> Concents { get; set; }
     }
 }

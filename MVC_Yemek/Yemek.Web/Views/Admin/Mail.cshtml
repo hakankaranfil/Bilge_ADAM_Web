@@ -1,0 +1,24 @@
+﻿@model List<Yemek.Entity.ViewModel.ViewMail>
+@{
+    ViewBag.Title = "Mail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Mail</h2>
+
+@using (Ajax.BeginForm("Mail", "Admin", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+{
+
+    for (int i = 0; i < Model.Count(); i++)
+    {
+    @Html.HiddenFor(it => it[i].GondericiMail)
+    @Html.HiddenFor(it => it[i].GonderilecekMail)
+    @Html.HiddenFor(it => it[i].Konu)
+    @Html.HiddenFor(it => it[i].Sifre)
+    }
+    <button type="submit"
+            class="btn btn-primary btn-block">
+        Kaydet
+    </button>
+}
+

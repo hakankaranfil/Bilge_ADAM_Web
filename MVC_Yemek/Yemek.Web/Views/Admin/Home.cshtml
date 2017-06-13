@@ -11,8 +11,8 @@
 
             @using (Ajax.BeginForm("AdminMenuList", new AjaxOptions() { OnSuccess = "menuListSuccess", OnFailure = "onError", HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "menuList", LoadingElementId = "loadingDiv" }))
             {
-                @Html.Label("Tarihi Girin:")
-                <input id="menuDate" type="date" name="menuDate" value="@(TempData["tarih"] != null  ? TempData["tarih"] : null)"/>
+                 @Html.Label("Tarihi Girin:")
+                <input id="menuDate" type="date" name="menuDate" />
                 <input id="getir" type="submit" value="Getir" />
             }
         </div>
