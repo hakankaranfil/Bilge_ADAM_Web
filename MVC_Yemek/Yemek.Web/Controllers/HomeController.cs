@@ -40,7 +40,7 @@ namespace Yemek.Web.Controllers
             }
             return Json(m, JsonRequestBehavior.AllowGet);
         }
-        //}
+        
 
         public ActionResult Menu()
         {
@@ -58,28 +58,6 @@ namespace Yemek.Web.Controllers
             if (ModelState.IsValid)
             {
                 MailRepo.Add(cn);
-                //MailMessage mail = new MailMessage();
-                //mail.To.Add("hakankaranfil123@gmail.com");  //mail gönderilen adres
-                //mail.From = new MailAddress(cn.EMail);  //maili gönderen adres
-                //mail.Subject = "İletişim Formu";
-                //string Body = "İsim: " + cn.Name + " </br>E-Mail : " + cn.EMail + " </br>Message : " + cn.Message + " </br>Phone : " + cn.Phone;
-                //mail.Body = Body;
-                //mail.IsBodyHtml = true;
-                //SmtpClient smtp = new SmtpClient();
-                //smtp.Host = "smtp.gmail.com";  //mail serverının host bilgisi
-                //smtp.Port = 587;  //mail serverının portu
-                //smtp.UseDefaultCredentials = true;
-                //smtp.Credentials = new System.Net.NetworkCredential("hakankaranfil123@gmail.com", "hakan123.");  //mail serverının kullanıcı bilgileri
-                //smtp.Send(mail);
-                //WebMail.SmtpServer = "smtp.gmail.com";
-                //WebMail.EnableSsl = true;
-                //WebMail.UserName = "hakankaranfil123@gmail.com";
-                //WebMail.Password = "hakan123.";
-                //WebMail.SmtpPort = 587;
-                //WebMail.Send(
-                //    "hakankaranfil123@gmail.com",
-                //    "İletişim",
-                //    "İleti",
                 MailMessage msg = new MailMessage();//yeni bir mail nesnesi Oluşturuldu.
                 msg.IsBodyHtml = true; //mail içeriğinde html etiketleri kullanılsın mı?
                 msg.To.Add("hakankaranfil123@gmail.com");//Kime mail gönderilecek.

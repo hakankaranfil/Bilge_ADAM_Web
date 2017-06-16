@@ -105,8 +105,8 @@ namespace Yemek.Web.Controllers
         [HttpPost]
         public ActionResult Mail(List<ViewMail> maillist)
         {
-            
-            List<Menu> c = new List<Menu>();
+
+
             Customer cs = new Customer();
             var model = CustomerRepo.CustomerList();
             MailMessage msg = new MailMessage();//yeni bir mail nesnesi Oluşturuldu.
@@ -116,12 +116,14 @@ namespace Yemek.Web.Controllers
                 msg.To.Add(item.Email);//Kime mail gönderilecek.
             }
             msg.From = new MailAddress("hakankaranfil123@gmail.com", "İletişim ", System.Text.Encoding.UTF8);//mail kimden geliyor, hangi ifade görünsün?
-            msg.Subject = "Siteden gelen mesaj (İletişim formu)";//mailin konus 
-            foreach (var item in c)
+            msg.Subject = "Siteden gelen mesaj (İletişim formu)";//mailin konus 7
+            foreach (var item in maillist)
             {
-                msg.Body = "a";
+                     msg.Body +="<h3>" + item.GonderilecekMail + "</h3><br>";
+                    /*"<center><h1 style='color:blue'>Hello</h1><h3>" + DateTime.Now.ToString("dd-MM-yyyy") + "</h3><li>"; */
             }
-          
+                   
+
             msg.IsBodyHtml = true;
             SmtpClient smp = new SmtpClient();
             smp.Credentials = new NetworkCredential("hakankaranfil123@gmail.com", "hakan123.");//mailin gönderileceği adres ve kullanıcı adı,şifresi
@@ -131,10 +133,12 @@ namespace Yemek.Web.Controllers
             smp.Send(msg);//msg isimli mail gönderiliyor.
             return View();
         }
-
+     
     }
 
 }
+
+
 
 
 
