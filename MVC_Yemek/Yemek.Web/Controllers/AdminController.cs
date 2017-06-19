@@ -116,13 +116,13 @@ namespace Yemek.Web.Controllers
                 msg.To.Add(item.Email);//Kime mail gönderilecek.
             }
             msg.From = new MailAddress("hakankaranfil123@gmail.com", "İletişim ", System.Text.Encoding.UTF8);//mail kimden geliyor, hangi ifade görünsün?
-            msg.Subject = "Siteden gelen mesaj (İletişim formu)";//mailin konus 7
+            msg.Subject = "Günün Menüsü";//mailin konus 7
             foreach (var item in maillist)
             {
-                     msg.Body +="<h3>" + item.GonderilecekMail + "</h3><br>";
-                    /*"<center><h1 style='color:blue'>Hello</h1><h3>" + DateTime.Now.ToString("dd-MM-yyyy") + "</h3><li>"; */
+                msg.Body += "<h3>" + item.GonderilecekMail + "</h3><br>";
+                /*"<center><h1 style='color:blue'>Hello</h1><h3>" + DateTime.Now.ToString("dd-MM-yyyy") + "</h3><li>"; */
             }
-                   
+
 
             msg.IsBodyHtml = true;
             SmtpClient smp = new SmtpClient();
@@ -131,9 +131,9 @@ namespace Yemek.Web.Controllers
             smp.Host = "smtp.gmail.com";//gmail üstrzerinden gönderiliyor.
             smp.EnableSsl = true;
             smp.Send(msg);//msg isimli mail gönderiliyor.
-            return View();
+            return RedirectToAction("Add", "Admin");
         }
-     
+
     }
 
 }

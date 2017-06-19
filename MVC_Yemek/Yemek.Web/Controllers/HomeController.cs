@@ -40,7 +40,7 @@ namespace Yemek.Web.Controllers
             }
             return Json(m, JsonRequestBehavior.AllowGet);
         }
-        
+
 
         public ActionResult Menu()
         {
@@ -74,10 +74,10 @@ namespace Yemek.Web.Controllers
             };
             return View();
         }
-          
-        }
 
     }
+
+}
 
 
 
